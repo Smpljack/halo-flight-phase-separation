@@ -1,4 +1,4 @@
-Tools to separate the HALO flights during EUREC4A into different phases. 
+## Tools to separate the HALO flights during EUREC4A into different phases. 
 
 A flight phase is for example the period of a particular circle or 
 calibration maneuver during a research flight. The idea behind this is to 
@@ -10,7 +10,7 @@ distinct timestamps in order to identify the flight phases. It is based on
 input from the unified HALO datasets of BAHAMAS and the dropsondes. These 
 datasets can for example be obtained from:
 
-ftp-projects.mpimet.mpg.de
+> ftp-projects.mpimet.mpg.de
 
 For each research flight there is a jupyter notebook that makes use of the 
 FlightPhaseTools module to determine the flight phases. Within each notebook 
