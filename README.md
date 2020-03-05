@@ -1,4 +1,4 @@
-Tools to seperate the HALO flights during EUREC4A into different phases. 
+Tools to separate the HALO flights during EUREC4A into different phases. 
 
 A flight phase is for example the period of a particular circle or 
 calibration maneuver during a research flight. The idea behind this is to 
