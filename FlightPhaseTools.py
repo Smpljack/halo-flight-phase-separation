@@ -148,3 +148,12 @@ def markers_for_ts_ind(x, y, ts_ind_list, label_list, ax):
     for enum, ts_ind in enumerate(ts_ind_list):
         ax.scatter(x[ts_ind], y[ts_ind],
                    marker="x", zorder=10, label=label_list[enum], s=100)
+
+
+def get_unixtime(dt64):
+    """
+    Transform datetime64 object into integer with 1970-01-01 00:00:00 UTC epoch.
+    :param dt64: datetime64 object.
+    :return: integer containing the number of seconds since 1970-01-01 00:00:00 UTC.
+    """
+    return dt64.astype('datetime64[s]').astype('int')
