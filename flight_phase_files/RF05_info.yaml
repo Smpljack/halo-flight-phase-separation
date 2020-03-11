@@ -12,10 +12,10 @@
   flight_id: HALO-0128
   landing: '2020-01-28T23:55:17.000006144'
   mission: EUREC4A
-  name: '05'
+  name: RF05
   remarks:
   - Rather long excursion towards NTAS with radar calibration maneuver.
-  - Sugar cloud patterns within the circle.
+  - sugar cloud patterns within the circle.
   segments:
   - end: '2020-01-28T16:13:03.999998976'
     kind: circle
