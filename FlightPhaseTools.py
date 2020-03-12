@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy import signal
-import pandas as pd
+from datetime import datetime
 
 
 def ds_timestamp_ind(bahamas_data, dropsonde_data, dropsonde_ind):
@@ -150,10 +150,19 @@ def markers_for_ts_ind(x, y, ts_ind_list, label_list, ax):
                    marker="x", zorder=10, label=label_list[enum], s=100)
 
 
-def get_unixtime(dt64):
+def dt64_to_unixtime(dt64):
     """
     Transform datetime64 object into integer with 1970-01-01 00:00:00 UTC epoch.
     :param dt64: datetime64 object.
     :return: integer containing the number of seconds since 1970-01-01 00:00:00 UTC.
     """
     return dt64.astype('datetime64[s]').astype('int')
+
+
+def dt64_to_dt(dt64):
+    """
+    Transform datetime64 object to datetime.datetime object.
+    :param dt64: numpy datetime64 object
+    :return: datetime.datetime object
+    """
+    return datetime.utcfromtimestamp(dt64_to_unixtime(dt64))

@@ -71,4 +71,5 @@ class ResearchFlight:
         :param filename: Name of the file, ending with .yaml.
         """
         with open(os.path.join(dirname, f"{filename}"), 'w') as outfile:
-            yaml.dump([self.to_dictionary()], outfile, default_flow_style=False)
+            yaml.dump([self.to_dictionary()], outfile,
+                      default_flow_style=False, sort_keys=False)

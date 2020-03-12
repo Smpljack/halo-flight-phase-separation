@@ -1,56 +1,56 @@
-- contacts:
-  - email: marc.prange@uni-hamburg.de
-    name: Marc Prange
+- name: RF05
+  mission: EUREC4A
+  flight_id: HALO-0128
+  contacts:
+  - name: Marc Prange
+    email: marc.prange@uni-hamburg.de
     tags:
     - dataset creator
-  - email: bjorn.stevens@mpimet.mpg.de
-    name: Bjorn Stevens
+  - name: Bjorn Stevens
+    email: bjorn.stevens@mpimet.mpg.de
     tags:
     - flight PI
-  date: '2020-01-28'
+  date: 2020-01-28
+  takeoff: 2020-01-28 14:58:34
+  landing: 2020-01-28 23:55:17
   events: []
-  flight_id: HALO-0128
-  landing: '2020-01-28T23:55:17.000006144'
-  mission: EUREC4A
-  name: RF05
   remarks:
   - Rather long excursion towards NTAS with radar calibration maneuver.
-  - sugar cloud patterns within the circle.
+  - Sugar cloud patterns within the circle.
   segments:
-  - end: '2020-01-28T16:13:03.999998976'
-    kind: circle
+  - kind: circle
     name: c1
-    start: '2020-01-28T15:21:54.000004352'
-  - end: '2020-01-28T17:25:06.000002048'
-    kind: circle
+    start: 2020-01-28 15:21:54
+    end: 2020-01-28 16:13:03
+  - kind: circle
     name: c2
-    start: '2020-01-28T16:32:33.000005120'
-  - end: '2020-01-28T18:37:26.000008448'
-    kind: circle
+    start: 2020-01-28 16:32:33
+    end: 2020-01-28 17:25:06
+  - kind: circle
     name: c3
-    start: '2020-01-28T17:42:40.000008448'
-  - end: '2020-01-28T19:01:46.000005120'
-    kind: straight_leg
+    start: 2020-01-28 17:42:40
+    end: 2020-01-28 18:37:26
+  - kind: straight_leg
     name: leg1
-    start: '2020-01-28T18:41:47.000001024'
-  - end: '2020-01-28T19:50:47.000005376'
-    kind: straight_leg
+    start: 2020-01-28 18:41:47
+    end: 2020-01-28 19:01:46
+  - kind: straight_leg
     name: leg2
-    start: '2020-01-28T19:29:47.000010240'
-  - end: '2020-01-28T20:53:13.000005120'
-    kind: circle
+    start: 2020-01-28 19:29:47
+    end: 2020-01-28 19:50:47
+  - kind: circle
     name: c4
-    start: '2020-01-28T19:57:50.000004608'
-  - end: '2020-01-28T22:07:21.000008704'
-    kind: circle
+    start: 2020-01-28 19:57:50
+    end: 2020-01-28 20:53:13
+  - kind: circle
     name: c5
-    start: '2020-01-28T21:13:08.000010752'
-  - end: '2020-01-28T23:23:36.000007680'
-    kind: circle
+    start: 2020-01-28 21:13:08
+    end: 2020-01-28 22:07:21
+  - kind: circle
     name: c6
-    start: '2020-01-28T22:29:35.000005120'
-  - end: '2020-01-28T19:25:26.000007680'
-    kind: radar_calibration
+    start: 2020-01-28 22:29:35
+    end: 2020-01-28 23:23:36
+  - kind: radar_calibration
     name: radar_cal
-    start: '2020-01-28T19:07:44.000004608'
-  takeoff: '2020-01-28T14:58:34.000003840'
+    start: 2020-01-28 19:07:44
+    end: 2020-01-28 19:25:26

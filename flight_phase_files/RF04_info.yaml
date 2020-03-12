@@ -1,73 +1,73 @@
-- contacts:
-  - email: marc.prange@uni-hamburg.de
-    name: Marc Prange
+- name: RF04
+  mission: EUREC4A
+  flight_id: HALO-0126
+  contacts:
+  - name: Marc Prange
+    email: marc.prange@uni-hamburg.de
     tags:
     - dataset creator
-  - email: m.wendisch@uni-leipzig.de
-    name: Manfred Wendisch
+  - name: Manfred Wendisch
+    email: m.wendisch@uni-leipzig.de
     tags:
     - flight PI
-  date: '2020-01-26'
+  date: 2020-01-26
+  takeoff: 2020-01-26 12:05:30
+  landing: 2020-01-26 21:20:49
   events: []
-  flight_id: HALO-0126
-  landing: '2020-01-26T21:20:49.000004864'
-  mission: EUREC4A
-  name: RF04
   remarks:
   - Super curtain with Twin Otter and ATR after takeoff.
   - Four coordinated straight legs over Meteor.
   - Cirrus clouds in 14-17 km present for almost full flight.
   segments:
-  - end: '2020-01-26T12:15:10.000002816'
-    kind: straight_leg
+  - kind: straight_leg
     name: super_curtain
-    start: '2020-01-26T12:07:06.999997440'
-  - end: '2020-01-26T13:17:15.000005376'
-    kind: circle
+    start: 2020-01-26 12:07:06
+    end: 2020-01-26 12:15:10
+  - kind: circle
     name: c1
-    start: '2020-01-26T12:27:11.999999232'
-  - end: '2020-01-26T14:27:36.999997952'
-    kind: circle
+    start: 2020-01-26 12:27:11
+    end: 2020-01-26 13:17:15
+  - kind: circle
     name: c2
-    start: '2020-01-26T13:38:57.999998720'
-  - end: '2020-01-26T15:35:58.999997440'
-    kind: circle
+    start: 2020-01-26 13:38:57
+    end: 2020-01-26 14:27:36
+  - kind: circle
     name: c3
-    start: '2020-01-26T14:43:29.999998720'
-  - end: '2020-01-26T16:04:52.000002048'
-    kind: straight_leg
+    start: 2020-01-26 14:43:29
+    end: 2020-01-26 15:35:58
+  - kind: straight_leg
     name: leg1
-    start: '2020-01-26T15:50:46.999998720'
-  - end: '2020-01-26T16:31:14.999995648'
-    kind: straight_leg
+    start: 2020-01-26 15:50:46
+    end: 2020-01-26 16:04:52
+  - kind: straight_leg
     name: leg2
-    start: '2020-01-26T16:11:14.000002048'
-  - end: '2020-01-26T16:52:17.000000256'
-    kind: straight_leg
+    start: 2020-01-26 16:11:14
+    end: 2020-01-26 16:31:14
+  - kind: straight_leg
     name: leg3
-    start: '2020-01-26T16:37:21.999996416'
-  - end: '2020-01-26T17:14:14.000008192'
-    kind: straight_leg
+    start: 2020-01-26 16:37:21
+    end: 2020-01-26 16:52:17
+  - kind: straight_leg
     name: leg4
-    start: '2020-01-26T16:58:46.000002304'
-  - end: '2020-01-26T18:12:50.000007936'
-    kind: circle
+    start: 2020-01-26 16:58:46
+    end: 2020-01-26 17:14:14
+  - kind: circle
     name: c4
-    start: '2020-01-26T17:21:01.000003328'
-  - end: '2020-01-26T19:29:21.000000512'
-    kind: circle
+    start: 2020-01-26 17:21:01
+    end: 2020-01-26 18:12:50
+  - kind: circle
     name: c5
-    start: '2020-01-26T18:36:01.000006656'
-  - end: '2020-01-26T19:50:00.000008960'
-    kind: flight_track_deviaton
+    start: 2020-01-26 18:36:01
+    end: 2020-01-26 19:29:21
+  - kind: flight_track_deviaton
     name: flight_track_deviation
-    start: '2020-01-26T19:41:01.000005632'
-  - end: '2020-01-26T20:45:42.000006912'
-    kind: circle
+    start: 2020-01-26 19:41:01
+    end: 2020-01-26 19:50:00
+  - kind: circle
     name: c6
-    start: '2020-01-26T19:51:32.000002816'
-  - end: '2020-01-26T21:03:44.000002048'
-    kind: lidar_calibration
+    start: 2020-01-26 19:51:32
+    end: 2020-01-26 20:45:42
+  - kind: lidar_calibration
     name: lidar_cal
-    start: '2020-01-26T20:54:26.000001280'
-  takeoff: '2020-01-26T12:05:30.000000512'
+    start: 2020-01-26 20:54:26
+    end: 2020-01-26 21:03:44
