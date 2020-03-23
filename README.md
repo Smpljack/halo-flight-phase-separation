@@ -45,7 +45,7 @@ start- and end-times of the flight segments than to automate this process. To va
 found timestamps for the different segments are plausible, they are scattered into a set of standard 
 BAHAMAS timeseries. An example is given below. 
 
-![Set of BAHAMAS data timeseries with timestamps denoting start- and end-times of flight segments.](https://raw.githubusercontent.com/smpljack/flight-phase-seperation/master/plots/flight_phase_seperation_example.png)
+![Set of BAHAMAS data timeseries with timestamps denoting start- and end-times of flight segments.](plots/flight_phase_seperation_example.png)
 
 It is clear that this process is to some degree always going to be subjective, but due to the individuality 
 of the different RFs (unforeseeable track-deviations, dropsonde failures, complexity of maneuvers) and the managable 
