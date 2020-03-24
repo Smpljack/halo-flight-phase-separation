@@ -46,16 +46,16 @@
     name: leg1
     start: 2020-01-31 18:52:58
     end: 2020-01-31 19:06:16
-  - kind: 10deg_circle
-    name: rad_circle
+  - kind: radar_cal_tilted
+    name: radar_cal_tilted
     start: 2020-01-31 19:07:45
     end: 2020-01-31 19:30:44
   - kind: straight_leg
     name: leg2
     start: 2020-01-31 19:35:33
     end: 2020-01-31 19:53:24
-  - kind: 20deg_wiggle
-    name: wiggle
+  - kind: radar_cal_wiggle
+    name: radar_cal_wiggle
     start: 2020-01-31 19:42:56
     end: 2020-01-31 19:47:30
   - kind: circle
@@ -78,7 +78,7 @@
     name: c6
     start: 2020-01-31 22:31:25
     end: 2020-01-31 23:25:33
-  - kind: lidar_cal
+  - kind: lidar_calibration
     name: lidar_cal
     start: 2020-01-31 23:34:13
     end: 2020-01-31 23:37:29

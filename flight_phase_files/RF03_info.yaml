@@ -74,3 +74,59 @@
     name: lidar_cal
     start: 2020-01-24 18:12:19
     end: 2020-01-24 18:21:55
+  - kind: circle
+    name: c1
+    start: 2020-01-24 09:50:17
+    end: 2020-01-24 10:48:51
+  - kind: circle_break
+    name: cb1
+    start: 2020-01-24 10:48:51
+    end: 2020-01-24 11:00:08
+  - kind: circle
+    name: c2
+    start: 2020-01-24 11:00:08
+    end: 2020-01-24 12:00:00
+  - kind: circle_break
+    name: cb2
+    start: 2020-01-24 12:00:00
+    end: 2020-01-24 12:15:10
+  - kind: circle
+    name: c3
+    start: 2020-01-24 12:15:10
+    end: 2020-01-24 13:10:03
+  - kind: circle_break
+    name: cb3
+    start: 2020-01-24 13:10:03
+    end: 2020-01-24 13:30:05
+  - kind: circle
+    name: c4
+    start: 2020-01-24 13:30:05
+    end: 2020-01-24 14:25:07
+  - kind: circle_break
+    name: cb4
+    start: 2020-01-24 14:25:07
+    end: 2020-01-24 14:40:08
+  - kind: circle
+    name: c5
+    start: 2020-01-24 14:40:08
+    end: 2020-01-24 15:35:05
+  - kind: circle_break
+    name: cb5
+    start: 2020-01-24 15:35:05
+    end: 2020-01-24 15:50:06
+  - kind: circle
+    name: c6
+    start: 2020-01-24 15:50:06
+    end: 2020-01-24 16:45:10
+  - kind: straight_leg
+    name: leg1
+    start: 2020-01-24 16:59:34
+    end: 2020-01-24 17:27:19
+  - kind: straight_leg
+    name: leg2
+    start: 2020-01-24 17:33:45
+    end: 2020-01-24 18:02:50
+  - kind: lidar_calibration
+    name: lidar_cal
+    start: 2020-01-24 18:12:19
+    end: 2020-01-24 18:21:55
