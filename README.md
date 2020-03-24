@@ -28,16 +28,40 @@ segment-kinds in the YAML files. The criteria to determine the start- and end-ti
 are noted below each flight segment.
 
 #### circle (circle):
+- Defined via launch times of first and last dropsonde during each of the circles.
+- A circle typically ranges over 330° rather than 360°, because the final dropsonde of a circle is launched
+30° ahead of the geometrical circle closure.
+- If the first or final dropsonde is missing (e.g. due to instrument failure), the circle starts or closes with the 
+first or last available dropsonde.
+- The circle is defined this way because it appears most conservative with regard to comparability between
+dropsonde and remote sensing data within a circle.
 
 #### circle break (circle_break):
+- Periods between two consecutive circles, during which no dropsondes were launched.
+- Circle breaks stand out to breaks between for example a circle and a straight-leg because during these it 
+is assured that the aircraft remained on the circle track.
+- Defined by launch times of last dropsonde of previous circle and first dropsonde of next circle.
+- Circle breaks may be used to obtain all the available remote sensing data from circles, neglecting availability 
+of dropsonde data.
 
 #### straight leg (straight_leg):
+- Period with constant aircraft heading and close to 0° roll angle.
+- Straight legs were flown with various purposes, which are more closely described by the straight leg 
+"name"-Parameter in the YAML files.
 
 #### lidar calibration (lidar_calibration):
+- Maneuver typically conducted during the final descent of most RFs in FL160.
+- Defined as the period of the aircraft being in FL160.
 
 #### radar calibration with wiggle (radar_cal_wiggle):
+- Maneuver typically conducted during straight legs, where the aircraft tilts to a roll angle of first -20° and then +20°.
+- For these cases, the straight leg is split into three flight segments: 1.) straight_leg, 2.) radar_cal_wiggle, 3.) straight_leg.
+- The "rad_cal_wiggle" period is constrained to the period where the aircraft roll angle deviates from 0° and the heading is
+not constant.
 
 #### radar calibration with constant bank (radar_cal_tilted):
+- Maneuver typically conducted at the end of a straight leg, where a narrow circle pattern with a constant 10° bank is flown.
+- A constant roll angle of 10° is used to define the period of a "radar_cal_tilted" segment.
 
 These criteria are applied by making use of the FlightPhaseTools.py python module in jupyter 
 notebooks for each individual RF. This module rather provides useful functions to search for the 
@@ -51,25 +75,7 @@ It is clear that this process is to some degree always going to be subjective, b
 of the different RFs (unforeseeable track-deviations, dropsonde failures, complexity of maneuvers) and the managable 
 amount of them, this methodology appears plausible.
 
-The module FlightPhaseTools.py contains functions that help to determine 
-distinct timestamps in order to identify the flight phases. It is based on
-input from the unified HALO datasets of BAHAMAS and the dropsondes. These 
-datasets can for example be obtained from:
-
-> ftp-projects.mpimet.mpg.de
-
-For each research flight there is a jupyter notebook that makes use of the 
-FlightPhaseTools module to determine the flight phases. Within each notebook 
-a set of base BAHAMAS plots are made to sanity check the obtained timestamps. 
-The flight reports are used here as a reference.Finally, the notebook stores 
-the determined timestamps in a NetCDF4 file.
-
-What should the README contain?
-- Brief explanation of what this is about.
-- Structure of the repository
-- Methodology to determine timestamps.
-- Definitions of the different flight phases, what criteria are used?
-- Note on obtaining data as NetCDF.
-
-
-
+**Note on data format**: It is strongly encouraged to use the provided YAML files since they best reflect the 
+structure of the gathered meta-data. For python users, a reader method for the YAML files is directly included in the provided
+ ResearchFlight class ("from_yaml"). For users still insisting on the use of NetCDF data, please contact the dataset creator.
+ 
