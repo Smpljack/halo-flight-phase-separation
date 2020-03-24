@@ -53,13 +53,13 @@ of dropsonde data.
 - Maneuver typically conducted during the final descent of most RFs in FL160.
 - Defined as the period of the aircraft being in FL160.
 
-#### radar calibration with wiggle (radar_cal_wiggle):
+#### radar calibration with wiggle (radar_calibration_wiggle):
 - Maneuver typically conducted during straight legs, where the aircraft tilts to a roll angle of first -20° and then +20°.
 - For these cases, the straight leg is split into three flight segments: 1.) straight_leg, 2.) radar_cal_wiggle, 3.) straight_leg.
 - The "rad_cal_wiggle" period is constrained to the period where the aircraft roll angle deviates from 0° and the heading is
 not constant.
 
-#### radar calibration with constant bank (radar_cal_tilted):
+#### radar calibration with constant bank (radar_calibration_tilted):
 - Maneuver typically conducted at the end of a straight leg, where a narrow circle pattern with a constant 10° bank is flown.
 - A constant roll angle of 10° is used to define the period of a "radar_cal_tilted" segment.
 
