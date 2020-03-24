@@ -47,17 +47,21 @@
     start: 2020-01-31 18:52:58
     end: 2020-01-31 19:06:16
   - kind: radar_cal_tilted
-    name: radar_cal_tilted
+    name: radar_cal_tilted (10deg) around Ron Brown
     start: 2020-01-31 19:07:45
     end: 2020-01-31 19:30:44
   - kind: straight_leg
     name: leg2
     start: 2020-01-31 19:35:33
-    end: 2020-01-31 19:53:24
+    end: 2020-01-31 19:42:56
   - kind: radar_cal_wiggle
-    name: radar_cal_wiggle
+    name: radar_cal_wiggle (20deg)
     start: 2020-01-31 19:42:56
     end: 2020-01-31 19:47:30
+  - kind: straight_leg
+    name: leg3
+    start: 2020-01-31 19:47:30
+    end: 2020-01-31 19:53:24
   - kind: circle
     name: c4
     start: 2020-01-31 19:59:34
