@@ -27,7 +27,7 @@ segments:
   start: 2020-01-31 15:32:18
   end: 2020-01-31 16:24:43
 - kind: circle_break
-  name: cb1
+  name: cb1to2
   start: 2020-01-31 16:24:43
   end: 2020-01-31 16:41:53
 - kind: circle
@@ -35,7 +35,7 @@ segments:
   start: 2020-01-31 16:41:53
   end: 2020-01-31 17:36:28
 - kind: circle_break
-  name: cb2
+  name: cb2to3
   start: 2020-01-31 17:36:28
   end: 2020-01-31 17:52:48
 - kind: circle
@@ -43,7 +43,7 @@ segments:
   start: 2020-01-31 17:52:48
   end: 2020-01-31 18:47:49
 - kind: straight_leg
-  name: leg1
+  name: leg1_towards_NTAS
   start: 2020-01-31 18:52:58
   end: 2020-01-31 19:06:16
 - kind: radar_calibration_tilted
@@ -51,7 +51,7 @@ segments:
   start: 2020-01-31 19:07:45
   end: 2020-01-31 19:30:44
 - kind: straight_leg
-  name: leg2
+  name: leg2_return_NTAS
   start: 2020-01-31 19:35:33
   end: 2020-01-31 19:42:56
 - kind: radar_calibration_wiggle
@@ -59,7 +59,7 @@ segments:
   start: 2020-01-31 19:42:56
   end: 2020-01-31 19:47:30
 - kind: straight_leg
-  name: leg3
+  name: leg3_return_NTAS
   start: 2020-01-31 19:47:30
   end: 2020-01-31 19:53:24
 - kind: circle
@@ -67,7 +67,7 @@ segments:
   start: 2020-01-31 19:59:34
   end: 2020-01-31 20:53:38
 - kind: circle_break
-  name: cb3
+  name: cb4to5
   start: 2020-01-31 20:53:38
   end: 2020-01-31 21:16:52
 - kind: circle
@@ -75,7 +75,7 @@ segments:
   start: 2020-01-31 21:16:52
   end: 2020-01-31 22:09:28
 - kind: circle_break
-  name: cb4
+  name: cb5to6
   start: 2020-01-31 22:09:28
   end: 2020-01-31 22:31:25
 - kind: circle
