@@ -63,13 +63,18 @@ class ResearchFlight:
         }
         return rf_dict
 
-    def to_yaml(self, dirname, filename):
+    def to_yaml(self, filename):
         """
         Store the flight phase attributes to a .yaml file.
 
         :param dirname: Directory path to store the file to.
         :param filename: Name of the file, ending with .yaml.
         """
-        with open(os.path.join(dirname, f"{filename}"), 'w') as outfile:
-            yaml.dump([self.to_dictionary()], outfile,
+        with open(filename, 'w') as outfile:
+            yaml.dump(self.to_dictionary(), outfile,
                       default_flow_style=False, sort_keys=False)
+
+    # @classmethod
+    # def from_yaml(cls, filename):
+    #     # ...
+    #     return cls(name, mission, ...)
