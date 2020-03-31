@@ -79,10 +79,6 @@ segments:
   name: cb5to6
   start: 2020-01-26 19:29:21
   end: 2020-01-26 19:41:01
-- kind: flight_track_deviaton
-  name: flight_track_deviation
-  start: 2020-01-26 19:41:01
-  end: 2020-01-26 19:51:32
 - kind: circle
   name: c6
   start: 2020-01-26 19:51:32
