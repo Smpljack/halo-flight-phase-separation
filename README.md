@@ -80,13 +80,11 @@ structure of the gathered meta-data. For python users, the module [PyYAML](https
 the yaml files into plane python objects like lists and dictionaries. Here is an example to read a file and print the circle start- and endtimes 
 from that file:
 
-`
+```
 import yaml 
-
 flightinfo = yaml.load(open("HALO_RF04_20200126_info.yaml"))
-
 print([(c["start"], c["end"]) for c in flightinfo["segments"] if c["kind"] == "circle"])
-`
+```
 
 For users still insisting on the use of NetCDF data, please contact the dataset creator.
  
