@@ -81,8 +81,10 @@ the yaml files into plane python objects like lists and dictionaries. Here is an
 from that file:
 
 `
-import yaml
+import yaml 
+
 flightinfo = yaml.load(open("HALO_RF04_20200126_info.yaml"))
+
 print([(c["start"], c["end"]) for c in flightinfo["segments"] if c["kind"] == "circle"])
 `
 
