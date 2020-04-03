@@ -76,6 +76,15 @@ of the different RFs (unforeseeable track-deviations, dropsonde failures, comple
 amount of them, this methodology appears plausible.
 
 **Note on data format**: It is strongly encouraged to use the provided YAML files since they best reflect the 
-structure of the gathered meta-data. For python users, a reader method for the YAML files is directly included in the provided
- ResearchFlight class ("from_yaml"). For users still insisting on the use of NetCDF data, please contact the dataset creator.
+structure of the gathered meta-data. For python users, the module [PyYAML](https://pyyaml.org) (included in Anaconda) offers an easy to use module to read the data from 
+the yaml files into plane python objects like lists and dictionaries. Here is an example to read a file and print the circle start- and endtimes 
+from that file:
+
+```
+import yaml 
+flightinfo = yaml.load(open("HALO_RF04_20200126_info.yaml"))
+print([(c["start"], c["end"]) for c in flightinfo["segments"] if c["kind"] == "circle"])
+```
+
+For users still insisting on the use of NetCDF data, please contact the dataset creator.
  
