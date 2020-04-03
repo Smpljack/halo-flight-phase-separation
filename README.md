@@ -44,6 +44,18 @@ is assured that the aircraft remained on the circle track.
 - Circle breaks may be used to obtain all the available remote sensing data from circles, neglecting availability 
 of dropsonde data.
 
+#### clover leg (clover_leg):
+- Defined as the long legs of a clover flight pattern with close to 2° roll angle.
+- Dropsondes were launched every 30° along clover legs. 
+- The transitions between circle pattern and clover pattern are excluded, because of steep roll angles of about 30°. 
+- Clover legs are not defined via launch times of first and last dropsonde, because they don't always represent the 
+whole leg.
+
+#### clover turn (clover_turn):
+- Periods between two consecutive clover legs (smooth transition), with steeper roll angles of about 6°.
+- These periods are constrained to the periods during the clover pattern where the aircraft roll angle deviates clearly from 2°.
+- During these turns no dropsondes were launched. 
+
 #### straight leg (straight_leg):
 - Period with constant aircraft heading and close to 0° roll angle.
 - Straight legs were flown with various purposes, which are more closely described by the straight leg 
@@ -51,7 +63,7 @@ of dropsonde data.
 
 #### lidar calibration (lidar_calibration):
 - Maneuver typically conducted during the final descent of most RFs in FL160.
-- Defined as the period of the aircraft being in FL160.
+- Defined as the period of the aircraft being in FL160 and close to 0° roll angle.
 
 #### radar calibration with wiggle (radar_calibration_wiggle):
 - Maneuver typically conducted during straight legs, where the aircraft tilts to a roll angle of first -20° and then +20°.
@@ -62,6 +74,9 @@ not constant.
 #### radar calibration with constant bank (radar_calibration_tilted):
 - Maneuver typically conducted at the end of a straight leg, where a narrow circle pattern with a constant 10° bank is flown.
 - A constant roll angle of 10° is used to define the period of a "radar_cal_tilted" segment.
+
+#### baccardi calibration square (baccardi_calibration):
+- Defined by 4 turns indicated by roll angles of about 25° (1 turn: -25°, 3 turns: +25°).
 
 These criteria are applied by making use of the FlightPhaseTools.py python module in jupyter 
 notebooks for each individual RF. This module rather provides useful functions to search for the 
