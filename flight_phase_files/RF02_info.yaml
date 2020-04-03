@@ -79,3 +79,59 @@ segments:
   name: lidar_cal
   start: 2020-01-22 23:25:01
   end: 2020-01-22 23:40:59
+- kind: circle
+  name: c1
+  start: 2020-01-22 15:18:17
+  end: 2020-01-22 16:13:02
+- kind: circle_break
+  name: cb1to2
+  start: 2020-01-22 16:13:02
+  end: 2020-01-22 16:31:19
+- kind: circle
+  name: c2
+  start: 2020-01-22 16:31:19
+  end: 2020-01-22 17:26:29
+- kind: circle_break
+  name: cb2to3
+  start: 2020-01-22 17:26:29
+  end: 2020-01-22 17:43:08
+- kind: circle
+  name: c3
+  start: 2020-01-22 17:43:08
+  end: 2020-01-22 18:38:02
+- kind: baccardi_calibration
+  name: baccardi_cal
+  start: 2020-01-22 18:54:07
+  end: 2020-01-22 19:08:55
+- kind: straight_leg
+  name: leg1_above_cirrus
+  start: 2020-01-22 19:08:55
+  end: 2020-01-22 19:18:35
+- kind: straight_leg
+  name: leg2_below_cirrus
+  start: 2020-01-22 19:25:59
+  end: 2020-01-22 19:33:01
+- kind: circle
+  name: c4
+  start: 2020-01-22 19:45:09
+  end: 2020-01-22 20:40:04
+- kind: circle
+  name: c5
+  start: 2020-01-22 21:01:09
+  end: 2020-01-22 21:56:52
+- kind: circle_break
+  name: cb5to6
+  start: 2020-01-22 21:56:52
+  end: 2020-01-22 22:10:05
+- kind: circle
+  name: c6
+  start: 2020-01-22 22:10:05
+  end: 2020-01-22 23:00:01
+- kind: straight_leg
+  name: leg3_over_meteor
+  start: 2020-01-22 23:01:37
+  end: 2020-01-22 23:18:07
+- kind: lidar_calibration
+  name: lidar_cal
+  start: 2020-01-22 23:25:01
+  end: 2020-01-22 23:40:59
