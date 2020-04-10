@@ -16,7 +16,7 @@ landing: 2020-02-09 18:03:00
 events: []
 remarks:
 - Two standard circle sets with an excursion to NTAS.
-- Radar calibration maneuver (20-deg-wiggle and 10-deg-circle) at NTAS.
+- Radar calibration maneuver (20-deg-wiggles and 10-deg-circle) at NTAS.
 - Flyovers over the Ron Brown towards and backwards from NTAS.
 - At the 1st Ron Brown flyover a dropsonde was launched.
 - Mostly shallow sugar clouds during the flight.
@@ -47,13 +47,17 @@ segments:
   start: 2020-02-09 12:59:59
   end: 2020-02-09 13:17:03
 - kind: radar_calibration_wiggle
-  name: radar_cal_wiggle
+  name: radar_cal_wiggle1
   start: 2020-02-09 13:17:03
   end: 2020-02-09 13:19:42
 - kind: radar_calibration_tilted
   name: radar_cal_tilted
   start: 2020-02-09 13:19:42
   end: 2020-02-09 13:28:40
+- kind: radar_calibration_wiggle
+  name: radar_cal_wiggle2
+  start: 2020-02-09 13:28:40
+  end: 2020-02-09 13:36:18
 - kind: straight_leg
   name: leg2_return_NTAS
   start: 2020-02-09 13:36:18
