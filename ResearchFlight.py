@@ -4,7 +4,7 @@ import yaml
 
 class ResearchFlight:
     def __init__(self, name, mission, flight_id, contacts,
-                 date, takeoff, landing, events, remarks):
+                 date, flight_report, takeoff, landing, events, remarks):
         """
         Initialize the research flight attributes.
 
@@ -13,6 +13,7 @@ class ResearchFlight:
         :param flight_id: Research flight ID.
         :param contacts: List of contact persons.
         :param date: Date of the research flight.
+        :param flight_report: Link to the flight report.
         :param takeoff: Research flight takeoff time.
         :param landing: Research flight landing time.
         :param events: Timestamps of events during the research flight.
@@ -23,6 +24,7 @@ class ResearchFlight:
         self.flight_id = flight_id
         self.contacts = contacts
         self.date = date
+        self.flight_report = flight_report
         self.takeoff = takeoff
         self.landing = landing
         self.events = events
@@ -55,6 +57,7 @@ class ResearchFlight:
             'flight_id': self.flight_id,
             'contacts': self.contacts,
             'date': self.date,
+            'flight_report': self.flight_report,
             'takeoff': self.takeoff,
             'landing': self.landing,
             'events': self.events,

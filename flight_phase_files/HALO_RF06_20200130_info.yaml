@@ -11,6 +11,7 @@ contacts:
   tags:
   - flight PI
 date: 2020-01-30
+flight_report: https://observations.ipsl.fr/aeris/eurec4a-data/REPORTS/HALO/2020/20200130/HALO-0130.pdf
 takeoff: 2020-01-30 11:19:34
 landing: 2020-01-30 15:08:20
 events: []

@@ -11,6 +11,7 @@ contacts:
   tags:
   - flight PI
 date: 2020-02-05
+flight_report: https://observations.ipsl.fr/aeris/eurec4a-data/REPORTS/HALO/2020/20200205/HALO-0205.pdf
 takeoff: 2020-02-05 09:15:51
 landing: 2020-02-05 18:21:22
 events: []
@@ -42,11 +43,11 @@ segments:
   start: 2020-02-05 11:55:58
   end: 2020-02-05 12:49:02
 - kind: straight_leg
-  name: leg1_towards_NTAS
+  name: leg1_outbound_NTAS
   start: 2020-02-05 12:54:08
   end: 2020-02-05 13:19:23
 - kind: straight_leg
-  name: leg2_return_NTAS
+  name: leg2_inbound_NTAS
   start: 2020-02-05 13:25:53
   end: 2020-02-05 13:55:04
 - kind: straight_leg
@@ -54,7 +55,7 @@ segments:
   start: 2020-02-05 14:00:18
   end: 2020-02-05 14:13:45
 - kind: straight_leg
-  name: leg4_satellite_overpass
+  name: leg4_terra_underpass
   start: 2020-02-05 14:21:13
   end: 2020-02-05 14:31:56
 - kind: circle
