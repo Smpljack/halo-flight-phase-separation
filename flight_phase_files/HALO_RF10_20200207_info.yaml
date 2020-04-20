@@ -11,11 +11,12 @@ contacts:
   tags:
   - flight PI
 date: 2020-02-07
+flight_report: https://observations.ipsl.fr/aeris/eurec4a-data/REPORTS/HALO/2020/20200207/HALO-0207.pdf
 takeoff: 2020-02-07 12:02:24
 landing: 2020-02-07 21:11:40
 events: []
 remarks:
-- Two standart circle patterns with an excursion to NTAS plus radar calibration manoveur.
+- Two standard circle patterns with an excursion to NTAS plus radar calibration manoveur.
 - 1st set of circles dominated by flower pattern with stratiform layers at ~2km.
 - Many large cold pools with remnants of stratiform clouds in the middle.
 - 2nd set of circles dominated by sugar/gravel pattern.
@@ -41,7 +42,7 @@ segments:
   start: 2020-02-07 14:41:02
   end: 2020-02-07 15:33:41
 - kind: straight_leg
-  name: leg1_towards_NTAS
+  name: leg1_outbound_NTAS
   start: 2020-02-07 15:37:47
   end: 2020-02-07 16:11:52
 - kind: radar_calibration_tilted
@@ -49,7 +50,7 @@ segments:
   start: 2020-02-07 16:18:32
   end: 2020-02-07 16:26:57
 - kind: straight_leg
-  name: leg2_return_NTAS
+  name: leg2_inbound_NTAS
   start: 2020-02-07 16:31:11
   end: 2020-02-07 17:12:38
 - kind: circle
