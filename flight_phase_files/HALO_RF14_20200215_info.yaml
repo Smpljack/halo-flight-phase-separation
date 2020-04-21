@@ -52,11 +52,11 @@ segments:
   start: 2020-02-15 19:28:05
   end: 2020-02-15 19:59:51
 - kind: circle
-  name: c4
+  name: c4_one_dropsonde
   start: 2020-02-15 20:10:03
   end: 2020-02-15 21:20:20
 - kind: circle
-  name: c5_no_dropsondes
+  name: c5
   start: 2020-02-15 21:49:27
   end: 2020-02-15 22:41:15
 - kind: circle_break
