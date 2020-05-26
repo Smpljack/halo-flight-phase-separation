@@ -1,0 +1,40 @@
+name: RF01
+mission: EUREC4A
+flight_id: HALO-0119
+contacts:
+- name: Marc Prange
+  email: marc.prange@uni-hamburg.de
+  tags:
+  - dataset creator
+- name: Silke Gross
+  email: silke.gross@dlr.de
+  tags:
+  - flight PI
+date: 2020-01-19
+flight_report: https://observations.ipsl.fr/aeris/eurec4a-data/REPORTS/HALO/2020/20200119/HALO-0119.pdf
+takeoff: 2020-01-19 09:34:25
+landing: 2020-01-19 18:48:03
+events:
+- name: NTAS overpass with dropsonde
+  time: 2020-01-19 16:16:36
+- name: ship overpass with dropsonde
+  time: 2020-01-19 16:55:16
+- name: circle center dropsonde
+  time: 2020-01-19 17:22:00
+remarks:
+- Transfer flight to Barbados.
+- Clear sky during take off in Santiago de Compostela.
+- Super curtain from NTAS buoy over ships towards circle center.
+segments:
+- kind: radar_calibration_wiggle
+  name: radar calibration with +-20 deg roll wiggles
+  start: 2020-01-19 16:55:16
+  end: 2020-01-19 17:22:00
+- kind: straight_leg
+  name: super curtain (from NTAS, over ships, to circle center)
+  start: 2020-01-19 16:55:16
+  end: 2020-01-19 17:22:00
+- kind: circle
+  name: circle 1
+  start: 2020-01-19 17:32:27
+  end: 2020-01-19 18:22:23
