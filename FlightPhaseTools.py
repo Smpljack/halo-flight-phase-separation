@@ -14,7 +14,7 @@ def ds_timestamp_ind(bahamas_data, dropsonde_data, dropsonde_ind):
     :return:
     """
     return int(np.abs(bahamas_data['time'] -
-                  dropsonde_data["launch_time"][dropsonde_ind]).argmin().values)
+                      dropsonde_data["launch_time"][dropsonde_ind]).argmin().values)
 
 
 def max_timestamp_ind(bahamas_data, quantity, time_slice, order):
@@ -32,7 +32,7 @@ def max_timestamp_ind(bahamas_data, quantity, time_slice, order):
     sliced_ind = signal.argrelextrema(
         sliced_bahamas_data[quantity].values, np.greater, order=order)[0]
     return int(np.where(np.isin(bahamas_data['time'].values,
-                            sliced_bahamas_data['time'][sliced_ind].values))[0])
+                                sliced_bahamas_data['time'][sliced_ind].values))[0])
 
 
 def min_timestamp_ind(bahamas_data, quantity, time_slice, order):
@@ -50,7 +50,7 @@ def min_timestamp_ind(bahamas_data, quantity, time_slice, order):
     sliced_ind = signal.argrelextrema(
         sliced_bahamas_data[quantity].values, np.less, order=order)[0]
     return int(np.where(np.isin(bahamas_data['time'].values,
-                            sliced_bahamas_data['time'][sliced_ind].values))[0])
+                                sliced_bahamas_data['time'][sliced_ind].values))[0])
 
 
 def find_first_value_after_ts_ind(bahamas_data, quantity, timestamp_ind, apr_value, margin):
@@ -69,7 +69,7 @@ def find_first_value_after_ts_ind(bahamas_data, quantity, timestamp_ind, apr_val
     sliced_bahamas_data = bahamas_data.isel(time=np.arange(timestamp_ind, len(bahamas_data['time'])))
     sliced_ind = np.where(np.less(np.abs(sliced_bahamas_data[quantity] - apr_value), margin))[0][0]
     return int(np.where(np.isin(bahamas_data['time'].values,
-                            sliced_bahamas_data['time'][sliced_ind].values))[0])
+                                sliced_bahamas_data['time'][sliced_ind].values))[0])
 
 
 def find_first_value_before_ts_ind(bahamas_data, quantity, timestamp_ind, apr_value, margin):
@@ -89,7 +89,7 @@ def find_first_value_before_ts_ind(bahamas_data, quantity, timestamp_ind, apr_va
     sliced_bahamas_data = bahamas_data.isel(time=np.arange(0, timestamp_ind))
     sliced_ind = np.where(np.less(np.abs(sliced_bahamas_data[quantity] - apr_value), margin))[0][-1]
     return int(np.where(np.isin(bahamas_data['time'].values,
-                            sliced_bahamas_data['time'][sliced_ind].values))[0])
+                                sliced_bahamas_data['time'][sliced_ind].values))[0])
 
 
 def plot_bahamas_timeseries(bahamas_data, ts_ind_list, label_list):
@@ -113,18 +113,18 @@ def plot_bahamas_timeseries(bahamas_data, ts_ind_list, label_list):
 
     ax[1].plot(bahamas_data["time"], bahamas_data["altitude"] / 1e3, color="k")
     markers_for_ts_ind(bahamas_data["time"].values, bahamas_data["altitude"].values / 1e3,
-                   ts_ind_list, label_list, ax[1])
+                       ts_ind_list, label_list, ax[1])
     ax[1].set_ylabel('altitude [km]')
 
     ax[2].plot(bahamas_data["time"][1:], np.diff(bahamas_data["altitude"]), color="k")
-    ts_ind_list_for_diff = [ts_ind - 1 if ts_ind > 0 else ts_ind for ts_ind in ts_ind_list ]
+    ts_ind_list_for_diff = [ts_ind - 1 if ts_ind > 0 else ts_ind for ts_ind in ts_ind_list]
     markers_for_ts_ind(bahamas_data["time"].values, np.diff(bahamas_data["altitude"].values),
-                   ts_ind_list_for_diff, label_list, ax[2])
+                       ts_ind_list_for_diff, label_list, ax[2])
     ax[2].set_ylabel('d(altitude)/dt [m/s]')
 
     ax[3].plot(bahamas_data["time"], bahamas_data["heading"], color="k")
     markers_for_ts_ind(bahamas_data["time"].values, bahamas_data["heading"],
-                   ts_ind_list, label_list, ax[3])
+                       ts_ind_list, label_list, ax[3])
     ax[3].set_ylabel('heading [°]')
     plt.xticks(rotation=45)
     ax[3].set_xlabel('time')
@@ -166,3 +166,27 @@ def dt64_to_dt(dt64):
     :return: datetime.datetime object
     """
     return datetime.utcfromtimestamp(dt64_to_unixtime(dt64))
+
+
+def timestamp_ind_1min_prior(bahamas_data, timestamp_ind):
+    """
+    Find the timestamp index in the bahamas dataset that is 1 minute
+    prior to the given timetamp_ind. Used for finding the circle start
+    timestamps.
+    :param bahamas_data: unified bahamas dataset.
+    :param timestamp_ind: timestamp index.
+    :return:
+    """
+    return int(np.argmin(np.abs(bahamas_data['time'] -
+                                (bahamas_data['time'][timestamp_ind] - np.timedelta64(1, 'm')))))
+
+
+def exit_circle_timestamp_ind(bahamas_data, enter_circle_ts_index):
+    """
+
+    :param bahamas_data: unified bahamas dataset.
+    :param enter_circle_ts_index: timestamp index.
+    :return:
+    """
+    return np.argmin(np.abs(bahamas_data['heading'][enter_circle_ts_index + 1:]
+                            - bahamas_data['heading'][enter_circle_ts_index])) + enter_circle_ts_index + 1

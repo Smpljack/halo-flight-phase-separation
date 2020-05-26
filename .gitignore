@@ -1,0 +1,10 @@
+.idea/
+__pycache__/
+venv/
+.DS_Store
+.ipynb_checkpoints/
+flight_phase_files/RF_04_2020-01-26_flight_phase_timestamps_v2.nc
+flight_phase_files/RF_05_2020-01-28_flight_phase_timestamps_v2.nc
+flights.yaml
+flights2nc.py
+notebooks/.ipynb_checkpoints/
