@@ -14,10 +14,17 @@ env = Environment(
 
 def fig2data_url(fig):
     io = BytesIO()
-    fig.savefig(io, format="PNG")
+    fig.savefig(io, format="PNG", bbox_inches="tight")
     b64 = b64encode(io.getvalue())
     url = "data:{};base64,{}".format("image/png", b64.decode("ascii"))
     return url
+
+def start_end_lims(bahamas):
+    lat_min = min(*bahamas.lat.data[[0,-1]])
+    lat_max = max(*bahamas.lat.data[[0,-1]])
+    lon_min = min(*bahamas.lon.data[[0,-1]])
+    lon_max = max(*bahamas.lon.data[[0,-1]])
+    return (2 * lat_min - lat_max, 2 * lat_max - lat_min), (2 * lon_min - lon_max, 2 * lon_max - lon_min)
 
 def _main():
     import argparse
@@ -27,7 +34,7 @@ def _main():
     parser.add_argument("-d", "--data_path", default="../data")
     args = parser.parse_args()
 
-    flightdata = yaml.load(open(args.infile))
+    flightdata = yaml.load(open(args.infile), Loader=yaml.SafeLoader)
     bahamas_path = os.path.join(args.data_path,
                                 "bahamas_{:%Y%m%d}_v0.4.nc".format(flightdata["date"]))
     dropsondes_path = os.path.join(args.data_path,
@@ -35,25 +42,41 @@ def _main():
     bahamas = xr.open_dataset(bahamas_path)
     dropsondes = xr.open_dataset(dropsondes_path)
 
+    data_info = {
+        "first_sonde": dropsondes.launch_time.data[0]
+    }
+
     fig, ax = plt.subplots()
     ax.plot(bahamas.lon, bahamas.lat)
     im = fig2data_url(fig)
     plt.close("all")
     flightdata["plot_data"] = im
+    flightdata["data_info"] = data_info
 
     for seg in flightdata["segments"]:
         sonde_mask = (dropsondes.launch_time.data >= np.datetime64(seg["start"])) \
                    & (dropsondes.launch_time.data < np.datetime64(seg["end"]))
         sondes = dropsondes.isel(sonde_number=sonde_mask)
         seg_bahamas = bahamas.sel(time=slice(seg["start"], seg["end"]))
-        fig, ax = plt.subplots()
-        ax.plot(seg_bahamas.lon, seg_bahamas.lat)
+        fig, (overview_ax, zoom_ax, roll_ax) = plt.subplots(3, figsize=(6,8))
+        overview_ax.plot(seg_bahamas.lon, seg_bahamas.lat)
         sonde_track = bahamas.sel(time=sondes.launch_time, method="nearest")
-        ax.scatter(sonde_track.lon, sonde_track.lat, color="C1")
+        overview_ax.scatter(sonde_track.lon, sonde_track.lat, color="C1")
+
+        zoom_ax.plot(seg_bahamas.lon, seg_bahamas.lat, "o-")
+        sonde_track = bahamas.sel(time=sondes.launch_time, method="nearest")
+        zoom_ax.scatter(sonde_track.lon, sonde_track.lat, color="C1")
+        lat_lims, lon_lims = start_end_lims(seg_bahamas)
+        zoom_ax.set_xlim(*lon_lims)
+        zoom_ax.set_ylim(*lat_lims)
+
+        seg_bahamas["roll"].plot(ax=roll_ax)
+
         im = fig2data_url(fig)
         plt.close("all")
         seg["plot_data"] = im
         seg["sonde_count_in_data"] = len(sondes.launch_time)
+        seg["sonde_times"] = sondes.launch_time.data
 
     tpl = env.get_template("flight.html")
 

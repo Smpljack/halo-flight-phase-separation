@@ -6,10 +6,30 @@
     <body>
         <h1>Flight {{ flight.flight_id }}</h1>
         <img src="{{ flight.plot_data }}" alt="flight {{ flight.name }} plot" />
+        <h2>remarks</h2>
+        <ul>
+            {% for remark in flight.remarks %}
+            <li>{{ remark }}</li>
+        </ul>
+        <h2>data info</h2>
+        <dl>
+            {% for k, v in flight.data_info.items() %}
+            <dt>{{ k }}</dt><dd>{{ v }}</dd>
+            {% endfor %}
+        </dl>
         <h2>Flight Phases</h2>
         {% for segment in flight.segments %}
         <h3>{{ segment.name }}</h3>
+        <ul>
+            <li>Number of sondes: {{ segment.sonde_count_in_data }}</li>
+        </ul>
         <img src="{{ segment.plot_data }}" alt="segment {{ segment.name }} plot" />
+        <h4>sonde times</h4>
+        <ul>
+            {% for t in segment.sonde_times %}
+            <li>{{ t }}</li>
+            {% endfor %}
+        </ul>
         {% endfor %}
     </body>
 </html>
