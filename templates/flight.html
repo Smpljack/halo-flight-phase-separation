@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flight {{ flight.flight_id }}</title>
+    </head>
+    <body>
+        <h1>Flight {{ flight.flight_id }}</h1>
+        <img src="{{ flight.plot_data }}" alt="flight {{ flight.name }} plot" />
+        <h2>Flight Phases</h2>
+        {% for segment in flight.segments %}
+        <h3>{{ segment.name }}</h3>
+        <img src="{{ segment.plot_data }}" alt="segment {{ segment.name }} plot" />
+        {% endfor %}
+    </body>
+</html>

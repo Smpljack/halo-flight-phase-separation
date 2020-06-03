@@ -8,3 +8,4 @@ flight_phase_files/RF_05_2020-01-28_flight_phase_timestamps_v2.nc
 flights.yaml
 flights2nc.py
 notebooks/.ipynb_checkpoints/
+reports/
