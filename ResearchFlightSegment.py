@@ -1,5 +1,5 @@
 class ResearchFlightSegment:
-    def __init__(self, kind, name, start, end):
+    def __init__(self, kinds, name, good_dropsondes, irregularities, segment_id, start, end):
         """
         Initialize the attributes of a research flight segment.
         :param kind: The general kind (or type) of the research flight segment.
@@ -7,7 +7,7 @@ class ResearchFlightSegment:
         :param start: Start time of the research flight segment in unix time.
         :param end: End time of the research flight segment in unix time.
         """
-        self.kind = kind
+        self.kinds = kinds
         self.name = name
         self.start = start
         self.end = end
