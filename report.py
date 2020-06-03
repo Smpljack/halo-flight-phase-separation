@@ -7,6 +7,8 @@ import matplotlib.pyplot as plt
 from io import BytesIO
 from base64 import b64encode
 
+border_time = np.timedelta64(3, "m")
+
 env = Environment(
     loader=FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates')),
     autoescape=select_autoescape(['html', 'xml'])
@@ -60,15 +62,23 @@ def _main():
         sonde_mask = (dropsondes.launch_time.data >= np.datetime64(seg["start"])) \
                    & (dropsondes.launch_time.data < np.datetime64(seg["end"]))
         sondes = dropsondes.isel(sonde_number=sonde_mask)
-        seg_bahamas = bahamas.sel(time=slice(seg["start"], seg["end"]))
+        t_start = np.datetime64(seg["start"])
+        t_end = np.datetime64(seg["end"])
+        seg_bahamas = bahamas.sel(time=slice(t_start, t_end))
+        seg_before = bahamas.sel(time=slice(t_start - border_time, t_start))
+        seg_after = bahamas.sel(time=slice(t_end, t_end + border_time))
         fig, (overview_ax, zoom_ax, roll_ax) = plt.subplots(3, figsize=(6,8))
-        overview_ax.plot(seg_bahamas.lon, seg_bahamas.lat)
+        overview_ax.plot(seg_bahamas.lon, seg_bahamas.lat, zorder=10)
+        overview_ax.plot(seg_before.lon, seg_before.lat, color="C3", alpha=.3, zorder=0)
+        overview_ax.plot(seg_after.lon, seg_after.lat, color="C3", alpha=.3, zorder=0)
         sonde_track = bahamas.sel(time=sondes.launch_time, method="nearest")
-        overview_ax.scatter(sonde_track.lon, sonde_track.lat, color="C1")
+        overview_ax.scatter(sonde_track.lon, sonde_track.lat, color="C1", zorder=5)
 
-        zoom_ax.plot(seg_bahamas.lon, seg_bahamas.lat, "o-")
+        zoom_ax.plot(seg_bahamas.lon, seg_bahamas.lat, "o-", zorder=10)
+        zoom_ax.plot(seg_before.lon, seg_before.lat, "x-", color="C3", alpha=.3, zorder=0)
+        zoom_ax.plot(seg_after.lon, seg_after.lat, "x-", color="C3", alpha=.3, zorder=0)
         sonde_track = bahamas.sel(time=sondes.launch_time, method="nearest")
-        zoom_ax.scatter(sonde_track.lon, sonde_track.lat, color="C1")
+        zoom_ax.scatter(sonde_track.lon, sonde_track.lat, color="C1", zorder=5)
         lat_lims, lon_lims = start_end_lims(seg_bahamas)
         zoom_ax.set_xlim(*lon_lims)
         zoom_ax.set_ylim(*lat_lims)
