@@ -21,39 +21,66 @@ remarks:
 - GPM satellite underpass.
 - Straight leg above saharan dust layer.
 segments:
-- kind: straight_leg
-  name: leg1_racetrack
-  start: 2020-01-30 11:42:36
-  end: 2020-01-30 11:51:44
-- kind: straight_leg
-  name: leg2_racetrack
+- kinds:
+  - straight_leg
+  name: Leg 1 racetrack
+  irregularities: []
+  segment_id: HALO-0130_sl1
+  start: 2020-01-30 11:42:28
+  end: 2020-01-30 11:51:48
+- kinds:
+  - straight_leg
+  name: Leg 2 racetrack
+  irregularities: []
+  segment_id: HALO-0130_sl2
   start: 2020-01-30 11:55:38
-  end: 2020-01-30 12:05:20
-- kind: straight_leg
-  name: leg3_racetrack
-  start: 2020-01-30 12:09:31
-  end: 2020-01-30 12:17:48
-- kind: straight_leg
-  name: leg4_racetrack
-  start: 2020-01-30 12:24:08
-  end: 2020-01-30 12:31:47
-- kind: straight_leg
-  name: leg5_towards_gpm
+  end: 2020-01-30 12:06:16
+- kinds:
+  - straight_leg
+  name: Leg 3 racetrack
+  irregularities: []
+  segment_id: HALO-0130_sl3
+  start: 2020-01-30 12:08:42
+  end: 2020-01-30 12:17:53
+- kinds:
+  - straight_leg
+  name: Leg 4 racetrack
+  irregularities: []
+  segment_id: HALO-0130_sl4
+  start: 2020-01-30 12:23:30
+  end: 2020-01-30 12:32:41
+- kinds:
+  - straight_leg
+  name: Leg 5 towards GPM
+  irregularities: []
+  segment_id: HALO-0130_sl5
   start: 2020-01-30 12:39:11
   end: 2020-01-30 12:52:48
-- kind: straight_leg
-  name: leg6_gpm_underpass
-  start: 2020-01-30 12:56:31
-  end: 2020-01-30 13:13:11
-- kind: straight_leg
-  name: leg7_towards_dust
-  start: 2020-01-30 13:15:58
-  end: 2020-01-30 13:33:22
-- kind: straight_leg
-  name: leg8_dust_overpass
-  start: 2020-01-30 13:35:11
-  end: 2020-01-30 13:52:48
-- kind: straight_leg
-  name: leg9_to_barbados
-  start: 2020-01-30 13:56:17
+- kinds:
+  - straight_leg
+  name: Leg 6 GPM underpass
+  irregularities: []
+  segment_id: HALO-0130_sl6
+  start: 2020-01-30 12:56:24
+  end: 2020-01-30 13:13:21
+- kinds:
+  - straight_leg
+  name: Leg 7 towards dust
+  irregularities: []
+  segment_id: HALO-0130_sl7
+  start: 2020-01-30 13:15:55
+  end: 2020-01-30 13:33:30
+- kinds:
+  - straight_leg
+  name: Leg 8 dust overpass
+  irregularities: []
+  segment_id: HALO-0130_sl8
+  start: 2020-01-30 13:35:10
+  end: 2020-01-30 13:52:49
+- kinds:
+  - straight_leg
+  name: Leg 9 towards Barbados
+  irregularities: []
+  segment_id: HALO-0130_sl9
+  start: 2020-01-30 13:56:16
   end: 2020-01-30 14:42:18
