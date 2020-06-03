@@ -21,6 +21,7 @@
         <h2>Flight Phases</h2>
         {% for segment in flight.segments %}
         <h3>{{ segment.name }}</h3>
+        from {{ segment.start }} until {{ segment.end }}
         <ul>
             <li>Number of sondes: {{ segment.sonde_count_in_data }}</li>
         </ul>
