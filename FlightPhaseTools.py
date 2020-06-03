@@ -175,7 +175,7 @@ def timestamp_ind_1min_prior(bahamas_data, timestamp_ind):
     timestamps.
     :param bahamas_data: unified bahamas dataset.
     :param timestamp_ind: timestamp index.
-    :return:
+    :return: timestamp index.
     """
     return int(np.argmin(np.abs(bahamas_data['time'] -
                                 (bahamas_data['time'][timestamp_ind] - np.timedelta64(1, 'm')))))
@@ -183,10 +183,15 @@ def timestamp_ind_1min_prior(bahamas_data, timestamp_ind):
 
 def exit_circle_timestamp_ind(bahamas_data, enter_circle_ts_index):
     """
-
+    Find the timestamp index in the bahamas dataset after the given
+    enter_circle_ts_index that has the closest 'heading' value as
+    was present during the enter_circle_ts_index timestamp.
+    This only searches within the next hour after enter_circle_ts_index.
     :param bahamas_data: unified bahamas dataset.
     :param enter_circle_ts_index: timestamp index.
-    :return:
+    :return: timestamp index.
     """
-    return np.argmin(np.abs(bahamas_data['heading'][enter_circle_ts_index + 1:]
+    timestamp_1h = bahamas_data['time'][enter_circle_ts_index] + np.timedelta64(1, 'h')
+    timestamp_ind_1h = int(np.argmin(np.abs(bahamas_data['time'] - timestamp_1h)))
+    return np.argmin(np.abs(bahamas_data['heading'][enter_circle_ts_index + 1:timestamp_ind_1h]
                             - bahamas_data['heading'][enter_circle_ts_index])) + enter_circle_ts_index + 1
