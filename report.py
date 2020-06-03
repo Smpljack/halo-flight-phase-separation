@@ -24,7 +24,10 @@ def start_end_lims(bahamas):
     lat_max = max(*bahamas.lat.data[[0,-1]])
     lon_min = min(*bahamas.lon.data[[0,-1]])
     lon_max = max(*bahamas.lon.data[[0,-1]])
-    return (2 * lat_min - lat_max, 2 * lat_max - lat_min), (2 * lon_min - lon_max, 2 * lon_max - lon_min)
+    delta = ((lat_max - lat_min) ** 2 + (lon_max - lon_min) ** 2)**.5
+    lat_center = (lat_min + lat_max) / 2
+    lon_center = (lon_min + lon_max) / 2
+    return (lat_center - delta, lat_center + delta), (lon_center - delta, lon_center + delta)
 
 def _main():
     import argparse
@@ -69,6 +72,7 @@ def _main():
         lat_lims, lon_lims = start_end_lims(seg_bahamas)
         zoom_ax.set_xlim(*lon_lims)
         zoom_ax.set_ylim(*lat_lims)
+        zoom_ax.set_aspect("equal")
 
         seg_bahamas["roll"].plot(ax=roll_ax)
 
