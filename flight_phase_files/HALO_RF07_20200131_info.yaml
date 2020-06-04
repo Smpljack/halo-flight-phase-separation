@@ -23,67 +23,120 @@ remarks:
 - 'Excursion: Partly successful with the 10deg bank (or 540deg heading) manoeuvre.'
 - The Flo-manoeuvre (wiggle) failed as the radar stopped right before it.
 segments:
-- kind: circle
-  name: c1
-  start: 2020-01-31 15:32:18
-  end: 2020-01-31 16:24:43
-- kind: circle_break
-  name: cb1to2
-  start: 2020-01-31 16:24:43
-  end: 2020-01-31 16:41:53
-- kind: circle
-  name: c2
-  start: 2020-01-31 16:41:53
-  end: 2020-01-31 17:36:28
-- kind: circle_break
-  name: cb2to3
-  start: 2020-01-31 17:36:28
-  end: 2020-01-31 17:52:48
-- kind: circle
-  name: c3
-  start: 2020-01-31 17:52:48
-  end: 2020-01-31 18:47:49
-- kind: straight_leg
-  name: leg1_outbound_NTAS
+- kinds:
+  - circle
+  name: circle 1
+  irregularities: ''
+  segment_id: Flight-ID_c1
+  start: 2020-01-31 15:28:35
+  end: 2020-01-31 16:25:44
+  good_dropsondes: 11
+- kinds:
+  - circle_break
+  name: circle break between circle 1 and 2
+  irregularities: ''
+  segment_id: Flight-ID_cb1
+  start: 2020-01-31 16:25:44
+  end: 2020-01-31 16:40:53
+- kinds:
+  - circle
+  name: circle 2
+  irregularities: ''
+  segment_id: Flight-ID_c2
+  start: 2020-01-31 16:40:53
+  end: 2020-01-31 17:39:45
+  good_dropsondes: 11
+- kinds:
+  - circle_break
+  name: circle break between circle 2 and 3
+  irregularities: ''
+  segment_id: Flight-ID_cb2
+  start: 2020-01-31 17:39:45
+  end: 2020-01-31 17:50:15
+- kinds:
+  - circle
+  name: circle 3
+  irregularities: ''
+  segment_id: Flight-ID_c3
+  start: 2020-01-31 17:50:15
+  end: 2020-01-31 18:49:16
+  good_dropsondes: 12
+- kinds:
+  - straight_leg
+  name: leg 1 outbound towards NTAS buoy
+  irregularities: ''
+  segment_id: Flight-ID_sl1
   start: 2020-01-31 18:52:58
   end: 2020-01-31 19:06:16
-- kind: radar_calibration_tilted
-  name: radar_cal_tilted
+- kinds:
+  - radar_calibration_tilted
+  name: radar calibration circle
+  irregularities: ''
+  segment_id: Flight-ID_rct1
   start: 2020-01-31 19:07:45
   end: 2020-01-31 19:30:44
-- kind: straight_leg
-  name: leg2_inbound_NTAS
+- kinds:
+  - straight_leg
+  name: leg 2 inbound from NTAS buoy back to circle area
+  irregularities: ''
+  segment_id: Flight-ID_sl2
   start: 2020-01-31 19:35:33
   end: 2020-01-31 19:42:56
-- kind: radar_calibration_wiggle
-  name: radar_cal_wiggle
+- kinds:
+  - radar_calibration_wiggle
+  name: radar calibration wiggle pattern
+  irregularities: ''
+  segment_id: Flight-ID_rcw1
   start: 2020-01-31 19:42:56
   end: 2020-01-31 19:47:30
-- kind: straight_leg
-  name: leg3_inbound_NTAS
+- kinds:
+  - straight_leg
+  name: leg 3 inbound from NTAS buoy back to circle area
+  irregularities: ''
+  segment_id: Flight-ID_sl3
   start: 2020-01-31 19:47:30
   end: 2020-01-31 19:53:24
-- kind: circle
-  name: c4
-  start: 2020-01-31 19:59:34
-  end: 2020-01-31 20:53:38
-- kind: circle_break
-  name: cb4to5
-  start: 2020-01-31 20:53:38
-  end: 2020-01-31 21:16:52
-- kind: circle
-  name: c5
-  start: 2020-01-31 21:16:52
-  end: 2020-01-31 22:09:28
-- kind: circle_break
-  name: cb5to6
-  start: 2020-01-31 22:09:28
-  end: 2020-01-31 22:31:25
-- kind: circle
-  name: c6
-  start: 2020-01-31 22:31:25
-  end: 2020-01-31 23:25:33
-- kind: lidar_calibration
-  name: lidar_cal
+- kinds:
+  - circle
+  name: circle 4
+  irregularities: ''
+  segment_id: Flight_ID_c4
+  start: 2020-01-31 19:58:34
+  end: 2020-01-31 20:57:42
+  good_dropsondes: 12
+- kinds:
+  - circle_break
+  name: circle break between circle 4 and 5
+  irregularities: ''
+  segment_id: Flight-ID_cb3
+  start: 2020-01-31 20:57:42
+  end: 2020-01-31 21:15:52
+- kinds:
+  - circle
+  name: circle 5
+  irregularities: ''
+  segment_id: Flight_ID_c5
+  start: 2020-01-31 21:15:40
+  end: 2020-01-31 22:14:15
+  good_dropsondes: 12
+- kinds:
+  - circle_break
+  name: circle break between circle 5 and 6
+  irregularities: ''
+  segment_id: Flight-ID_cb4
+  start: 2020-01-31 22:14:15
+  end: 2020-01-31 22:28:05
+- kinds:
+  - circle
+  name: circle 6
+  irregularities: last sonde slightly delayed tocircumvent conflict with P3.
+  segment_id: Flight_ID_c6
+  start: 2020-01-31 22:26:40
+  end: 2020-01-31 23:25:38
+  good_dropsondes: 12
+- kinds: lidar_calibration
+  name: lidar calibration
+  irregularities: ''
+  segment_id: Flight-ID_lc1
   start: 2020-01-31 23:34:13
   end: 2020-01-31 23:37:29
