@@ -136,7 +136,7 @@ SPECIAL_PLOTS = {
     "circle": [circle_detail_plot],
     "straight_leg": [straight_leg_detail_plot],
     "radar_calibration_wiggle": [roll_zoom_plot],
-    "lidar_calibration": [altitude_plot],
+    "lidar_leg": [altitude_plot],
 }
 
 def plots_for_kinds(kinds):
