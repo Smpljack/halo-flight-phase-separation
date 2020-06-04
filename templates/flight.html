@@ -64,21 +64,12 @@
         {% for segment in flight.segments %}
         <h3>{{ segment.name }} ({{ segment.segment_id }})</h3>
         from {{ segment.start }} until {{ segment.end }}
-        {% if not segment.segment_id %}
-        <p class="warning">
-            Segment has no <i>segment_id</i>.
-        </p>
-        {% endif %}
         {% if segment.kinds %}
         <ul class="taglist">
             {% for kind in segment.kinds %}
             <li class="tag kind">{{ kind }}</li>
             {% endfor %}
         </ul>
-        {% else %}
-        <p class="warning">
-            Segment has no kinds.
-        </p>
         {% endif %}
         {% if segment.irregularities %}
         <ul class="taglist">
@@ -86,18 +77,13 @@
             <li class="tag irregularity">{{ irregularity }}</li>
             {% endfor %}
         </ul>
-        {% elif segment.irregularities is not defined %}
+        {% endif %}
+
+        {% for warning in segment.warnings %}
         <p class="warning">
-            Segment has no irregularities attribute.
+            {{ warning }}
         </p>
-        {% endif %}
-        {% if "circle" in segment.kinds or "circling" in segment.kinds %}
-            {% if segment.good_dropsondes is not defined %}
-            <p class="warning">
-                Segment has no good_dropsondes attribute.
-            </p>
-            {% endif %}
-        {% endif %}
+        {% endfor %}
         <ul>
             <li>Number of sondes according to data: {{ segment.sonde_count_in_data }}</li>
             {% if segment.good_dropsondes %}
