@@ -101,42 +101,43 @@ def straight_leg_detail_plot(seg, sonde_track, seg_before, seg_after):
 
     return fig
 
-def roll_zoom_plot(seg, sonde_track, seg_before, seg_after):
-    fig, (start_ax, end_ax) = plt.subplots(1, 2, figsize=(8,3), constrained_layout=True)
+def zoom_on(var, unit):
+    def zoom_plot(seg, sonde_track, seg_before, seg_after):
+        fig, (start_ax, end_ax) = plt.subplots(1, 2, figsize=(8,3), constrained_layout=True)
 
-    tofs = np.timedelta64(30, "s")
+        tofs = np.timedelta64(30, "s")
 
-    for ax, t, name in [(start_ax, seg.time.data[0], "start"),
-                  (end_ax, seg.time.data[-1], "end")]:
-        var = "roll"
+        for ax, t, name in [(start_ax, seg.time.data[0], "start"),
+                      (end_ax, seg.time.data[-1], "end")]:
+            seg[var].plot(ax=ax, zorder=10)
+            seg_before[var].plot(ax=ax, color="C3", alpha=.3, zorder=0)
+            seg_after[var].plot(ax=ax, color="C3", alpha=.3, zorder=0)
+            ax.set_title("zoom on {}".format(name))
+            ax.set_ylabel("{} [{}]".format(var, unit))
+
+            ax.set_xlim(t - tofs, t + tofs)
+
+        return fig
+    return zoom_plot
+
+def timeline_of(var, unit):
+    def plot(seg, sonde_track, seg_before, seg_after):
+        fig, ax  = plt.subplots(1, 1, figsize=(8,3), constrained_layout=True)
+
         seg[var].plot(ax=ax, zorder=10)
         seg_before[var].plot(ax=ax, color="C3", alpha=.3, zorder=0)
         seg_after[var].plot(ax=ax, color="C3", alpha=.3, zorder=0)
-        ax.set_title("zoom on {}".format(name))
-        ax.set_ylabel("roll [deg]")
+        ax.set_title(var)
+        ax.set_ylabel("{} [{}]".format(var, unit))
 
-        ax.set_xlim(t - tofs, t + tofs)
-
-    return fig
-
-def altitude_plot(seg, sonde_track, seg_before, seg_after):
-    fig, ax  = plt.subplots(1, 1, figsize=(8,3), constrained_layout=True)
-
-
-    var = "altitude"
-    seg[var].plot(ax=ax, zorder=10)
-    seg_before[var].plot(ax=ax, color="C3", alpha=.3, zorder=0)
-    seg_after[var].plot(ax=ax, color="C3", alpha=.3, zorder=0)
-    ax.set_title("altitude")
-    ax.set_ylabel("altitude [m]")
-
-    return fig
+        return fig
+    return plot
 
 SPECIAL_PLOTS = {
     "circle": [circle_detail_plot],
     "straight_leg": [straight_leg_detail_plot],
-    "radar_calibration_wiggle": [roll_zoom_plot],
-    "lidar_leg": [altitude_plot],
+    "radar_calibration_wiggle": [zoom_on("roll", "deg")],
+    "lidar_leg": [timeline_of("altitude", "m")],
 }
 
 def plots_for_kinds(kinds):
