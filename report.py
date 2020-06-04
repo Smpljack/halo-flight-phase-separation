@@ -40,11 +40,12 @@ def start_end_lims(bahamas):
 
 def default_segment_plot(seg, sonde_track, seg_before, seg_after):
     fig = plt.figure(figsize=(8, 5), constrained_layout=True)
-    spec = gridspec.GridSpec(ncols=3, nrows=3, figure=fig)
+    spec = gridspec.GridSpec(ncols=3, nrows=4, figure=fig)
     overview_ax = fig.add_subplot(spec[:, :2])
-    roll_ax = fig.add_subplot(spec[0, 2])
-    pitch_ax = fig.add_subplot(spec[1, 2], sharex=roll_ax)
-    yaw_ax = fig.add_subplot(spec[2, 2], sharex=roll_ax)
+    alt_ax = fig.add_subplot(spec[0, 2])
+    roll_ax = fig.add_subplot(spec[1, 2], sharex=alt_ax)
+    pitch_ax = fig.add_subplot(spec[2, 2], sharex=alt_ax)
+    yaw_ax = fig.add_subplot(spec[3, 2], sharex=alt_ax)
 
     overview_ax.plot(seg.lon, seg.lat, color=color_at, zorder=10)
     overview_ax.plot(seg_before.lon, seg_before.lat, color=color_before, alpha=.3, zorder=0)
@@ -55,14 +56,17 @@ def default_segment_plot(seg, sonde_track, seg_before, seg_after):
     overview_ax.set_xlabel("longitude [deg]")
     overview_ax.set_ylabel("latitude [deg]")
 
-    for ax, var in [(roll_ax, "roll"), (pitch_ax, "pitch"), (yaw_ax, "heading")]:
+    for ax, var, unit in [(alt_ax, "altitude", "m"),
+                          (roll_ax, "roll", "deg"),
+                          (pitch_ax, "pitch", "deg"),
+                          (yaw_ax, "heading", "deg")]:
         seg[var].plot(ax=ax, color=color_at, zorder=10)
         seg_before[var].plot(ax=ax, color=color_before, alpha=.3, zorder=0)
         seg_after[var].plot(ax=ax, color=color_after, alpha=.3, zorder=0)
         ax.set_title(var)
-        ax.set_ylabel("deg")
+        ax.set_ylabel(unit)
 
-    for ax in [roll_ax, pitch_ax]:
+    for ax in [alt_ax, roll_ax, pitch_ax]:
         plt.setp(ax.get_xticklabels(), visible=False)
         ax.set_xlabel("")
 
