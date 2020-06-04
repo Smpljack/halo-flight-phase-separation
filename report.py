@@ -163,6 +163,9 @@ def plots_for_kinds(kinds):
             for kind in kinds
             for plot in SPECIAL_PLOTS.get(kind, [])]
 
+def kinds_is_circle(kinds):
+    return any(k in kinds for k in ["circle", "circling"])
+
 class SegmentChecker:
     def __init__(self, flight):
         self.used_segment_ids = set()
@@ -193,6 +196,14 @@ class SegmentChecker:
 
         if kinds_is_circle(seg["kinds"]) and "good_dropsondes" not in seg:
             yield "segment is a circle and has no good_dropsondes attribute"
+
+        t_start = np.datetime64(seg["start"])
+        if kinds_is_circle(seg["kinds"]) and len(sondes.launch_time) > 0:
+            seconds_to_first_sonde = (sondes.launch_time.data[0] - t_start) \
+                                   / np.timedelta64(1, "s")
+            if abs(seconds_to_first_sonde - 60.) > .75 and len(irregularities) == 0:
+                # use a little bit more that .5 sec offset to cover rounding errors
+                yield "time to first sonde is not 1 minute and no irregularities are recorded"
 
 
 def _main():
@@ -246,6 +257,8 @@ def _main():
         seg["plot_data"] = plot_data
         seg["sonde_count_in_data"] = len(sondes.launch_time)
         seg["sonde_times"] = sondes.launch_time.data
+        if len(sondes.launch_time) > 0:
+            seg["time_to_first_sonde"] = (sondes.launch_time.data[0] - t_start) / np.timedelta64(1, "s")
 
         seg["warnings"] = list(checker.check_segment(seg, seg_bahamas, sondes))
 

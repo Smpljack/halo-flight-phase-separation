@@ -89,6 +89,9 @@
             {% if segment.good_dropsondes %}
             <li>Number of good sondes: {{ segment.good_dropsondes }}</li>
             {% endif %}
+            {% if segment.time_to_first_sonde %}
+            <li>Time until first dropsonde launch: {{ segment.time_to_first_sonde }} s</li>
+            {% endif %}
         </ul>
         {% for plot in segment.plot_data %}
         <p>
