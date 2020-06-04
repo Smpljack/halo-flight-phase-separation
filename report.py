@@ -101,9 +101,28 @@ def straight_leg_detail_plot(seg, sonde_track, seg_before, seg_after):
 
     return fig
 
+def roll_zoom_plot(seg, sonde_track, seg_before, seg_after):
+    fig, (start_ax, end_ax) = plt.subplots(1, 2, figsize=(8,3), constrained_layout=True)
+
+    tofs = np.timedelta64(30, "s")
+
+    for ax, t, name in [(start_ax, seg.time.data[0], "start"),
+                  (end_ax, seg.time.data[-1], "end")]:
+        var = "roll"
+        seg[var].plot(ax=ax, zorder=10)
+        seg_before[var].plot(ax=ax, color="C3", alpha=.3, zorder=0)
+        seg_after[var].plot(ax=ax, color="C3", alpha=.3, zorder=0)
+        ax.set_title("zoom on {}".format(name))
+        ax.set_ylabel("roll [deg]")
+
+        ax.set_xlim(t - tofs, t + tofs)
+
+    return fig
+
 SPECIAL_PLOTS = {
     "circle": [circle_detail_plot],
     "straight_leg": [straight_leg_detail_plot],
+    "radar_calibration_wiggle": [roll_zoom_plot],
 }
 
 def plots_for_kinds(kinds):
