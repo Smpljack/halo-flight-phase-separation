@@ -16,6 +16,12 @@
     background-color: orange;
 }
 
+.inline_warning {
+    display: inline-block;
+    background-color: orange;
+    padding: 0 .2em;
+}
+
 .taglist {
     list-style-type: none;
     display: block;
@@ -61,8 +67,19 @@
             {% endfor %}
         </ul>
         <h2>Flight Phases</h2>
+        <h3>index</h3>
+        <ul>
+            {% for segment in flight.segments %}
+            <li>
+                <a href="#{{ segment.segment_id }}">{{ segment.name }}</a>
+                {% for warning in segment.warnings %}
+                <div class="inline_warning">{{ warning }}</div>
+                {% endfor %}
+            </li>
+            {% endfor %}
+        </ul>
         {% for segment in flight.segments %}
-        <h3>{{ segment.name }} ({{ segment.segment_id }})</h3>
+        <h3 id="{{ segment.segment_id }}">{{ segment.name }} ({{ segment.segment_id }})</h3>
         from {{ segment.start }} until {{ segment.end }}
         {% if segment.kinds %}
         <ul class="taglist">
