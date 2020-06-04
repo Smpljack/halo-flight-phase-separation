@@ -181,6 +181,21 @@ def timestamp_ind_1min_prior(bahamas_data, timestamp_ind):
                                 (bahamas_data['time'][timestamp_ind] - np.timedelta64(1, 'm')))))
 
 
+def timestamp_ind_seconds_prior(bahamas_data, timestamp_ind, seconds):
+    """
+    Find the timestamp index in the bahamas dataset that is 'seconds'
+    prior to the given timetamp_ind. Used for finding the circle start
+    timestamps.
+    :param bahamas_data: unified bahamas dataset.
+    :param timestamp_ind: timestamp index.
+    :param: seconds: Amount of seconds to go back in time.
+    :return: timestamp index.
+    """
+    return int(np.argmin(np.abs(bahamas_data['time'] -
+                                (bahamas_data['time'][timestamp_ind] -
+                                 np.timedelta64(seconds, 's')))))
+
+
 def exit_circle_timestamp_ind(bahamas_data, enter_circle_ts_index):
     """
     Find the timestamp index in the bahamas dataset after the given
@@ -195,3 +210,19 @@ def exit_circle_timestamp_ind(bahamas_data, enter_circle_ts_index):
     timestamp_ind_1h = int(np.argmin(np.abs(bahamas_data['time'] - timestamp_1h)))
     return np.argmin(np.abs(bahamas_data['heading'][enter_circle_ts_index + 1:timestamp_ind_1h]
                             - bahamas_data['heading'][enter_circle_ts_index])) + enter_circle_ts_index + 1
+
+def enter_circle_timestamp_ind_given_end(bahamas_data, exit_circle_ts_index):
+    """
+    Find the timestamp index in the bahamas dataset prior to the given
+    exit_circle_ts_index that has the closest 'heading' value as
+    was present during the exit_circle_ts_index timestamp.
+    This only searches within the hour prior to exit_circle_ts_index.
+    :param bahamas_data: unified bahamas dataset.
+    :param exit_circle_ts_index: timestamp index.
+    :return: timestamp index.
+    """
+    timestamp_1h = bahamas_data['time'][exit_circle_ts_index] - np.timedelta64(1, 'h')
+    timestamp_ind_1h = int(np.argmin(np.abs(bahamas_data['time'] - timestamp_1h)))
+    return  exit_circle_ts_index - 1 - \
+            np.argmin(np.abs(bahamas_data['heading'][exit_circle_ts_index-1:timestamp_ind_1h:-1]
+                            - bahamas_data['heading'][exit_circle_ts_index]))
