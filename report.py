@@ -179,6 +179,12 @@ def _main():
     bahamas = xr.open_dataset(bahamas_path)
     dropsondes = xr.open_dataset(dropsondes_path)
 
+    global_warnings = []
+    if "flight_id" in flightdata:
+        flight_id = flightdata["flight_id"]
+    else:
+        flight_id = ""
+        global_warnings.append("flight_id is missing")
 
     fig, ax = plt.subplots()
     ax.plot(bahamas.lon, bahamas.lat)
@@ -206,6 +212,8 @@ def _main():
         seg["plot_data"] = plot_data
         seg["sonde_count_in_data"] = len(sondes.launch_time)
         seg["sonde_times"] = sondes.launch_time.data
+
+    flightdata["warnings"] = global_warnings
 
     tpl = env.get_template("flight.html")
 

@@ -46,6 +46,14 @@
     <body>
         <h1>Flight {{ flight.flight_id }}</h1>
         <img src="{{ flight.plot_data }}" alt="flight {{ flight.name }} plot" />
+        {% if flight.warnings|length %}
+        <h2>warnings</h2>
+        {% for warning in flight.warnings %}
+        <p class="warning">
+            {{ warning }}
+        </p>
+        {% endfor %}
+        {% endif %}
         <h2>remarks</h2>
         <ul>
             {% for remark in flight.remarks %}
