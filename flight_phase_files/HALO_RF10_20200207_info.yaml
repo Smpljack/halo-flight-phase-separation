@@ -11,6 +11,10 @@ contacts:
   email: raphaela.vogel@mpimet.mpg.de
   tags:
   - flight PI
+- name: Tobias Kölling
+  email: tobias.koelling@physik.uni-muenchen.de
+  tags:
+  - dataset creator
 date: 2020-02-07
 flight_report: https://observations.ipsl.fr/aeris/eurec4a-data/REPORTS/HALO/2020/20200207/HALO-0207.pdf
 takeoff: 2020-02-07 12:02:24
@@ -22,59 +26,108 @@ remarks:
 - Many large cold pools with remnants of stratiform clouds in the middle.
 - 2nd set of circles dominated by sugar/gravel pattern.
 segments:
-- kind: circle
-  name: c1
-  start: 2020-02-07 12:22:05
-  end: 2020-02-07 13:13:01
-- kind: circle_break
-  name: cb1to2
-  start: 2020-02-07 13:13:01
-  end: 2020-02-07 13:32:57
-- kind: circle
-  name: c2
-  start: 2020-02-07 13:32:57
-  end: 2020-02-07 14:23:24
-- kind: circle_break
-  name: cb2to3
-  start: 2020-02-07 14:23:24
-  end: 2020-02-07 14:41:02
-- kind: circle
-  name: c3
-  start: 2020-02-07 14:41:02
-  end: 2020-02-07 15:33:41
-- kind: straight_leg
-  name: leg1_outbound_NTAS
-  start: 2020-02-07 15:37:47
-  end: 2020-02-07 16:11:52
-- kind: radar_calibration_tilted
-  name: radar_cal_tilted
-  start: 2020-02-07 16:18:32
+- kinds: [circle]
+  name: circle 1
+  start: 2020-02-07 12:21:06
+  end: 2020-02-07 13:16:47
+  segment_id: HALO-0207_c1
+  irregularities: []
+  good_dropsondes: 12
+- kinds: [circle_break]
+  name: circle break 1/2
+  start: 2020-02-07 13:16:47
+  end: 2020-02-07 13:31:57
+  segment_id: HALO-0207_cb1
+  irregularities: []
+- kinds: [circle]
+  name: circle 2
+  start: 2020-02-07 13:31:57
+  end: 2020-02-07 14:27:29
+  segment_id: HALO-0207_c2
+  irregularities: []
+  good_dropsondes: 11
+- kinds: [circle_break]
+  name: circle break 2/3
+  start: 2020-02-07 14:27:29
+  end: 2020-02-07 14:39:00
+  segment_id: HALO-0207_cb2
+  irregularities: []
+- kinds: [circle]
+  name: circle 3
+  start: 2020-02-07 14:39:00
+  end: 2020-02-07 15:34:48
+  segment_id: HALO-0207_c3
+  irregularities: [begin is 122s before first launch due to roll angle at end]
+  good_dropsondes: 10
+- kinds: [straight_leg]
+  name: outbound leg to NTAS
+  start: 2020-02-07 15:37:12
+  end: 2020-02-07 16:15:23
+  segment_id: HALO-0207_sl1
+  irregularities: []
+  good_dropsondes: 1
+- kinds: [radar_calibration_wiggle]
+  name: radar wiggle pattern 1
+  start: 2020-02-07 16:15:24
+  end: 2020-02-07 16:16:36
+  segment_id: HALO-0207_rcw1
+  irregularities: []
+- kinds: [radar_calibration_tilted]
+  name: tilted radar calibration maneuver
+  start: 2020-02-07 16:17:25
   end: 2020-02-07 16:26:57
-- kind: straight_leg
-  name: leg2_inbound_NTAS
-  start: 2020-02-07 16:31:11
-  end: 2020-02-07 17:12:38
-- kind: circle
-  name: c4
+  segment_id: HALO-0207_rct1
+  irregularities: []
+- kinds: [radar_calibration_wiggle]
+  name: radar wiggle pattern 2
+  start: 2020-02-07 16:27:27
+  end: 2020-02-07 16:28:31
+  segment_id: HALO-0207_rcw2
+  irregularities: []
+- kinds: [straight_leg]
+  name: inbound leg from NTAS
+  start: 2020-02-07 16:30:56
+  end: 2020-02-07 17:12:58
+  segment_id: HALO-0207_sl2
+  irregularities: []
+- kinds: [circle]
+  name: circle 4
   start: 2020-02-07 17:14:54
-  end: 2020-02-07 18:11:04
-- kind: circle_break
-  name: cb4to5
-  start: 2020-02-07 18:11:04
-  end: 2020-02-07 18:29:20
-- kind: circle
-  name: c5
-  start: 2020-02-07 18:29:20
-  end: 2020-02-07 19:22:49
-- kind: circle_break
-  name: cb5to6
-  start: 2020-02-07 19:22:49
-  end: 2020-02-07 19:48:06
-- kind: circle
-  name: c6
-  start: 2020-02-07 19:48:06
-  end: 2020-02-07 20:36:43
-- kind: lidar_calibration
-  name: lidar_cal
+  end: 2020-02-07 18:15:57
+  segment_id: HALO-0207_c4
+  irregularities: [traffic_diversion, begin is at first launch due to roll angle at start]
+  good_dropsondes: 11
+- kinds: [circle_break]
+  name: circle break 4/5
+  start: 2020-02-07 18:15:57
+  end: 2020-02-07 18:28:20
+  segment_id: HALO-0207_cb3
+  irregularities: []
+- kinds: [circle]
+  name: circle 5
+  start: 2020-02-07 18:28:20
+  end: 2020-02-07 19:27:05
+  segment_id: HALO-0207_c5
+  irregularities: []
+  good_dropsondes: 12
+- kinds: [circle_break]
+  name: circle break 5/6
+  start: 2020-02-07 19:27:05
+  end: 2020-02-07 19:39:43
+  segment_id: HALO-0207_cb4
+  irregularities: []
+- kinds: [circle]
+  name: circle 6
+  start: 2020-02-07 19:39:45
+  end: 2020-02-07 20:38:25
+  segment_id: HALO-0207_c6
+  irregularities:
+    - traffic_diversion
+    - begin is 501s before first launch due to roll angle at end
+  good_dropsondes: 10
+- kinds: [straight_leg, lidar_leg]
+  name: low level lidar leg
   start: 2020-02-07 20:45:50
-  end: 2020-02-07 20:54:41
+  end: 2020-02-07 20:54:48
+  segment_id: HALO-0207_ll1
+  irregularities: []
