@@ -16,22 +16,31 @@
     background-color: orange;
 }
 
-.kindlist {
+.taglist {
     list-style-type: none;
     display: block;
     margin: 0;
     padding: 0;
 }
 
-.kind {
+.tag {
     display: inline-block;
     margin: .3em;
     padding: .3em;
     border-radius: .2em;
-    background-color: #88f;
-    color: white;
     font-family: sans-serif;
 }
+
+.kind {
+    background-color: #88f;
+    color: white;
+}
+
+.irregularity {
+    background-color: orange;
+    color: white;
+}
+
 </style>
     </head>
     <body>
@@ -59,14 +68,25 @@
         </p>
         {% endif %}
         {% if segment.kinds %}
-        <ul class="kindlist">
+        <ul class="taglist">
             {% for kind in segment.kinds %}
-            <li class="kind">{{ kind }}</li>
+            <li class="tag kind">{{ kind }}</li>
             {% endfor %}
         </ul>
         {% else %}
         <p class="warning">
             Segment has no kinds.
+        </p>
+        {% endif %}
+        {% if segment.irregularities %}
+        <ul class="taglist">
+            {% for irregularity in segment.irregularities %}
+            <li class="tag irregularity">{{ irregularity }}</li>
+            {% endfor %}
+        </ul>
+        {% elif segment.irregularities is not defined %}
+        <p class="warning">
+            Segment has no irregularities attribute.
         </p>
         {% endif %}
         <ul>
