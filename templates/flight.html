@@ -2,6 +2,37 @@
 <html>
     <head>
         <title>Flight {{ flight.flight_id }}</title>
+<style>
+
+.warning::before {
+    content: "WARNING: ";
+    font-weight: bold;
+}
+
+.warning {
+    margin: .3em;
+    padding: .3em;
+    border-radius: .2em;
+    background-color: orange;
+}
+
+.kindlist {
+    list-style-type: none;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.kind {
+    display: inline-block;
+    margin: .3em;
+    padding: .3em;
+    border-radius: .2em;
+    background-color: #88f;
+    color: white;
+    font-family: sans-serif;
+}
+</style>
     </head>
     <body>
         <h1>Flight {{ flight.flight_id }}</h1>
@@ -20,8 +51,24 @@
         </dl>
         <h2>Flight Phases</h2>
         {% for segment in flight.segments %}
-        <h3>{{ segment.name }}</h3>
+        <h3>{{ segment.name }} ({{ segment.segment_id }})</h3>
         from {{ segment.start }} until {{ segment.end }}
+        {% if not segment.segment_id %}
+        <p class="warning">
+            Segment has no <i>segment_id</i>.
+        </p>
+        {% endif %}
+        {% if segment.kinds %}
+        <ul class="kindlist">
+            {% for kind in segment.kinds %}
+            <li class="kind">{{ kind }}</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p class="warning">
+            Segment has no kinds.
+        </p>
+        {% endif %}
         <ul>
             <li>Number of sondes: {{ segment.sonde_count_in_data }}</li>
         </ul>
