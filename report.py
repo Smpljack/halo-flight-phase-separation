@@ -150,7 +150,7 @@ def timeline_of(var, unit):
     return plot
 
 SPECIAL_PLOTS = {
-    "circle": [circle_detail_plot],
+    "circle": [circle_detail_plot, zoom_on("roll", "deg")],
     "straight_leg": [straight_leg_detail_plot, zoom_on("roll", "deg")],
     "radar_calibration_wiggle": [zoom_on("roll", "deg")],
     "radar_calibration_tilted": [zoom_on("roll", "deg")],
