@@ -119,10 +119,24 @@ def roll_zoom_plot(seg, sonde_track, seg_before, seg_after):
 
     return fig
 
+def altitude_plot(seg, sonde_track, seg_before, seg_after):
+    fig, ax  = plt.subplots(1, 1, figsize=(8,3), constrained_layout=True)
+
+
+    var = "altitude"
+    seg[var].plot(ax=ax, zorder=10)
+    seg_before[var].plot(ax=ax, color="C3", alpha=.3, zorder=0)
+    seg_after[var].plot(ax=ax, color="C3", alpha=.3, zorder=0)
+    ax.set_title("altitude")
+    ax.set_ylabel("altitude [m]")
+
+    return fig
+
 SPECIAL_PLOTS = {
     "circle": [circle_detail_plot],
     "straight_leg": [straight_leg_detail_plot],
     "radar_calibration_wiggle": [roll_zoom_plot],
+    "lidar_calibration": [altitude_plot],
 }
 
 def plots_for_kinds(kinds):
