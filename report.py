@@ -14,6 +14,7 @@ color_before = "C2"
 color_at = "C0"
 color_after = "C3"
 color_sonde = "C1"
+color_connection = "gray"
 
 env = Environment(
     loader=FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates')),
@@ -72,6 +73,13 @@ def circle_detail_plot(seg, sonde_track, seg_before, seg_after):
     zoom_ax.plot(seg.lon, seg.lat, "o-", color=color_at, zorder=10)
     zoom_ax.plot(seg_before.lon, seg_before.lat, "x-", color=color_before, alpha=.3, zorder=0)
     zoom_ax.plot(seg_after.lon, seg_after.lat, "x-", color=color_after, alpha=.3, zorder=0)
+    zoom_ax.plot([seg_before.lon.data[-1], seg.lon.data[0]],
+                 [seg_before.lat.data[-1], seg.lat.data[0]],
+                 "--", color=color_connection, alpha=.3, zorder=0)
+    zoom_ax.plot([seg.lon.data[-1], seg_after.lon.data[0]],
+                 [seg.lat.data[-1], seg_after.lat.data[0]],
+                 "--", color=color_connection, alpha=.3, zorder=0)
+
     zoom_ax.scatter(sonde_track.lon, sonde_track.lat, color=color_sonde, zorder=5)
     lat_lims, lon_lims = start_end_lims(seg)
     zoom_ax.set_xlim(*lon_lims)
