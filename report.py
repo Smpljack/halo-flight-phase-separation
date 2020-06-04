@@ -79,8 +79,31 @@ def circle_detail_plot(seg, sonde_track, seg_before, seg_after):
 
     return fig
 
+def straight_leg_detail_plot(seg, sonde_track, seg_before, seg_after):
+    fig, (start_ax, end_ax) = plt.subplots(1, 2, figsize=(8,4), constrained_layout=True)
+
+    start_lat, end_lat = seg.lat.data[[0, -1]]
+    start_lon, end_lon = seg.lon.data[[0, -1]]
+
+    for ax, lat, lon, name in [(start_ax, start_lat, start_lon, "start"),
+                               (end_ax, end_lat, end_lon, "end")]:
+        ax.plot(seg.lon, seg.lat, "o-", zorder=10)
+        ax.plot(seg_before.lon, seg_before.lat, "x-", color="C3", alpha=.3, zorder=0)
+        ax.plot(seg_after.lon, seg_after.lat, "x-", color="C3", alpha=.3, zorder=0)
+        ax.scatter(sonde_track.lon, sonde_track.lat, color="C1", zorder=5)
+
+        ax.set_xlim(lon - .1, lon + .1)
+        ax.set_ylim(lat - .1, lat + .1)
+        ax.set_aspect("equal")
+        ax.set_title("zoom on {}".format(name))
+        ax.set_xlabel("longitude [deg]")
+        ax.set_ylabel("latitude [deg]")
+
+    return fig
+
 SPECIAL_PLOTS = {
     "circle": [circle_detail_plot],
+    "straight_leg": [straight_leg_detail_plot],
 }
 
 def plots_for_kinds(kinds):
