@@ -89,8 +89,18 @@
             Segment has no irregularities attribute.
         </p>
         {% endif %}
+        {% if "circle" in segment.kinds or "circling" in segment.kinds %}
+            {% if segment.good_dropsondes is not defined %}
+            <p class="warning">
+                Segment has no good_dropsondes attribute.
+            </p>
+            {% endif %}
+        {% endif %}
         <ul>
-            <li>Number of sondes: {{ segment.sonde_count_in_data }}</li>
+            <li>Number of sondes according to data: {{ segment.sonde_count_in_data }}</li>
+            {% if segment.good_dropsondes %}
+            <li>Number of good sondes: {{ segment.good_dropsondes }}</li>
+            {% endif %}
         </ul>
         {% for plot in segment.plot_data %}
         <p>

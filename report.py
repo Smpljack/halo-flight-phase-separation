@@ -151,8 +151,9 @@ def timeline_of(var, unit):
 
 SPECIAL_PLOTS = {
     "circle": [circle_detail_plot],
-    "straight_leg": [straight_leg_detail_plot],
+    "straight_leg": [straight_leg_detail_plot, zoom_on("roll", "deg")],
     "radar_calibration_wiggle": [zoom_on("roll", "deg")],
+    "radar_calibration_tilted": [zoom_on("roll", "deg")],
     "lidar_leg": [timeline_of("altitude", "m"), zoom_on("altitude", "m")],
 }
 
