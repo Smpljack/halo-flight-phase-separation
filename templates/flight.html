@@ -25,7 +25,11 @@
         <ul>
             <li>Number of sondes: {{ segment.sonde_count_in_data }}</li>
         </ul>
-        <img src="{{ segment.plot_data }}" alt="segment {{ segment.name }} plot" />
+        {% for plot in segment.plot_data %}
+        <p>
+            <img src="{{ plot }}" alt="segment {{ segment.name }} plot" />
+        </p>
+        {% endfor %}
         <h4>sonde times</h4>
         <ul>
             {% for t in segment.sonde_times %}

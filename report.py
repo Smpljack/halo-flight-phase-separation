@@ -31,6 +31,45 @@ def start_end_lims(bahamas):
     lon_center = (lon_min + lon_max) / 2
     return (lat_center - delta, lat_center + delta), (lon_center - delta, lon_center + delta)
 
+def default_segment_plot(seg, sonde_track, seg_before, seg_after):
+    fig, (overview_ax, roll_ax) = plt.subplots(2, figsize=(6,6))
+    overview_ax.plot(seg.lon, seg.lat, zorder=10)
+    overview_ax.plot(seg_before.lon, seg_before.lat, color="C3", alpha=.3, zorder=0)
+    overview_ax.plot(seg_after.lon, seg_after.lat, color="C3", alpha=.3, zorder=0)
+    overview_ax.scatter(sonde_track.lon, sonde_track.lat, color="C1", zorder=5)
+
+
+    seg["roll"].plot(ax=roll_ax, zorder=10)
+    seg_before["roll"].plot(ax=roll_ax, color="C3", alpha=.3, zorder=0)
+    seg_after["roll"].plot(ax=roll_ax, color="C3", alpha=.3, zorder=0)
+
+    return fig
+
+def circle_detail_plot(seg, sonde_track, seg_before, seg_after):
+    fig, zoom_ax = plt.subplots(1, figsize=(4,4))
+    zoom_ax.plot(seg.lon, seg.lat, "o-", zorder=10)
+    zoom_ax.plot(seg_before.lon, seg_before.lat, "x-", color="C3", alpha=.3, zorder=0)
+    zoom_ax.plot(seg_after.lon, seg_after.lat, "x-", color="C3", alpha=.3, zorder=0)
+
+    zoom_ax.scatter(sonde_track.lon, sonde_track.lat, color="C1", zorder=5)
+    lat_lims, lon_lims = start_end_lims(seg)
+    zoom_ax.set_xlim(*lon_lims)
+    zoom_ax.set_ylim(*lat_lims)
+    zoom_ax.set_aspect("equal")
+    zoom_ax.set_title("zoom on circle ends")
+
+    return fig
+
+SPECIAL_PLOTS = {
+    "circle": [circle_detail_plot],
+}
+
+def plots_for_kinds(kinds):
+    return [default_segment_plot] + \
+           [plot
+            for kind in kinds
+            for plot in SPECIAL_PLOTS.get(kind, [])]
+
 def _main():
     import argparse
     parser = argparse.ArgumentParser()
@@ -67,28 +106,15 @@ def _main():
         seg_bahamas = bahamas.sel(time=slice(t_start, t_end))
         seg_before = bahamas.sel(time=slice(t_start - border_time, t_start))
         seg_after = bahamas.sel(time=slice(t_end, t_end + border_time))
-        fig, (overview_ax, zoom_ax, roll_ax) = plt.subplots(3, figsize=(6,8))
-        overview_ax.plot(seg_bahamas.lon, seg_bahamas.lat, zorder=10)
-        overview_ax.plot(seg_before.lon, seg_before.lat, color="C3", alpha=.3, zorder=0)
-        overview_ax.plot(seg_after.lon, seg_after.lat, color="C3", alpha=.3, zorder=0)
         sonde_track = bahamas.sel(time=sondes.launch_time, method="nearest")
-        overview_ax.scatter(sonde_track.lon, sonde_track.lat, color="C1", zorder=5)
 
-        zoom_ax.plot(seg_bahamas.lon, seg_bahamas.lat, "o-", zorder=10)
-        zoom_ax.plot(seg_before.lon, seg_before.lat, "x-", color="C3", alpha=.3, zorder=0)
-        zoom_ax.plot(seg_after.lon, seg_after.lat, "x-", color="C3", alpha=.3, zorder=0)
-        sonde_track = bahamas.sel(time=sondes.launch_time, method="nearest")
-        zoom_ax.scatter(sonde_track.lon, sonde_track.lat, color="C1", zorder=5)
-        lat_lims, lon_lims = start_end_lims(seg_bahamas)
-        zoom_ax.set_xlim(*lon_lims)
-        zoom_ax.set_ylim(*lat_lims)
-        zoom_ax.set_aspect("equal")
+        plot_data = []
+        for plot in plots_for_kinds(seg.get("kinds", [])):
+            plot_data.append(fig2data_url(
+                plot(seg_bahamas, sonde_track, seg_before, seg_after)))
+            plt.close("all")
 
-        seg_bahamas["roll"].plot(ax=roll_ax)
-
-        im = fig2data_url(fig)
-        plt.close("all")
-        seg["plot_data"] = im
+        seg["plot_data"] = plot_data
         seg["sonde_count_in_data"] = len(sondes.launch_time)
         seg["sonde_times"] = sondes.launch_time.data
 
