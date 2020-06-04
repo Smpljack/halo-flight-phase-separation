@@ -98,12 +98,14 @@
             <img src="{{ plot }}" alt="segment {{ segment.name }} plot" />
         </p>
         {% endfor %}
+        {% if segment.sonde_times|length %}
         <h4>sonde times</h4>
         <ul>
             {% for t in segment.sonde_times %}
             <li>{{ t }}</li>
             {% endfor %}
         </ul>
+        {% endif %}
         {% endfor %}
     </body>
 </html>
