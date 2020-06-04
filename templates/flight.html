@@ -52,12 +52,6 @@
             <li>{{ remark }}</li>
             {% endfor %}
         </ul>
-        <h2>data info</h2>
-        <dl>
-            {% for k, v in flight.data_info.items() %}
-            <dt>{{ k }}</dt><dd>{{ v }}</dd>
-            {% endfor %}
-        </dl>
         <h2>Flight Phases</h2>
         {% for segment in flight.segments %}
         <h3>{{ segment.name }} ({{ segment.segment_id }})</h3>

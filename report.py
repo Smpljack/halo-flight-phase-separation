@@ -179,16 +179,12 @@ def _main():
     bahamas = xr.open_dataset(bahamas_path)
     dropsondes = xr.open_dataset(dropsondes_path)
 
-    data_info = {
-        "first_sonde": dropsondes.launch_time.data[0]
-    }
 
     fig, ax = plt.subplots()
     ax.plot(bahamas.lon, bahamas.lat)
     im = fig2data_url(fig)
     plt.close("all")
     flightdata["plot_data"] = im
-    flightdata["data_info"] = data_info
 
     for seg in flightdata["segments"]:
         sonde_mask = (dropsondes.launch_time.data >= np.datetime64(seg["start"])) \
