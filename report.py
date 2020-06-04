@@ -4,6 +4,7 @@ import yaml
 import xarray as xr
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.gridspec as gridspec
 from io import BytesIO
 from base64 import b64encode
 
@@ -32,21 +33,37 @@ def start_end_lims(bahamas):
     return (lat_center - delta, lat_center + delta), (lon_center - delta, lon_center + delta)
 
 def default_segment_plot(seg, sonde_track, seg_before, seg_after):
-    fig, (overview_ax, roll_ax) = plt.subplots(2, figsize=(6,6))
+    fig = plt.figure(figsize=(8, 5), constrained_layout=True)
+    spec = gridspec.GridSpec(ncols=3, nrows=3, figure=fig)
+    overview_ax = fig.add_subplot(spec[:, :2])
+    roll_ax = fig.add_subplot(spec[0, 2])
+    pitch_ax = fig.add_subplot(spec[1, 2], sharex=roll_ax)
+    yaw_ax = fig.add_subplot(spec[2, 2], sharex=roll_ax)
+
     overview_ax.plot(seg.lon, seg.lat, zorder=10)
     overview_ax.plot(seg_before.lon, seg_before.lat, color="C3", alpha=.3, zorder=0)
     overview_ax.plot(seg_after.lon, seg_after.lat, color="C3", alpha=.3, zorder=0)
     overview_ax.scatter(sonde_track.lon, sonde_track.lat, color="C1", zorder=5)
 
+    overview_ax.set_title("segment overview")
+    overview_ax.set_xlabel("longitude [deg]")
+    overview_ax.set_ylabel("latitude [deg]")
 
-    seg["roll"].plot(ax=roll_ax, zorder=10)
-    seg_before["roll"].plot(ax=roll_ax, color="C3", alpha=.3, zorder=0)
-    seg_after["roll"].plot(ax=roll_ax, color="C3", alpha=.3, zorder=0)
+    for ax, var in [(roll_ax, "roll"), (pitch_ax, "pitch"), (yaw_ax, "heading")]:
+        seg[var].plot(ax=ax, zorder=10)
+        seg_before[var].plot(ax=ax, color="C3", alpha=.3, zorder=0)
+        seg_after[var].plot(ax=ax, color="C3", alpha=.3, zorder=0)
+        ax.set_title(var)
+        ax.set_ylabel("deg")
+
+    for ax in [roll_ax, pitch_ax]:
+        plt.setp(ax.get_xticklabels(), visible=False)
+        ax.set_xlabel("")
 
     return fig
 
 def circle_detail_plot(seg, sonde_track, seg_before, seg_after):
-    fig, zoom_ax = plt.subplots(1, figsize=(4,4))
+    fig, zoom_ax = plt.subplots(1, figsize=(4,4), constrained_layout=True)
     zoom_ax.plot(seg.lon, seg.lat, "o-", zorder=10)
     zoom_ax.plot(seg_before.lon, seg_before.lat, "x-", color="C3", alpha=.3, zorder=0)
     zoom_ax.plot(seg_after.lon, seg_after.lat, "x-", color="C3", alpha=.3, zorder=0)
@@ -57,6 +74,8 @@ def circle_detail_plot(seg, sonde_track, seg_before, seg_after):
     zoom_ax.set_ylim(*lat_lims)
     zoom_ax.set_aspect("equal")
     zoom_ax.set_title("zoom on circle ends")
+    zoom_ax.set_xlabel("longitude [deg]")
+    zoom_ax.set_ylabel("latitude [deg]")
 
     return fig
 
