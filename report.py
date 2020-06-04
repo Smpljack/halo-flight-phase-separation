@@ -183,19 +183,30 @@ class SegmentChecker:
             yield "segment_id is missing"
 
         if "kinds" in seg:
-            if len(seg["kinds"]) == 0:
+            kinds = seg["kinds"]
+            if not isinstance(kinds, list):
+                yield "kinds is not a list"
+                del seg["kinds"]
+            elif len(kinds) == 0:
                 yield "segment has no kinds"
         else:
             yield "segment has no kinds attribute"
 
         if "irregularities" in seg:
             irregularities = seg["irregularities"]
+            if not isinstance(irregularities, list):
+                yield "irregularities is not a list"
+                del seg["irregularities"]
+                irregularities = []
         else:
             yield "segment has no irregularities attribute"
             irregularities = []
 
         if kinds_is_circle(seg["kinds"]) and "good_dropsondes" not in seg:
             yield "segment is a circle and has no good_dropsondes attribute"
+
+        if "good_dropsondes" in seg and not isinstance(seg["good_dropsondes"], int):
+            yield "good_dropsondes is not an int"
 
         t_start = np.datetime64(seg["start"])
         if kinds_is_circle(seg["kinds"]) and len(sondes.launch_time) > 0:
