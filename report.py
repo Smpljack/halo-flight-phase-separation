@@ -150,7 +150,7 @@ def timeline_of(var, unit):
     return plot
 
 SPECIAL_PLOTS = {
-    "circle": [circle_detail_plot],
+    "circle": [circle_detail_plot, zoom_on("roll", "deg")],
     "straight_leg": [straight_leg_detail_plot, zoom_on("roll", "deg")],
     "radar_calibration_wiggle": [zoom_on("roll", "deg")],
     "radar_calibration_tilted": [zoom_on("roll", "deg")],
@@ -162,6 +162,60 @@ def plots_for_kinds(kinds):
            [plot
             for kind in kinds
             for plot in SPECIAL_PLOTS.get(kind, [])]
+
+def kinds_is_circle(kinds):
+    return any(k in kinds for k in ["circle", "circling"])
+
+class SegmentChecker:
+    def __init__(self, flight):
+        self.used_segment_ids = set()
+        self.flight_id = flight.get("flight_id", "")
+
+    def check_segment(self, seg, bahamas, sondes):
+        if "segment_id" in seg:
+            segment_id = seg["segment_id"]
+            if not segment_id.startswith(self.flight_id):
+                yield "segment_id does not start with flight_id"
+            if segment_id in self.used_segment_ids:
+                yield "segment_id \"{}\" is duplicated".format(segment_id)
+            self.used_segment_ids.add(segment_id)
+        else:
+            yield "segment_id is missing"
+
+        if "kinds" in seg:
+            kinds = seg["kinds"]
+            if not isinstance(kinds, list):
+                yield "kinds is not a list"
+                del seg["kinds"]
+            elif len(kinds) == 0:
+                yield "segment has no kinds"
+        else:
+            yield "segment has no kinds attribute"
+
+        if "irregularities" in seg:
+            irregularities = seg["irregularities"]
+            if not isinstance(irregularities, list):
+                yield "irregularities is not a list"
+                del seg["irregularities"]
+                irregularities = []
+        else:
+            yield "segment has no irregularities attribute"
+            irregularities = []
+
+        if kinds_is_circle(seg["kinds"]) and "good_dropsondes" not in seg:
+            yield "segment is a circle and has no good_dropsondes attribute"
+
+        if "good_dropsondes" in seg and not isinstance(seg["good_dropsondes"], int):
+            yield "good_dropsondes is not an int"
+
+        t_start = np.datetime64(seg["start"])
+        if kinds_is_circle(seg["kinds"]) and len(sondes.launch_time) > 0:
+            seconds_to_first_sonde = (sondes.launch_time.data[0] - t_start) \
+                                   / np.timedelta64(1, "s")
+            if abs(seconds_to_first_sonde - 60.) > .75 and len(irregularities) == 0:
+                # use a little bit more that .5 sec offset to cover rounding errors
+                yield "time to first sonde is not 1 minute and no irregularities are recorded"
+
 
 def _main():
     import argparse
@@ -179,16 +233,20 @@ def _main():
     bahamas = xr.open_dataset(bahamas_path)
     dropsondes = xr.open_dataset(dropsondes_path)
 
-    data_info = {
-        "first_sonde": dropsondes.launch_time.data[0]
-    }
+    global_warnings = []
+    if "flight_id" in flightdata:
+        flight_id = flightdata["flight_id"]
+    else:
+        flight_id = ""
+        global_warnings.append("flight_id is missing")
 
     fig, ax = plt.subplots()
     ax.plot(bahamas.lon, bahamas.lat)
     im = fig2data_url(fig)
     plt.close("all")
     flightdata["plot_data"] = im
-    flightdata["data_info"] = data_info
+
+    checker = SegmentChecker(flightdata)
 
     for seg in flightdata["segments"]:
         sonde_mask = (dropsondes.launch_time.data >= np.datetime64(seg["start"])) \
@@ -210,6 +268,12 @@ def _main():
         seg["plot_data"] = plot_data
         seg["sonde_count_in_data"] = len(sondes.launch_time)
         seg["sonde_times"] = sondes.launch_time.data
+        if len(sondes.launch_time) > 0:
+            seg["time_to_first_sonde"] = (sondes.launch_time.data[0] - t_start) / np.timedelta64(1, "s")
+
+        seg["warnings"] = list(checker.check_segment(seg, seg_bahamas, sondes))
+
+    flightdata["warnings"] = global_warnings
 
     tpl = env.get_template("flight.html")
 

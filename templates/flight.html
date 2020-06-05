@@ -16,6 +16,12 @@
     background-color: orange;
 }
 
+.inline_warning {
+    display: inline-block;
+    background-color: orange;
+    padding: 0 .2em;
+}
+
 .taglist {
     list-style-type: none;
     display: block;
@@ -46,37 +52,41 @@
     <body>
         <h1>Flight {{ flight.flight_id }}</h1>
         <img src="{{ flight.plot_data }}" alt="flight {{ flight.name }} plot" />
+        {% if flight.warnings|length %}
+        <h2>warnings</h2>
+        {% for warning in flight.warnings %}
+        <p class="warning">
+            {{ warning }}
+        </p>
+        {% endfor %}
+        {% endif %}
         <h2>remarks</h2>
         <ul>
             {% for remark in flight.remarks %}
             <li>{{ remark }}</li>
             {% endfor %}
         </ul>
-        <h2>data info</h2>
-        <dl>
-            {% for k, v in flight.data_info.items() %}
-            <dt>{{ k }}</dt><dd>{{ v }}</dd>
-            {% endfor %}
-        </dl>
         <h2>Flight Phases</h2>
+        <h3>index</h3>
+        <ul>
+            {% for segment in flight.segments %}
+            <li>
+                <a href="#{{ segment.segment_id }}">{{ segment.name }}</a>
+                {% for warning in segment.warnings %}
+                <div class="inline_warning">{{ warning }}</div>
+                {% endfor %}
+            </li>
+            {% endfor %}
+        </ul>
         {% for segment in flight.segments %}
-        <h3>{{ segment.name }} ({{ segment.segment_id }})</h3>
+        <h3 id="{{ segment.segment_id }}">{{ segment.name }} ({{ segment.segment_id }})</h3>
         from {{ segment.start }} until {{ segment.end }}
-        {% if not segment.segment_id %}
-        <p class="warning">
-            Segment has no <i>segment_id</i>.
-        </p>
-        {% endif %}
         {% if segment.kinds %}
         <ul class="taglist">
             {% for kind in segment.kinds %}
             <li class="tag kind">{{ kind }}</li>
             {% endfor %}
         </ul>
-        {% else %}
-        <p class="warning">
-            Segment has no kinds.
-        </p>
         {% endif %}
         {% if segment.irregularities %}
         <ul class="taglist">
@@ -84,22 +94,20 @@
             <li class="tag irregularity">{{ irregularity }}</li>
             {% endfor %}
         </ul>
-        {% elif segment.irregularities is not defined %}
+        {% endif %}
+
+        {% for warning in segment.warnings %}
         <p class="warning">
-            Segment has no irregularities attribute.
+            {{ warning }}
         </p>
-        {% endif %}
-        {% if "circle" in segment.kinds or "circling" in segment.kinds %}
-            {% if segment.good_dropsondes is not defined %}
-            <p class="warning">
-                Segment has no good_dropsondes attribute.
-            </p>
-            {% endif %}
-        {% endif %}
+        {% endfor %}
         <ul>
             <li>Number of sondes according to data: {{ segment.sonde_count_in_data }}</li>
             {% if segment.good_dropsondes %}
             <li>Number of good sondes: {{ segment.good_dropsondes }}</li>
+            {% endif %}
+            {% if segment.time_to_first_sonde %}
+            <li>Time until first dropsonde launch: {{ segment.time_to_first_sonde }} s</li>
             {% endif %}
         </ul>
         {% for plot in segment.plot_data %}
@@ -107,12 +115,14 @@
             <img src="{{ plot }}" alt="segment {{ segment.name }} plot" />
         </p>
         {% endfor %}
+        {% if segment.sonde_times|length %}
         <h4>sonde times</h4>
         <ul>
             {% for t in segment.sonde_times %}
             <li>{{ t }}</li>
             {% endfor %}
         </ul>
+        {% endif %}
         {% endfor %}
     </body>
 </html>
