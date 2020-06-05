@@ -28,47 +28,136 @@ remarks:
 - Flight went above and below the altostratus layer.
 - '**See flight-report for more information.**'
 segments:
-- kind: circle
-  name: c1
-  start: 2020-02-15 15:38:41
-  end: 2020-02-15 16:41:39
-- kind: circle_break
-  name: cb1to2
-  start: 2020-02-15 16:41:39
-  end: 2020-02-15 17:00:13
-- kind: circle
-  name: c2
-  start: 2020-02-15 17:00:13
-  end: 2020-02-15 17:41:55
-- kind: straight_leg
-  name: leg1_outbound_NTAS
-  start: 2020-02-15 17:52:34
-  end: 2020-02-15 18:15:01
-- kind: circle
-  name: c3
-  start: 2020-02-15 18:17:29
-  end: 2020-02-15 19:16:33
-- kind: straight_leg
-  name: leg2_inbound_NTAS
-  start: 2020-02-15 19:28:05
-  end: 2020-02-15 19:59:51
-- kind: circle
-  name: c4_one_dropsonde
-  start: 2020-02-15 20:10:03
-  end: 2020-02-15 21:20:20
-- kind: circle
-  name: c5
-  start: 2020-02-15 21:49:27
-  end: 2020-02-15 22:41:15
-- kind: circle_break
-  name: cb5to6
-  start: 2020-02-15 22:41:15
-  end: 2020-02-15 22:48:04
-- kind: circle
-  name: c6
-  start: 2020-02-15 22:48:04
-  end: 2020-02-15 23:28:45
-- kind: lidar_calibration
-  name: lidar_cal
+- kinds:
+  - circle
+  name: circle 1
+  irregularities:
+  - descent from FL320 to FL180
+  - circle lasts 69 minutes
+  segment_id: HALO-0215_c1
+  start: 2020-02-15 15:37:42
+  end: 2020-02-15 16:45:25
+  good_dropsondes: 12
+- kinds:
+  - circle_break
+  name: circle break 1
+  irregularities: []
+  segment_id: HALO-0215_cb1
+  start: 2020-02-15 16:45:25
+  end: 2020-02-15 16:59:14
+- kinds:
+  - circle
+  name: circle 2
+  irregularities:
+  - early circle exit after 263 degrees
+  segment_id: HALO-0215_c2
+  start: 2020-02-15 16:59:14
+  end: 2020-02-15 17:48:59
+  good_dropsondes: 0
+- kinds:
+  - straight_leg
+  name: leg 1 from circle east to NTAS
+  irregularities:
+  - change FL180 to FL370
+  segment_id: HALO-0215_sl1
+  start: 2020-02-15 17:51:39
+  end: 2020-02-15 18:15:45
+- kinds:
+  - circle
+  name: circle 3
+  irregularities:
+  - starts 6 seconds prior to first dropsonde
+  segment_id: HALO-0215_c3
+  start: 2020-02-15 18:17:24
+  end: 2020-02-15 19:22:05
+  good_dropsondes: 12
+- kinds:
+  - straight_leg
+  name: leg 2 from NTAS to circle east
+  irregularities: []
+  segment_id: HALO-0215_sl2
+  start: 2020-02-15 19:26:54
+  end: 2020-02-15 20:00:13
+- kinds:
+  - circle
+  name: circle 4
+  irregularities:
+  - does not start 1 minute prior to dropsonde
+  - only one dropsonde at the end
+  segment_id: HALO-0215_c4
+  start: 2020-02-15 20:11:43
+  end: 2020-02-15 21:20:51
+  good_dropsondes: 1
+- kinds:
+  - circle_break
+  name: circle break 2
+  irregularities:
+  - excludes period of circle deviationbetween circle 4 and circle 5
+  segment_id: HALO-0215_cb2
+  start: 2020-02-15 21:38:56
+  end: 2020-02-15 21:48:27
+- kinds:
+  - circle
+  name: circle 5
+  irregularities:
+  - ascend from 10.4 km to 11.2 km at circle start
+  segment_id: HALO-0215_c5
+  start: 2020-02-15 21:48:27
+  end: 2020-02-15 22:46:50
+  good_dropsondes: 12
+- kinds:
+  - circle_break
+  name: circle break 3
+  irregularities: []
+  segment_id: HALO-0215_cb3
+  start: 2020-02-15 22:46:50
+  end: 2020-02-15 22:47:05
+- kinds:
+  - circle
+  name: circle 6
+  irregularities:
+  - early circle exit after 304 degrees
+  segment_id: HALO-0215_c6
+  start: 2020-02-15 22:47:05
+  end: 2020-02-15 23:35:07
+  good_dropsondes: 7
+- kinds:
+  - lidar_leg
+  name: lidar leg
+  irregularities: []
+  segment_id: HALO-0215_ll1
   start: 2020-02-15 23:38:34
-  end: 2020-02-15 23:48:43
+  end: 2020-02-15 23:58:16
+- kinds:
+  - circling
+  name: circling 1
+  irregularities:
+  - 'circle1: descent from FL320 to FL180'
+  - 'circle1: lasts 69 minutes'
+  - 'circle2: early circle exit after 263 degrees'
+  segment_id: HALO-0215_o1
+  start: 2020-02-15 15:37:42
+  end: 2020-02-15 17:48:59
+  good_dropsondes: 12
+- kinds:
+  - circling
+  name: circling 2
+  irregularities:
+  - 'circle3: starts 6 seconds prior to first dropsonde'
+  segment_id: HALO-0215_o2
+  start: 2020-02-15 18:17:24
+  end: 2020-02-15 19:22:05
+  good_dropsondes: 12
+- kinds:
+  - circling
+  name: circling 3
+  irregularities:
+  - 'circle4: does not start 1 minute prior to dropsonde'
+  - 'circle4: only one dropsonde at the endperiod of circle deviation between circle
+    4 and circle 5'
+  - 'circle 5: ascend from 10.4 km to 11.2 km at circle start'
+  - 'circle 6: early exit after 304 degrees'
+  segment_id: HALO-0215_o3
+  start: 2020-02-15 20:11:43
+  end: 2020-02-15 23:35:07
+  good_dropsondes: 20
