@@ -5,11 +5,16 @@ contacts:
 - name: Marc Prange
   email: marc.prange@uni-hamburg.de
   tags:
-  - dataset creator
+  - lc
+  - dp
 - name: Bjorn Stevens
   email: bjorn.stevens@mpimet.mpg.de
   tags:
-  - flight PI
+  - pi
+- name: Theresa Lang
+  email: theresa.lang@uni-hamburg.de
+  tags:
+  - dp
 date: 2020-01-28
 flight_report: https://observations.ipsl.fr/aeris/eurec4a-data/REPORTS/HALO/2020/20200128/HALO-0128.pdf
 takeoff: 2020-01-28 14:58:34
@@ -53,8 +58,7 @@ segments:
   - circle
   name: Circle 3
   irregularities:
-  - "The circle already starts 4 minutes (instead of regularly 1 minute) before the\
-    \ first dropsonde. This is necessary to make it a full 360\xB0 circle."
+  - Circle starts 4 minutes (instead of regularly 1 minute) before the first dropsonde.
   segment_id: HALO-0128_c3
   start: 2020-01-28 17:38:40
   end: 2020-01-28 18:37:38
@@ -72,11 +76,11 @@ segments:
   name: Outbound leg towards NTAS
   irregularities: []
   segment_id: HALO-0128_sl1
-  start: 2020-01-28 18:41:47
+  start: 2020-01-28 18:41:02
   end: 2020-01-28 19:01:46
 - kinds:
   - radar_calibration_tilted
-  name: Radar calibration
+  name: Radar calibration constant bank
   irregularities: []
   segment_id: HALO-0128_rct1
   start: 2020-01-28 19:07:44
@@ -86,7 +90,7 @@ segments:
   name: Inbound leg from NTAS
   irregularities: []
   segment_id: HALO-0128_sl2
-  start: 2020-01-28 19:29:47
+  start: 2020-01-28 19:28:47
   end: 2020-01-28 19:50:47
 - kinds:
   - circle
@@ -95,7 +99,7 @@ segments:
   segment_id: HALO-0128_c4
   start: 2020-01-28 19:56:50
   end: 2020-01-28 20:56:39
-  good_dropsondes: 12
+  good_dropsondes: 11
 - kinds:
   - circle_break
   name: Break between circle 4 and circle 5
@@ -122,12 +126,13 @@ segments:
   - circle
   name: Circle 6
   irregularities:
-  - "The circle already starts 5 minutes (instead of regularly 1 minute) before the\
-    \ first dropsonde. This is necessary to make it a full 360\xB0 circle."
+  - Circle starts 5 minutes (instead of regularly 1 minute) before the first dropsonde.
+  - There are 13 dropsondes in this circle. The last two sondes were launched one
+    after another, to check variability from measurement.
   segment_id: HALO-0128_c6
   start: 2020-01-28 22:24:35
   end: 2020-01-28 23:24:05
-  good_dropsondes: 12
+  good_dropsondes: 13
 - kinds:
   - circling
   name: Circling 2

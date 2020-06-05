@@ -5,11 +5,16 @@ contacts:
 - name: Marc Prange
   email: marc.prange@uni-hamburg.de
   tags:
-  - dataset creator
+  - lc
+  - dc
 - name: Mario Mech
   email: mario.mech@uni-koeln.de
   tags:
-  - flight PI
+  - pi
+- name: Theresa Lang
+  email: theresa.lang@uni-hamburg.de
+  tags:
+  - dc
 date: 2020-01-30
 flight_report: https://observations.ipsl.fr/aeris/eurec4a-data/REPORTS/HALO/2020/20200130/HALO-0130.pdf
 takeoff: 2020-01-30 11:19:34
