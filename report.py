@@ -260,10 +260,15 @@ def _main():
         sonde_track = bahamas.sel(time=sondes.launch_time, method="nearest")
 
         plot_data = []
+        warnings = list(checker.check_segment(seg, seg_bahamas, sondes))
+
         for plot in plots_for_kinds(seg.get("kinds", [])):
-            plot_data.append(fig2data_url(
-                plot(seg_bahamas, sonde_track, seg_before, seg_after)))
-            plt.close("all")
+            try:
+                plot_data.append(fig2data_url(
+                    plot(seg_bahamas, sonde_track, seg_before, seg_after)))
+                plt.close("all")
+            except Exception as e:
+                warnings.append("plot could not be created: {}".format(e))
 
         seg["plot_data"] = plot_data
         seg["sonde_count_in_data"] = len(sondes.launch_time)
@@ -271,7 +276,7 @@ def _main():
         if len(sondes.launch_time) > 0:
             seg["time_to_first_sonde"] = (sondes.launch_time.data[0] - t_start) / np.timedelta64(1, "s")
 
-        seg["warnings"] = list(checker.check_segment(seg, seg_bahamas, sondes))
+        seg["warnings"] = warnings
 
     flightdata["warnings"] = global_warnings
 
