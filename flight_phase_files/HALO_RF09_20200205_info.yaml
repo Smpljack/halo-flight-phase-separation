@@ -38,14 +38,14 @@ segments:
   irregularities: []
   segment_id: HALO-0205_c1
   start: 2020-02-05 09:36:26
-  end: 2020-02-05 10:33:03
+  end: 2020-02-05 10:32:59
   good_dropsondes: 12
 - kinds:
   - circle_break
   name: circle break between circle 1 and 2
   irregularities: []
   segment_id: HALO-0205_cb1
-  start: 2020-02-05 10:33:03
+  start: 2020-02-05 10:33:00
   end: 2020-02-05 10:46:45
 - kinds:
   - circle
@@ -53,7 +53,7 @@ segments:
   irregularities:
   - 3 sondes with no launch detect
   segment_id: HALO-0205_c2
-  start: 2020-02-05 10:46:45
+  start: 2020-02-05 10:46:46
   end: 2020-02-05 11:43:24
   good_dropsondes: 11
 - kinds:
@@ -61,15 +61,15 @@ segments:
   name: circle break between circle 2 and 3
   irregularities: []
   segment_id: HALO-0205_cb2
-  start: 2020-02-05 11:43:24
-  end: 2020-02-05 11:54:21
+  start: 2020-02-05 11:43:25
+  end: 2020-02-05 11:54:24
 - kinds:
   - circle
   name: circle 3
   irregularities:
   - "earlier start of cricle to get 360\xB0 before next flight segment"
   segment_id: HALO-0205_c3
-  start: 2020-02-05 11:54:21
+  start: 2020-02-05 11:54:25
   end: 2020-02-05 12:51:07
   good_dropsondes: 12
 - kinds:
@@ -77,18 +77,18 @@ segments:
   name: leg 1 outbound towards NTAS buoy
   irregularities: []
   segment_id: HALO-0205_sl1
-  start: 2020-02-05 12:54:08
-  end: 2020-02-05 13:19:23
+  start: 2020-02-05 12:53:40
+  end: 2020-02-05 13:19:33
 - kinds:
   - straight_leg
-  name: leg 1 inbound from NTAS buoy back to circle area
+  name: leg 2 inbound from NTAS buoy back to circle area
   irregularities: []
   segment_id: HALO-0205_sl2
   start: 2020-02-05 13:25:53
   end: 2020-02-05 13:55:04
 - kinds:
   - straight_leg
-  name: leg 3
+  name: leg 3 outbound North
   irregularities: []
   segment_id: HALO-0205_sl3
   start: 2020-02-05 14:00:18
@@ -98,7 +98,7 @@ segments:
   name: leg 4 TERRA underpass
   irregularities: []
   segment_id: HALO-0205_sl4
-  start: 2020-02-05 14:21:13
+  start: 2020-02-05 14:19:30
   end: 2020-02-05 14:31:56
 - kinds:
   - circling
@@ -116,15 +116,15 @@ segments:
   - 1 sonde with no launch detect
   segment_id: HALO-0205_c4
   start: 2020-02-05 14:35:52
-  end: 2020-02-05 15:32:04
+  end: 2020-02-05 15:32:05
   good_dropsondes: 11
 - kinds:
   - circle_break
   name: circle break between circle 4 and 5
   irregularities: []
   segment_id: HALO-0205_cb3
-  start: 2020-02-05 15:32:04
-  end: 2020-02-05 15:45:37
+  start: 2020-02-05 15:32:06
+  end: 2020-02-05 15:45:36
 - kinds:
   - circle
   name: circle 5
@@ -132,22 +132,22 @@ segments:
   - 3 sondes with no launch detect
   segment_id: HALO-0205_c5
   start: 2020-02-05 15:45:37
-  end: 2020-02-05 16:41:32
+  end: 2020-02-05 16:41:35
   good_dropsondes: 10
 - kinds:
   - circle_break
   name: circle break between circle 5 and 6
   irregularities: []
   segment_id: HALO-0205_cb4
-  start: 2020-02-05 16:41:32
-  end: 2020-02-05 16:55:11
+  start: 2020-02-05 16:41:36
+  end: 2020-02-05 16:55:18
 - kinds:
   - circle
   name: circle 6
   irregularities:
   - "earlier start of cricle to get 360\xB0 before next flight segment"
   segment_id: HALO-0205_c6
-  start: 2020-02-05 16:55:11
+  start: 2020-02-05 16:55:19
   end: 2020-02-05 17:51:12
   good_dropsondes: 12
 - kinds:
@@ -156,5 +156,5 @@ segments:
   name: lidar leg
   irregularities: []
   segment_id: HALO-0205_ll1
-  start: 2020-02-05 18:01:01
-  end: 2020-02-05 18:06:39
+  start: 2020-02-05 18:00:53
+  end: 2020-02-05 18:06:55
