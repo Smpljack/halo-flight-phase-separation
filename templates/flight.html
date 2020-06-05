@@ -109,6 +109,9 @@
             {% if segment.time_to_first_sonde %}
             <li>Time until first dropsonde launch: {{ segment.time_to_first_sonde }} s</li>
             {% endif %}
+            {% if segment.heading_difference %}
+            <li>Difference in heading from start to end: {{ segment.heading_difference }} deg</li>
+            {% endif %}
         </ul>
         {% for plot in segment.plot_data %}
         <p>

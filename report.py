@@ -278,6 +278,8 @@ def _main():
         seg["sonde_times"] = sondes.launch_time.data
         if len(sondes.launch_time) > 0:
             seg["time_to_first_sonde"] = (sondes.launch_time.data[0] - t_start) / np.timedelta64(1, "s")
+        if kinds_is_circle(seg["kinds"]):
+            seg["heading_difference"] = (seg_bahamas.heading.data[-1] - seg_bahamas.heading.data[0]) % 360
 
         seg["warnings"] = warnings
 
