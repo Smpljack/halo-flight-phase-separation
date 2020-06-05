@@ -192,6 +192,9 @@ class SegmentChecker:
         else:
             yield "segment has no kinds attribute"
 
+        if seg["end"] <= seg["start"]:
+            yield "segment ends before it starts"
+
         if "irregularities" in seg:
             irregularities = seg["irregularities"]
             if not isinstance(irregularities, list):
