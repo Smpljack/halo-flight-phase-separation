@@ -155,6 +155,7 @@ SPECIAL_PLOTS = {
     "radar_calibration_wiggle": [zoom_on("roll", "deg")],
     "radar_calibration_tilted": [zoom_on("roll", "deg")],
     "lidar_leg": [timeline_of("altitude", "m"), zoom_on("altitude", "m")],
+    "baccardi_calibration": [straight_leg_detail_plot, zoom_on("roll", "deg")],
 }
 
 def plots_for_kinds(kinds):
