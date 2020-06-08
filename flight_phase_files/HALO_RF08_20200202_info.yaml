@@ -24,7 +24,8 @@ segments:
 - kinds:
   - circle
   name: circle 1
-  irregularities: []
+  irregularities:
+  - Starts 38 sec prior to first dropsonde due to otherwise high roll.
   segment_id: HALO-0202_c1
   start: 2020-02-02 11:47:19
   end: 2020-02-02 12:42:57
@@ -58,13 +59,13 @@ segments:
   segment_id: HALO-0202_c3
   start: 2020-02-02 13:56:44
   end: 2020-02-02 14:51:59
-  good_dropsondes: 11
+  good_dropsondes: 10
 - kinds:
   - clover_leg
   name: clover 1
   irregularities: []
   segment_id: HALO-0202_cl1
-  start: 2020-02-02 15:04:14
+  start: 2020-02-02 15:03:14
   end: 2020-02-02 15:25:24
 - kinds:
   - clover_turn
@@ -132,7 +133,7 @@ segments:
   segment_id: HALO-0202_c6
   start: 2020-02-02 18:39:43
   end: 2020-02-02 19:34:53
-  good_dropsondes: 12
+  good_dropsondes: 11
 - kinds:
   - radar_calibration_tilted
   name: radar_cal_tilted
@@ -146,23 +147,24 @@ segments:
   irregularities: []
   segment_id: HALO-0202_rcw1
   start: 2020-02-02 19:49:03
-  end: 2020-02-02 19:50:58
+  end: 2020-02-02 19:51:51
 - kinds:
-  - lidar_leg
+  - lidar_calibration
   - straight_leg
-  name: lidar_leg
+  name: lidar_cal
   irregularities: []
-  segment_id: HALO-0202_ll1
-  start: 2020-02-02 19:51:49
+  segment_id: HALO-0202_lc1
+  start: 2020-02-02 19:51:51
   end: 2020-02-02 19:56:08
 - kinds:
   - circling
   name: circling 1
-  irregularities: []
+  irregularities:
+  - 'Circle 1: Starts 38 sec prior to first dropsonde due to otherwise high roll.'
   segment_id: HALO-0202_o1
   start: 2020-02-02 11:47:19
   end: 2020-02-02 14:51:59
-  good_dropsondes: 35
+  good_dropsondes: 34
 - kinds:
   - circling
   name: circling 2
@@ -171,4 +173,4 @@ segments:
   segment_id: HALO-0202_o2
   start: 2020-02-02 16:31:49
   end: 2020-02-02 19:34:53
-  good_dropsondes: 35
+  good_dropsondes: 34
