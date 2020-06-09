@@ -122,12 +122,21 @@ def zoom_on(var, unit):
         fig, (start_ax, end_ax) = plt.subplots(1, 2, figsize=(8,3), constrained_layout=True)
 
         tofs = np.timedelta64(30, "s")
+        tofs2 = np.timedelta64(31, "s")
 
         for ax, t, name in [(start_ax, seg.time.data[0], "start"),
-                      (end_ax, seg.time.data[-1], "end")]:
-            seg[var].plot(ax=ax, color=color_at, zorder=10)
-            seg_before[var].plot(ax=ax, color=color_before, alpha=.3, zorder=0)
-            seg_after[var].plot(ax=ax, color=color_after, alpha=.3, zorder=0)
+                            (end_ax, seg.time.data[-1], "end")]:
+            ts = slice(t - tofs2, t + tofs2)
+            s1 = seg[var].sel(time=ts)
+            s0 = seg_before[var].sel(time=ts)
+            s2 = seg_after[var].sel(time=ts)
+            if len(s1.time) > 0:
+                s1.plot(ax=ax, color=color_at, zorder=10)
+            if len(s0.time) > 0:
+                s0.plot(ax=ax, color=color_before, alpha=.3, zorder=0)
+            if len(s2.time) > 0:
+                s2.plot(ax=ax, color=color_after, alpha=.3, zorder=0)
+
             ax.set_title("zoom on {}".format(name))
             ax.set_ylabel("{} [{}]".format(var, unit))
 
