@@ -31,13 +31,13 @@ segments:
 - kinds: [circle]
   name: circle 1
   start: 2020-02-09 09:35:28
-  end: 2020-02-09 10:32:48
+  end: 2020-02-09 10:32:49
   segment_id: HALO-0209_c1
   irregularities: [begin is 41s before first launch due to roll angle at start]
   good_dropsondes: 11
 - kinds: [circle_break]
   name: circle break 1/2
-  start: 2020-02-09 10:32:24
+  start: 2020-02-09 10:32:49
   end: 2020-02-09 10:49:12
   segment_id: HALO-0209_cb1
   irregularities: []
