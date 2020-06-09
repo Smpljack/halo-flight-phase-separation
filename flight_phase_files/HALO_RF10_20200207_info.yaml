@@ -131,3 +131,17 @@ segments:
   end: 2020-02-07 20:54:48
   segment_id: HALO-0207_ll1
   irregularities: []
+- kinds: [circling]
+  name: circling 1
+  start: 2020-02-07 12:21:06
+  end: 2020-02-07 15:34:48
+  segment_id: HALO-0207_o1
+  irregularities: []
+  good_dropsondes: 33
+- kinds: [circling]
+  name: circling 2
+  start: 2020-02-07 17:14:54
+  end: 2020-02-07 20:38:25
+  segment_id: HALO-0207_o2
+  irregularities: [traffic_diversion, begin is at first launch due to roll angle at start]
+  good_dropsondes: 33
