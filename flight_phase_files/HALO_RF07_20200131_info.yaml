@@ -49,7 +49,7 @@ segments:
 - kinds:
   - circle
   name: circle 2
-  irregularities: []
+  irregularities: ['One sonde with no launch detect']
   segment_id: HALO-0131_c2
   start: 2020-01-31 16:40:53
   end: 2020-01-31 17:39:45
@@ -64,7 +64,7 @@ segments:
 - kinds:
   - circle
   name: circle 3
-  irregularities: ['Earlier start of circle to allow completion of 360 deg before next flight pattern']
+  irregularities: ['Earlier start of circle to allow completion of 360 deg before next flight pattern', 'One sonde with no launch detect']
   segment_id: HALO-0131_c3
   start: 2020-01-31 17:50:17
   end: 2020-01-31 18:49:16
@@ -74,7 +74,7 @@ segments:
   name: leg 1 outbound towards NTAS buoy
   irregularities: []
   segment_id: HALO-0131_sl1
-  start: 2020-01-31 18:52:58
+  start: 2020-01-31 18:52:35
   end: 2020-01-31 19:06:16
 - kinds:
   - radar_calibration_tilted
@@ -88,7 +88,7 @@ segments:
   name: leg 2 inbound from NTAS buoy back to circle area
   irregularities: []
   segment_id: HALO-0131_sl2
-  start: 2020-01-31 19:35:20
+  start: 2020-01-31 19:35:05
   end: 2020-01-31 19:42:56
 - kinds:
   - radar_calibration_wiggle
@@ -96,7 +96,7 @@ segments:
   irregularities: []
   segment_id: HALO-0131_rcw1
   start: 2020-01-31 19:42:57
-  end: 2020-01-31 19:47:10
+  end: 2020-01-31 19:44:47
 - kinds:
   - straight_leg
   name: leg 3 inbound from NTAS buoy back to circle area
