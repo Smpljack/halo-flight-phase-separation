@@ -6,6 +6,10 @@ contacts:
   email: marc.prange@uni-hamburg.de
   tags:
   - dataset creator
+- name: Theresa Mieslinger
+  email: theresa.mieslinger@mpimet.mpg.de
+  tags:
+  - dataset creator
 - name: Geet George
   email: geet.george@mpimet.mpg.de
   tags:
@@ -26,7 +30,7 @@ segments:
 - kinds:
   - circling
   name: circling phase 1
-  irregularities: ['Two sondes out of 36 with no launch detect.']
+  irregularities: []
   segment_id: HALO-0131_o1
   start: 2020-01-31 15:31:18
   end: 2020-01-31 18:49:16
@@ -44,15 +48,15 @@ segments:
   name: circle break between circle 1 and 2
   irregularities: []
   segment_id: HALO-0131_cb1
-  start: 2020-01-31 16:28:36
-  end: 2020-01-31 16:40:52
+  start: 2020-01-31 16:28:35
+  end: 2020-01-31 16:40:53
 - kinds:
   - circle
   name: circle 2
-  irregularities: ['One sonde with no launch detect']
+  irregularities: []
   segment_id: HALO-0131_c2
   start: 2020-01-31 16:40:53
-  end: 2020-01-31 17:39:45
+  end: 2020-01-31 17:39:46
   good_dropsondes: 11
 - kinds:
   - circle_break
@@ -60,11 +64,11 @@ segments:
   irregularities: []
   segment_id: HALO-0131_cb2
   start: 2020-01-31 17:39:46
-  end: 2020-01-31 17:50:16
+  end: 2020-01-31 17:50:17
 - kinds:
   - circle
   name: circle 3
-  irregularities: ['Earlier start of circle to allow completion of 360 deg before next flight pattern', 'One sonde with no launch detect']
+  irregularities: ['Earlier start of circle to allow completion of 360 deg before next flight pattern']
   segment_id: HALO-0131_c3
   start: 2020-01-31 17:50:17
   end: 2020-01-31 18:49:16
@@ -103,7 +107,7 @@ segments:
   irregularities: []
   segment_id: HALO-0131_sl3
   start: 2020-01-31 19:47:11
-  end: 2020-01-31 19:53:24
+  end: 2020-01-31 19:53:26
 - kinds:
   - circling
   name: circling phase 2
@@ -125,12 +129,12 @@ segments:
   name: circle break between circle 4 and 5
   irregularities: []
   segment_id: HALO-0131_cb3
-  start: 2020-01-31 20:57:40
-  end: 2020-01-31 21:15:38
+  start: 2020-01-31 20:57:39
+  end: 2020-01-31 21:15:39
 - kinds:
   - circle
   name: circle 5
-  irregularities: ['Start 74sec prior to first sonde.']
+  irregularities: ['Start 74 seconds prior to first sonde.']
   segment_id: HALO-0131_c5
   start: 2020-01-31 21:15:39
   end: 2020-01-31 22:14:17
@@ -140,8 +144,8 @@ segments:
   name: circle break between circle 5 and 6
   irregularities: []
   segment_id: HALO-0131_cb4
-  start: 2020-01-31 22:14:18
-  end: 2020-01-31 22:26:30
+  start: 2020-01-31 22:14:17
+  end: 2020-01-31 22:26:31
 - kinds:
   - circle
   name: circle 6
@@ -157,4 +161,4 @@ segments:
   irregularities: []
   segment_id: HALO-0131_ll1
   start: 2020-01-31 23:34:30
-  end: 2020-01-31 23:37:29
+  end: 2020-01-31 23:37:32
