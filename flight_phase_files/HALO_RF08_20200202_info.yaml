@@ -1,5 +1,6 @@
 name: RF08
 mission: EUREC4A
+platform: HALO
 flight_id: HALO-0202
 contacts:
 - name: Marc Prange

@@ -1,5 +1,6 @@
 name: RF09
 mission: EUREC4A
+platform: HALO
 flight_id: HALO-0205
 contacts:
 - name: Marc Prange
