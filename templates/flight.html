@@ -114,7 +114,14 @@
         </p>
         {% endfor %}
         <ul>
-            <li>Sondes:
+            {% if "dropsondes" in segment %}
+            <li>Sondes in segment file:
+                {% for flag, sondes in segment.dropsondes.items() | sort %}
+                <span class="tag flag_{{ flag }}">{{ sondes | length }} {{ flag }}</span>
+                {% endfor %}
+            </li>
+            {% endif %}
+            <li>Sondes in sondes.yaml:
                 {% for flag, sondes in segment.sondes_by_flag.items() | sort %}
                 <span class="tag flag_{{ flag }}">{{ sondes | length }} {{ flag }}</span>
                 {% endfor %}

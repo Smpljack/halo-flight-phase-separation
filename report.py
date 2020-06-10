@@ -193,7 +193,7 @@ class SegmentChecker:
         self.used_segment_ids = set()
         self.flight_id = flight.get("flight_id", "")
 
-    def check_segment(self, seg, bahamas, sonde_times):
+    def check_segment(self, seg, bahamas, sondes_by_flag):
         if "segment_id" in seg:
             segment_id = seg["segment_id"]
             if not segment_id.startswith(self.flight_id):
@@ -228,14 +228,33 @@ class SegmentChecker:
             yield "segment has no irregularities attribute"
             irregularities = []
 
-        if kinds_is_circle(kinds) and "good_dropsondes" not in seg:
-            yield "segment is a circle and has no good_dropsondes attribute"
+        good_dropsondes = 0
+        if "good_dropsondes" in seg:
+            yield "good_dropsondes attribute is deprecated. uses dropsondes instead"
+            good_dropsondes = seg["good_dropsondes"]
 
-        if "good_dropsondes" in seg and not isinstance(seg["good_dropsondes"], int):
-            yield "good_dropsondes is not an int"
+        if "dropsondes" not in seg:
+            yield "dropsondes attribute is missing"
+        elif not isinstance(seg["dropsondes"], dict):
+            yield "dropsondes is not a mapping"
+        else:
+            for flag, sonde_ids in seg["dropsondes"].items():
+                if not isinstance(sonde_ids, list):
+                    yield "dropsondes with flag {} are not a list".format(flag)
+            good_dropsondes = len(seg["dropsondes"].get("GOOD", []))
 
-        if "good_dropsondes" in seg and seg["good_dropsondes"] != len(sonde_times):
-            yield "inconsistent number of good sondes"
+            dropsondes_from_info = {f: [s["sonde_id"] for s in sondes]
+                                    for f, sondes in sondes_by_flag.items()}
+            dropsondes_from_segment = {f: s
+                                       for f, s in seg["dropsondes"].items()
+                                       if len(s) > 0}
+            if dropsondes_from_segment != dropsondes_from_info:
+                yield "dropsondes in segment file are different from sondes in sondes.yaml"
+
+        sonde_times = [s["launch_time"] for s in sondes_by_flag.get("GOOD", [])]
+
+        if good_dropsondes != len(sonde_times):
+            yield "inconsistent number of good sondes between segment file and sondes.yaml"
 
         t_start = np.datetime64(seg["start"])
         if kinds_is_circle(kinds) and len(sonde_times) > 0:
@@ -306,10 +325,7 @@ def _main():
 
         seg["sondes_by_flag"] = sondes_by_flag
 
-        if args.sonde_info is not None:
-            sonde_times = [s["launch_time"] for s in sondes_by_flag.get("GOOD", [])]
-        else:
-            sonde_times = []
+        sonde_times = [s["launch_time"] for s in sondes_by_flag.get("GOOD", [])]
 
         sonde_tracks_by_flag = {
             f: bahamas.sel(time=[s["launch_time"] for s in sondes], method="nearest")
@@ -317,7 +333,7 @@ def _main():
         }
 
         plot_data = []
-        warnings = list(checker.check_segment(seg, seg_bahamas, sonde_times))
+        warnings = list(checker.check_segment(seg, seg_bahamas, sondes_by_flag))
 
         for plot in plots_for_kinds(seg.get("kinds", [])):
             try:
