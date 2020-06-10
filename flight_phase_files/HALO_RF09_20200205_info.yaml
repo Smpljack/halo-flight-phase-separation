@@ -6,11 +6,12 @@ contacts:
 - name: Marc Prange
   email: marc.prange@uni-hamburg.de
   tags:
-  - dataset creator
+  - lc
+  - dp
 - name: Theresa Mieslinger
   email: theresa.mieslinger@mpimet.mpg.de
   tags:
-  - dataset creator
+  - dp
 - name: Bernhard Mayer
   email: bernhard.mayer@lmu.de
   tags:
@@ -107,7 +108,7 @@ segments:
   name: circling phase 2
   irregularities: []
   segment_id: HALO-0205_o2
-  start: 2020-02-05 14:35:52
+  start: 2020-02-05 14:35:53
   end: 2020-02-05 17:51:12
   good_dropsondes: 33
 - kinds:
@@ -115,15 +116,15 @@ segments:
   name: circle 4
   irregularities: []
   segment_id: HALO-0205_c4
-  start: 2020-02-05 14:35:52
-  end: 2020-02-05 15:32:05
+  start: 2020-02-05 14:35:53
+  end: 2020-02-05 15:32:06
   good_dropsondes: 11
 - kinds:
   - circle_break
   name: circle break between circle 4 and 5
   irregularities: []
   segment_id: HALO-0205_cb3
-  start: 2020-02-05 15:32:05
+  start: 2020-02-05 15:32:06
   end: 2020-02-05 15:45:37
 - kinds:
   - circle
