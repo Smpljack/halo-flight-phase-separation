@@ -6,15 +6,17 @@ contacts:
 - name: Marc Prange
   email: marc.prange@uni-hamburg.de
   tags:
-  - dataset creator
+  - dp
+  - lc
 - name: Theresa Mieslinger
   email: theresa.mieslinger@mpimet.mpg.de
   tags:
-  - dataset creator
+  - dp
 - name: Geet George
   email: geet.george@mpimet.mpg.de
   tags:
-  - flight PI
+  - pi
+  - cm
 date: 2020-01-31
 flight_report: https://observations.ipsl.fr/aeris/eurec4a-data/REPORTS/HALO/2020/20200131/HALO_0131.pdf
 takeoff: 2020-01-31 15:08:35
@@ -33,47 +35,138 @@ segments:
   name: circling phase 1
   irregularities: []
   segment_id: HALO-0131_o1
-  start: 2020-01-31 15:31:18
+  start: 2020-01-31 15:31:12
   end: 2020-01-31 18:49:16
-  good_dropsondes: 34
+  dropsondes:
+    GOOD:
+    - HALO-0131_s02
+    - HALO-0131_s03
+    - HALO-0131_s04
+    - HALO-0131_s05
+    - HALO-0131_s06
+    - HALO-0131_s07
+    - HALO-0131_s08
+    - HALO-0131_s09
+    - HALO-0131_s10
+    - HALO-0131_s11
+    - HALO-0131_s12
+    - HALO-0131_s13
+    - HALO-0131_s14
+    - HALO-0131_s15
+    - HALO-0131_s16
+    - HALO-0131_s17
+    - HALO-0131_s18
+    - HALO-0131_s19
+    - HALO-0131_s21
+    - HALO-0131_s22
+    - HALO-0131_s23
+    - HALO-0131_s24
+    - HALO-0131_s25
+    - HALO-0131_s26
+    - HALO-0131_s27
+    - HALO-0131_s28
+    - HALO-0131_s30
+    - HALO-0131_s31
+    - HALO-0131_s32
+    - HALO-0131_s33
+    - HALO-0131_s35
+    - HALO-0131_s36
+    BAD:
+    - HALO-0131_s20
+    - HALO-0131_s34
+    UGLY:
+    - HALO-0131_s29
 - kinds:
   - circle
   name: circle 1
   irregularities: []
   segment_id: HALO-0131_c1
-  start: 2020-01-31 15:31:18
-  end: 2020-01-31 16:28:35
-  good_dropsondes: 11
+  start: 2020-01-31 15:31:12
+  end: 2020-01-31 16:28:29
+  dropsondes:
+    GOOD:
+    - HALO-0131_s02
+    - HALO-0131_s03
+    - HALO-0131_s04
+    - HALO-0131_s05
+    - HALO-0131_s06
+    - HALO-0131_s07
+    - HALO-0131_s08
+    - HALO-0131_s09
+    - HALO-0131_s10
+    - HALO-0131_s11
+    - HALO-0131_s12
+    BAD: []
+    UGLY: []
 - kinds:
   - circle_break
   name: circle break between circle 1 and 2
   irregularities: []
   segment_id: HALO-0131_cb1
-  start: 2020-01-31 16:28:35
-  end: 2020-01-31 16:40:53
+  start: 2020-01-31 16:28:29
+  end: 2020-01-31 16:40:47
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
 - kinds:
   - circle
   name: circle 2
   irregularities: []
   segment_id: HALO-0131_c2
-  start: 2020-01-31 16:40:53
-  end: 2020-01-31 17:39:46
-  good_dropsondes: 11
+  start: 2020-01-31 16:40:47
+  end: 2020-01-31 17:39:38
+  dropsondes:
+    GOOD:
+    - HALO-0131_s13
+    - HALO-0131_s14
+    - HALO-0131_s15
+    - HALO-0131_s16
+    - HALO-0131_s17
+    - HALO-0131_s18
+    - HALO-0131_s19
+    - HALO-0131_s21
+    - HALO-0131_s22
+    - HALO-0131_s23
+    - HALO-0131_s24
+    BAD:
+    - HALO-0131_s20
+    UGLY: []
 - kinds:
   - circle_break
   name: circle break between circle 2 and 3
   irregularities: []
   segment_id: HALO-0131_cb2
-  start: 2020-01-31 17:39:46
+  start: 2020-01-31 17:39:38
   end: 2020-01-31 17:50:17
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
 - kinds:
   - circle
   name: circle 3
-  irregularities: ['Earlier start of circle to allow completion of 360 deg before next flight pattern']
+  irregularities: [Earlier start of circle to allow completion of 360 deg before next
+      flight pattern]
   segment_id: HALO-0131_c3
   start: 2020-01-31 17:50:17
   end: 2020-01-31 18:49:16
-  good_dropsondes: 12
+  dropsondes:
+    GOOD:
+    - HALO-0131_s25
+    - HALO-0131_s26
+    - HALO-0131_s27
+    - HALO-0131_s28
+    - HALO-0131_s30
+    - HALO-0131_s31
+    - HALO-0131_s32
+    - HALO-0131_s33
+    - HALO-0131_s35
+    - HALO-0131_s36
+    BAD:
+    - HALO-0131_s34
+    UGLY:
+    - HALO-0131_s29
 - kinds:
   - straight_leg
   name: leg 1 outbound towards NTAS buoy
@@ -81,6 +174,11 @@ segments:
   segment_id: HALO-0131_sl1
   start: 2020-01-31 18:52:35
   end: 2020-01-31 19:06:16
+  dropsondes:
+    GOOD: []
+    BAD:
+    - HALO-0131_s37
+    UGLY: []
 - kinds:
   - radar_calibration_tilted
   name: radar calibration circles
@@ -88,6 +186,10 @@ segments:
   segment_id: HALO-0131_rct1
   start: 2020-01-31 19:07:40
   end: 2020-01-31 19:30:47
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
 - kinds:
   - straight_leg
   name: leg 2 inbound from NTAS buoy back to circle area
@@ -95,6 +197,11 @@ segments:
   segment_id: HALO-0131_sl2
   start: 2020-01-31 19:35:05
   end: 2020-01-31 19:42:56
+  dropsondes:
+    GOOD:
+    - HALO-0131_s38
+    BAD: []
+    UGLY: []
 - kinds:
   - radar_calibration_wiggle
   name: radar calibration wiggle pattern
@@ -102,6 +209,10 @@ segments:
   segment_id: HALO-0131_rcw1
   start: 2020-01-31 19:42:57
   end: 2020-01-31 19:44:47
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
 - kinds:
   - straight_leg
   name: leg 3 inbound from NTAS buoy back to circle area
@@ -109,53 +220,149 @@ segments:
   segment_id: HALO-0131_sl3
   start: 2020-01-31 19:47:11
   end: 2020-01-31 19:53:26
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
 - kinds:
   - circling
   name: circling phase 2
   irregularities: []
   segment_id: HALO-0131_o2
-  start: 2020-01-31 19:58:34
+  start: 2020-01-31 19:58:32
   end: 2020-01-31 23:25:38
-  good_dropsondes: 36
+  dropsondes:
+    GOOD:
+    - HALO-0131_s39
+    - HALO-0131_s40
+    - HALO-0131_s41
+    - HALO-0131_s42
+    - HALO-0131_s43
+    - HALO-0131_s44
+    - HALO-0131_s45
+    - HALO-0131_s46
+    - HALO-0131_s47
+    - HALO-0131_s48
+    - HALO-0131_s49
+    - HALO-0131_s50
+    - HALO-0131_s51
+    - HALO-0131_s52
+    - HALO-0131_s53
+    - HALO-0131_s54
+    - HALO-0131_s55
+    - HALO-0131_s56
+    - HALO-0131_s57
+    - HALO-0131_s58
+    - HALO-0131_s59
+    - HALO-0131_s60
+    - HALO-0131_s61
+    - HALO-0131_s62
+    - HALO-0131_s63
+    - HALO-0131_s64
+    - HALO-0131_s65
+    - HALO-0131_s66
+    - HALO-0131_s67
+    - HALO-0131_s68
+    - HALO-0131_s69
+    - HALO-0131_s70
+    - HALO-0131_s71
+    - HALO-0131_s72
+    - HALO-0131_s74
+    BAD: []
+    UGLY:
+    - HALO-0131_s73
 - kinds:
   - circle
   name: circle 4
   irregularities: []
   segment_id: HALO-0131_c4
-  start: 2020-01-31 19:58:34
-  end: 2020-01-31 20:57:39
-  good_dropsondes: 12
+  start: 2020-01-31 19:58:32
+  end: 2020-01-31 20:57:37
+  dropsondes:
+    GOOD:
+    - HALO-0131_s39
+    - HALO-0131_s40
+    - HALO-0131_s41
+    - HALO-0131_s42
+    - HALO-0131_s43
+    - HALO-0131_s44
+    - HALO-0131_s45
+    - HALO-0131_s46
+    - HALO-0131_s47
+    - HALO-0131_s48
+    - HALO-0131_s49
+    - HALO-0131_s50
+    BAD: []
+    UGLY: []
 - kinds:
   - circle_break
   name: circle break between circle 4 and 5
   irregularities: []
   segment_id: HALO-0131_cb3
   start: 2020-01-31 20:57:39
-  end: 2020-01-31 21:15:39
+  end: 2020-01-31 21:15:53
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
 - kinds:
   - circle
   name: circle 5
-  irregularities: ['Start 74 seconds prior to first sonde.']
+  irregularities: []
   segment_id: HALO-0131_c5
-  start: 2020-01-31 21:15:39
-  end: 2020-01-31 22:14:17
-  good_dropsondes: 12
+  start: 2020-01-31 21:15:53
+  end: 2020-01-31 22:14:31
+  dropsondes:
+    GOOD:
+    - HALO-0131_s51
+    - HALO-0131_s52
+    - HALO-0131_s53
+    - HALO-0131_s54
+    - HALO-0131_s55
+    - HALO-0131_s56
+    - HALO-0131_s57
+    - HALO-0131_s58
+    - HALO-0131_s59
+    - HALO-0131_s60
+    - HALO-0131_s61
+    - HALO-0131_s62
+    BAD: []
+    UGLY: []
 - kinds:
   - circle_break
   name: circle break between circle 5 and 6
   irregularities: []
   segment_id: HALO-0131_cb4
-  start: 2020-01-31 22:14:17
+  start: 2020-01-31 22:14:31
   end: 2020-01-31 22:26:31
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
 - kinds:
   - circle
   name: circle 6
-  irregularities: ['last sonde slightly delayed to circumvent conflict with P3.']
+  irregularities: [last sonde slightly delayed to circumvent conflict with P3.]
   segment_id: HALO-0131_c6
   start: 2020-01-31 22:26:31
   end: 2020-01-31 23:25:38
-  good_dropsondes: 12
-- kinds: 
+  dropsondes:
+    GOOD:
+    - HALO-0131_s63
+    - HALO-0131_s64
+    - HALO-0131_s65
+    - HALO-0131_s66
+    - HALO-0131_s67
+    - HALO-0131_s68
+    - HALO-0131_s69
+    - HALO-0131_s70
+    - HALO-0131_s71
+    - HALO-0131_s72
+    - HALO-0131_s74
+    BAD: []
+    UGLY:
+    - HALO-0131_s73
+- kinds:
   - lidar_leg
   - straight_leg
   name: lidar leg
@@ -163,3 +370,7 @@ segments:
   segment_id: HALO-0131_ll1
   start: 2020-01-31 23:34:30
   end: 2020-01-31 23:37:32
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
