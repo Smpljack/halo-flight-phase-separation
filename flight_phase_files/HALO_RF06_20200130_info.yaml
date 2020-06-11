@@ -1,5 +1,6 @@
 name: RF06
 mission: EUREC4A
+platform: HALO
 flight_id: HALO-0130
 contacts:
 - name: Marc Prange
