@@ -1,0 +1,53 @@
+name: RF15
+mission: EUREC4A
+flight_id: HALO-0218
+contacts:
+- name: Marc Prange
+  email: marc.prange@uni-hamburg.de
+  tags:
+      - lc
+- name: Heike Konow
+  email: heike.konow@uni-hamburg.de
+  tags:
+  - dc
+- name: Silke Gross
+  email: silke.gross@dlr.de
+  tags:
+  - flight PI
+date: 2020-02-18
+flight_report: []
+takeoff: 2020-02-18 10:11:05
+landing: 2020-02-18 18:55:31
+events: []
+remarks:
+- Ferry flight from Barbados to Oberpfaffenhofen
+segments:
+- kinds:
+  - straight_leg
+  name: Constant altitude transfer leg 1
+  irregularities: []
+  segment_id: HALO-0218_sl1
+  start: 2020-02-18 10:42:32
+  end: 2020-02-18 11:06:34
+- kinds:
+  - straight_leg
+  name: Constant altitude transfer leg 2
+  irregularities: []
+  segment_id: HALO-0218_sl2
+  start: 2020-02-18 11:07:24
+  end: 2020-02-18 11:52:46
+- kinds:
+  - straight_leg
+  name: Constant altitude transfer leg 3
+  irregularities: []
+  segment_id: HALO-0218_sl3
+  start: 2020-02-18 11:53:46
+  end: 2020-02-18 13:22:00
+- kinds:
+  - straight_leg
+  name: Constant altitude transfer leg 4
+  irregularities:
+  - Roll angle is larger during this segment, but without heading change. Probably turbulence
+  segment_id: HALO-0218_sl4
+  start: 2020-02-18 13:23:00
+  end: 2020-02-18 14:43:03
