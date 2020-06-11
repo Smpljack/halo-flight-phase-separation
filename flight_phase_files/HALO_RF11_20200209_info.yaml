@@ -11,6 +11,10 @@ contacts:
   email: s.schnitt@uni-koeln.de
   tags:
   - flight PI
+- name: Tobias Kölling
+  email: tobias.koelling@physik.uni-muenchen.de
+  tags:
+  - dataset creator
 date: 2020-02-09
 flight_report: https://observations.ipsl.fr/aeris/eurec4a-data/REPORTS/HALO/2020/20200209/HALO-0209.pdf
 takeoff: 2020-02-09 09:14:31
@@ -23,68 +27,127 @@ remarks:
 - At the 1st Ron Brown flyover a dropsonde was launched.
 - Mostly shallow sugar clouds during the flight.
 - Two cold pools entered the circle during the 2nd circle set.
+- At the beginning of the leg inbound from NTAS, a diversion due to traffic was needed.
 segments:
-- kind: circle
-  name: c1
-  start: 2020-02-09 09:36:08
-  end: 2020-02-09 10:27:24
-- kind: circle_break
-  name: cb1to2
-  start: 2020-02-09 10:27:24
-  end: 2020-02-09 10:50:11
-- kind: circle
-  name: c2
-  start: 2020-02-09 10:50:11
-  end: 2020-02-09 11:42:45
-- kind: circle_break
-  name: cb2to3
-  start: 2020-02-09 11:42:45
-  end: 2020-02-09 11:59:21
-- kind: circle
-  name: c3
-  start: 2020-02-09 11:59:21
-  end: 2020-02-09 12:54:05
-- kind: straight_leg
-  name: leg1_outbound_NTAS
-  start: 2020-02-09 12:59:59
-  end: 2020-02-09 13:17:03
-- kind: radar_calibration_wiggle
-  name: radar_cal_wiggle1
-  start: 2020-02-09 13:17:03
-  end: 2020-02-09 13:19:42
-- kind: radar_calibration_tilted
-  name: radar_cal_tilted
+- kinds: [circle]
+  name: circle 1
+  start: 2020-02-09 09:35:28
+  end: 2020-02-09 10:32:49
+  segment_id: HALO-0209_c1
+  irregularities: [begin is 41s before first launch due to roll angle at start]
+  good_dropsondes: 11
+- kinds: [circle_break]
+  name: circle break 1/2
+  start: 2020-02-09 10:32:49
+  end: 2020-02-09 10:49:12
+  segment_id: HALO-0209_cb1
+  irregularities: []
+- kinds: [circle]
+  name: circle 2 
+  start: 2020-02-09 10:49:12
+  end: 2020-02-09 11:46:44
+  segment_id: HALO-0209_c2
+  irregularities: []
+  good_dropsondes: 10
+- kinds: [circle_break]
+  name: circle break 2/3
+  start: 2020-02-09 11:46:44
+  end: 2020-02-09 11:57:36
+  segment_id: HALO-0209_cb2
+  irregularities: []
+- kinds: [circle]
+  name: circle 3
+  start: 2020-02-09 11:57:36
+  end: 2020-02-09 12:56:03
+  segment_id: HALO-0209_c3
+  irregularities: [begin is 105s before first launch due to roll angle at end]
+  good_dropsondes: 11
+- kinds: [straight_leg]
+  name: outbound leg to NTAS
+  start: 2020-02-09 12:58:25
+  end: 2020-02-09 13:17:13
+  segment_id: HALO-0209_sl1
+  irregularities: []
+- kinds: [radar_calibration_wiggle]
+  name: radar wiggle pattern 1
+  start: 2020-02-09 13:17:13
+  end: 2020-02-09 13:19:11
+  segment_id: HALO-0209_rcw1
+  irregularities: []
+- kinds: [radar_calibration_tilted]
+  name: tilted radar calibration pattern
   start: 2020-02-09 13:19:42
   end: 2020-02-09 13:28:40
-- kind: radar_calibration_wiggle
-  name: radar_cal_wiggle2
-  start: 2020-02-09 13:28:40
-  end: 2020-02-09 13:36:18
-- kind: straight_leg
-  name: leg2_inbound_NTAS
-  start: 2020-02-09 13:36:18
-  end: 2020-02-09 13:49:00
-- kind: circle
-  name: c4
-  start: 2020-02-09 13:56:25
-  end: 2020-02-09 14:52:59
-- kind: circle_break
-  name: cb4to5
-  start: 2020-02-09 14:52:59
-  end: 2020-02-09 15:07:18
-- kind: circle
-  name: c5
-  start: 2020-02-09 15:07:18
-  end: 2020-02-09 16:03:31
-- kind: circle_break
-  name: cb5to6
-  start: 2020-02-09 16:03:31
-  end: 2020-02-09 16:28:13
-- kind: circle
-  name: c6
-  start: 2020-02-09 16:28:13
-  end: 2020-02-09 17:23:35
-- kind: lidar_calibration
-  name: lidar_cal
-  start: 2020-02-09 17:34:28
-  end: 2020-02-09 17:47:16
+  segment_id: HALO-0209_rct1
+  irregularities: []
+- kinds: [radar_calibration_wiggle]
+  name: radar wiggle pattern 2
+  start: 2020-02-09 13:32:59
+  end: 2020-02-09 13:35:14
+  segment_id: HALO-0209_rcw2
+  irregularities: []
+- kinds: [straight_leg]
+  name: inbound leg from NTAS
+  start: 2020-02-09 13:35:14
+  end: 2020-02-09 13:35:32
+  segment_id: HALO-0209_sl2
+  irregularities: []
+- kinds: [straight_leg]
+  name: inbound leg from NTAS
+  start: 2020-02-09 13:40:40
+  end: 2020-02-09 13:51:08
+  segment_id: HALO-0209_sl3
+  irregularities: []
+- kinds: [circle]
+  name: circle 4
+  start: 2020-02-09 13:55:26
+  end: 2020-02-09 14:56:14
+  segment_id: HALO-0209_c4
+  irregularities: []
+  good_dropsondes: 11
+- kinds: [circle_break]
+  name: circle break 4/5
+  start: 2020-02-09 14:56:14
+  end: 2020-02-09 15:06:19
+  segment_id: HALO-0209_cb3
+  irregularities: []
+- kinds: [circle]
+  name: circle 5
+  start: 2020-02-09 15:06:19
+  end: 2020-02-09 16:08:24
+  segment_id: HALO-0209_c5
+  irregularities: []
+  good_dropsondes: 12
+- kinds: [circle_break]
+  name: circle break 5/6
+  start: 2020-02-09 16:08:24
+  end: 2020-02-09 16:22:03
+  segment_id: HALO-0209_cb4
+  irregularities: []
+- kinds: [circle]
+  name: circle 6
+  start: 2020-02-09 16:22:03
+  end: 2020-02-09 17:24:26
+  segment_id: HALO-0209_c6
+  irregularities: [begin is 371s before first launch due to roll angle at end]
+  good_dropsondes: 12
+- kinds: [straight_leg, lidar_leg]
+  name: low level lidar leg
+  start: 2020-02-09 17:34:18
+  end: 2020-02-09 17:47:14
+  segment_id: HALO-0209_ll1
+  irregularities: []
+- kinds: [circling]
+  name: circling 1
+  start: 2020-02-09 09:35:28
+  end: 2020-02-09 12:56:03
+  segment_id: HALO-0209_o1
+  irregularities: [begin is 41s before first launch due to roll angle at start]
+  good_dropsondes: 32
+- kinds: [circling]
+  name: circling 2
+  start: 2020-02-09 13:55:26
+  end: 2020-02-09 17:24:26
+  segment_id: HALO-0209_o2
+  irregularities: []
+  good_dropsondes: 35
