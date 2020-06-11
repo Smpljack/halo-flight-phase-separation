@@ -1,0 +1,732 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>flight_segm_rf15_0218</title><meta name="generator" content="MATLAB 9.5"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2020-06-11"><meta name="DC.source" content="flight_segm_rf15_0218.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">HALO_RF15_20200218_info</a></li><li><a href="#2">Read data</a></li><li><a href="#3">Flight elements</a></li><li><a href="#4">Flight path</a></li><li><a href="#5">Flight overview</a></li><li><a href="#6">Segment start: straight leg</a></li><li><a href="#7">Segment end: straight leg</a></li><li><a href="#8">Look large roll</a></li><li><a href="#9">Flight path: straight leg</a></li><li><a href="#10">Segment times: straight leg</a></li><li><a href="#11">Functions</a></li></ul></div><h2 id="1">HALO_RF15_20200218_info</h2><pre>Code to identify flight segment for the HALO ferry flight from Barbados
+to Oberpfaffenhofen. Only one straight leg segment is identified. The
+later portion of the flight is omitted since it is far outside the
+subtropics.</pre><pre class="codeinput">flightdate = <span class="string">'20200218'</span>;
+</pre><h2 id="2">Read data</h2><pre class="codeinput"><span class="comment">% Define data directory</span>
+basefolder = <span class="string">'/Users/heike/Documents/eurec4a/data_processing/EUREC4A_campaignData/all_nc/'</span>;
+<span class="comment">% Find bahamas file</span>
+bahamasfile = listFiles([basefolder <span class="string">'*bahamas*'</span> flightdate <span class="string">'*.nc'</span>], <span class="string">'full'</span>, <span class="string">'latest'</span>);
+
+<span class="comment">% Load data</span>
+t = datetime(ncread(bahamasfile, <span class="string">'time'</span>), <span class="string">'convertfrom'</span>, <span class="string">'posixtime'</span>);
+lat = ncread(bahamasfile, <span class="string">'lat'</span>);
+lon = ncread(bahamasfile, <span class="string">'lon'</span>);
+alt = ncread(bahamasfile, <span class="string">'altitude'</span>);
+roll = ncread(bahamasfile, <span class="string">'roll'</span>);
+pitch = ncread(bahamasfile, <span class="string">'pitch'</span>);
+head = ncread(bahamasfile, <span class="string">'heading'</span>);
+<span class="comment">% Calculate altitude change</span>
+alt_dt = diff(alt);
+</pre><h2 id="3">Flight elements</h2><pre class="codeinput"><span class="comment">% Take off time</span>
+disp([<span class="string">'takeoff: '</span> datestr(t(1), <span class="string">'yyyy-mm-dd HH:MM:SS'</span>)])
+<span class="comment">% Landing time</span>
+disp([<span class="string">'landing: '</span> datestr(t(end), <span class="string">'yyyy-mm-dd HH:MM:SS'</span>)])
+</pre><pre class="codeoutput">takeoff: 2020-02-18 10:11:05
+landing: 2020-02-18 18:55:31
+</pre><h2 id="4">Flight path</h2><pre class="codeinput"><span class="comment">% Initialize figure</span>
+fh(1) = figure(1);
+set(fh(1),<span class="string">'Position'</span>, [223 406 725 506])
+
+<span class="comment">% Initialize map</span>
+x = initMap([12 50], [-60 15]);
+x.XLabel.Visible = <span class="string">'on'</span>;
+x.YLabel.Visible = <span class="string">'on'</span>;
+
+<span class="comment">% Plot</span>
+ah = plotm(lat, lon, <span class="string">'k'</span>, <span class="string">'Linewidth'</span>, 2);
+xlabel(<span class="string">'Longitude'</span>)
+ylabel(<span class="string">'Latitude'</span>)
+<span class="comment">% Make pretty</span>
+finetunefigures
+setFontSize(gcf, 14)
+grid <span class="string">on</span>
+box <span class="string">on</span>
+</pre><img vspace="5" hspace="5" src="flight_segm_rf15_0218_01.png" alt=""> <h2 id="5">Flight overview</h2><pre class="codeinput">fh(2) = plotAttitude(2, [], t, alt, alt_dt, roll, head, pitch, [0 0 0]);
+</pre><img vspace="5" hspace="5" src="flight_segm_rf15_0218_02.png" alt=""> <h2 id="6">Segment start: straight leg</h2><pre class="codeinput"><span class="comment">% Find first occurrence of altitude increase &lt; 0.3 m/s after take off</span>
+ind_end_ascent = find(abs(alt_dt)&lt;0.3, 1, <span class="string">'first'</span>);
+
+<span class="comment">% Initialize figure</span>
+fh(3) = figure(3);
+set(fh(3), <span class="string">'Position'</span>, [499 51 851 689])
+
+<span class="comment">% Plot altitude change</span>
+subplot(2,1,1)
+plot(t(1:end-1), alt_dt, <span class="string">'-k'</span>, <span class="string">'LineWidth'</span>, 2)
+hold <span class="string">on</span>
+plot(t(ind_end_ascent-1), alt_dt(ind_end_ascent), <span class="string">'xr'</span>, <span class="string">'MarkerSize'</span>, 18, <span class="string">'LineWidth'</span>, 4)
+hold <span class="string">off</span>
+xlim([t(1) datetime(2020,2,18,11,0,0)])
+ylabel(<span class="string">'dh/dt (m/s)'</span>)
+finetunefigures
+
+<span class="comment">% Plot altitude</span>
+subplot(2,1,2)
+plot(t(1:end-1), alt(1:end-1), <span class="string">'k'</span>, <span class="string">'LineWidth'</span>, 2)
+hold <span class="string">on</span>
+plot(t(ind_end_ascent-1), alt(ind_end_ascent-1), <span class="string">'xr'</span>, <span class="string">'MarkerSize'</span>, 18, <span class="string">'LineWidth'</span>, 4)
+hold <span class="string">off</span>
+xlim([t(1) datetime(2020,2,18,11,0,0)])
+ylabel(<span class="string">'altitude (m)'</span>)
+finetunefigures
+removeScientificLabel(gca, <span class="string">'y'</span>)
+</pre><img vspace="5" hspace="5" src="flight_segm_rf15_0218_03.png" alt=""> <h2 id="7">Segment end: straight leg</h2><pre class="codeinput"><span class="comment">% Find first occurrence of altitude increas of 0.5 m/s after</span>
+<span class="comment">% 2020-02-18 15:22:00 (identified by eye)</span>
+ind_climb = find(t(1:end-1)&gt;datetime(2020, 02, 18, 15, 22, 00)&amp;alt_dt&gt;0.5, 1, <span class="string">'first'</span>)-1;
+
+<span class="comment">% Initialize figure</span>
+fh(4) = figure(4);
+set(fh(4), <span class="string">'Position'</span>, [499 51 851 689])
+
+<span class="comment">% Plot altitude change</span>
+subplot(2,1,1)
+plot(t(1:end-1), alt_dt, <span class="string">'-k'</span>, <span class="string">'LineWidth'</span>, 2)
+hold <span class="string">on</span>
+plot(t(ind_climb-1), alt_dt(ind_climb), <span class="string">'xr'</span>, <span class="string">'MarkerSize'</span>, 18, <span class="string">'LineWidth'</span>, 4)
+hold <span class="string">off</span>
+xlim([datetime(2020,2,18,15,0,0) datetime(2020,2,18,16,0,0)])
+ylim([-4 4])
+ylabel(<span class="string">'dh/dt (m/s)'</span>)
+finetunefigures
+
+<span class="comment">% Plot altitude</span>
+subplot(2,1,2)
+plot(t(1:end-1), alt(1:end-1), <span class="string">'k'</span>, <span class="string">'LineWidth'</span>, 2)
+hold <span class="string">on</span>
+plot(t(ind_climb-1), alt(ind_climb-1), <span class="string">'xr'</span>, <span class="string">'MarkerSize'</span>, 18, <span class="string">'LineWidth'</span>, 4)
+hold <span class="string">off</span>
+xlim([datetime(2020,2,18,15,0,0) datetime(2020,2,18,16,0,0)])
+ylim([10000 15000])
+ylabel(<span class="string">'altitude (m)'</span>)
+finetunefigures
+removeScientificLabel(gca, <span class="string">'y'</span>)
+</pre><img vspace="5" hspace="5" src="flight_segm_rf15_0218_04.png" alt=""> <h2 id="8">Look large roll</h2><pre class="codeinput"><span class="comment">% Look for roll angles larger than 3 deg</span>
+ind_roll = find(abs(roll(ind_end_ascent:ind_climb+2))&gt;=3)+ind_end_ascent;
+
+<span class="comment">% Look for non-consecutive values in index</span>
+dInd_roll = diff(ind_roll);
+
+<span class="comment">% Find breaks in large roll angle longer than two minutes</span>
+ind_rollBreak = find(dInd_roll&gt;120);
+
+segmentStart(1) = ind_end_ascent;
+segmentEnd(1) = ind_roll(1)-1;
+<span class="comment">% Loop all breaks</span>
+<span class="keyword">for</span> i=1:length(ind_rollBreak)
+    segmentStart(i+1) = ind_roll(ind_rollBreak(i))+1;
+    segmentEnd(i+1) = ind_roll(ind_rollBreak(i)+1)-1;
+
+    irr{i} = <span class="string">'[]'</span>;
+
+<span class="keyword">end</span>
+
+<span class="comment">% Remove one segment break, this is more turbulence and no direction change</span>
+segmentEnd(4) = [];
+segmentStart(5) = [];
+irr{4} = <span class="string">'\n  - Roll angle is larger during this segment, but without heading change. Probably turbulence'</span>;
+
+<span class="keyword">for</span> i=1:length(segmentStart)
+    fh(6+i) = plotAttitudeSegment(6+i, segmentStart(i):segmentEnd(i), t, alt, alt_dt, roll, head, pitch);
+
+    disp(<span class="string">'- kinds:'</span>)
+    disp(<span class="string">'  - straight_leg'</span>)
+    disp([<span class="string">'  name: Constant altitude transfer leg '</span> num2str(i)])
+    fprintf([<span class="string">'  irregularities: '</span> irr{i} <span class="string">'\n'</span>])
+    disp([<span class="string">'  segment_id: HALO-0218_sl'</span> num2str(i)])
+    disp([<span class="string">'  start: '</span> datestr(t(segmentStart(i)), <span class="string">'yyyy-mm-dd HH:MM:SS'</span>)])
+    disp([<span class="string">'  end: '</span> datestr(t(segmentEnd(i)), <span class="string">'yyyy-mm-dd HH:MM:SS'</span>)])
+<span class="keyword">end</span>
+</pre><pre class="codeoutput">- kinds:
+  - straight_leg
+  name: Constant altitude transfer leg 1
+  irregularities: []
+  segment_id: HALO-0218_sl1
+  start: 2020-02-18 10:42:32
+  end: 2020-02-18 11:06:34
+- kinds:
+  - straight_leg
+  name: Constant altitude transfer leg 2
+  irregularities: []
+  segment_id: HALO-0218_sl2
+  start: 2020-02-18 11:07:24
+  end: 2020-02-18 11:52:46
+- kinds:
+  - straight_leg
+  name: Constant altitude transfer leg 3
+  irregularities: []
+  segment_id: HALO-0218_sl3
+  start: 2020-02-18 11:53:46
+  end: 2020-02-18 13:22:00
+- kinds:
+  - straight_leg
+  name: Constant altitude transfer leg 4
+  irregularities: 
+  - Roll angle is larger during this segment, but without heading change. Probably turbulence
+  segment_id: HALO-0218_sl4
+  start: 2020-02-18 13:23:00
+  end: 2020-02-18 14:43:03
+</pre><img vspace="5" hspace="5" src="flight_segm_rf15_0218_05.png" alt=""> <img vspace="5" hspace="5" src="flight_segm_rf15_0218_06.png" alt=""> <img vspace="5" hspace="5" src="flight_segm_rf15_0218_07.png" alt=""> <img vspace="5" hspace="5" src="flight_segm_rf15_0218_08.png" alt=""> <h2 id="9">Flight path: straight leg</h2><pre class="codeinput"><span class="comment">% Initialize figure</span>
+fh(6) = figure(6);
+set(fh(6),<span class="string">'Position'</span>, [223 406 725 506])
+
+<span class="comment">% initialize map</span>
+x2 = initMap([12 50], [-60 15]);
+
+<span class="comment">% Plot</span>
+plotm(lat, lon, <span class="string">'Linewidth'</span>, 2, <span class="string">'Color'</span>, [.7 .7 .7]);
+hold <span class="string">on</span>
+<span class="comment">% plotm(lat(ind_end_ascent-1:ind_climb-1), lon(ind_end_ascent-1:ind_climb-1), 'Linewidth', 2, 'Color', [191 14 14]./255);</span>
+plotm(lat(segmentStart(1)-1:segmentEnd(1)-1), lon(segmentStart(1)-1:segmentEnd(1)-1), <span class="string">'Linewidth'</span>, 4, <span class="string">'Color'</span>, [231 160 36]./255);
+plotm(lat(segmentStart(2)-1:segmentEnd(2)-1), lon(segmentStart(2)-1:segmentEnd(2)-1), <span class="string">'Linewidth'</span>, 4, <span class="string">'Color'</span>, [191 14 14]./255);
+plotm(lat(segmentStart(3)-1:segmentEnd(3)-1), lon(segmentStart(3)-1:segmentEnd(3)-1), <span class="string">'Linewidth'</span>, 4, <span class="string">'Color'</span>, [59 113 245]./255);
+plotm(lat(segmentStart(4)-1:segmentEnd(4)-1), lon(segmentStart(4)-1:segmentEnd(4)-1), <span class="string">'Linewidth'</span>, 4, <span class="string">'Color'</span>, [129 130 51]./255);
+<span class="comment">% Make pretty</span>
+xlabel(<span class="string">'Longitude'</span>)
+ylabel(<span class="string">'Latitude'</span>)
+x2.XLabel.Visible = <span class="string">'on'</span>;
+x2.YLabel.Visible = <span class="string">'on'</span>;
+finetunefigures
+setFontSize(gcf, 14)
+grid <span class="string">on</span>
+box <span class="string">on</span>
+</pre><img vspace="5" hspace="5" src="flight_segm_rf15_0218_09.png" alt=""> <h2 id="10">Segment times: straight leg</h2><pre class="codeinput">disp([<span class="string">'start: '</span> datestr(t(ind_end_ascent), <span class="string">'yyyy-mm-dd HH:MM:SS'</span>)])
+disp([<span class="string">'end: '</span> datestr(t(ind_climb), <span class="string">'yyyy-mm-dd HH:MM:SS'</span>)])
+</pre><pre class="codeoutput">start: 2020-02-18 10:42:32
+end: 2020-02-18 15:24:30
+</pre><h2 id="11">Functions</h2><pre class="codeinput"><span class="keyword">function</span> ax = initMap(varargin)
+    <span class="keyword">if</span> nargin==0
+        latlim = [10 16];
+        lonlim = [-62 -53];
+    <span class="keyword">else</span>
+        isneg = cell2mat(transpose(cellfun(@(x) x&lt;0, varargin, <span class="string">'uni'</span>, 0)));
+        ind_lon = sum(isneg, 2)&gt;0;
+        ind_lat = -ind_lon + [1;1];
+        latlim = varargin{ind_lat};
+        lonlim = varargin{ind_lon};
+    <span class="keyword">end</span>
+    ax = axesm(<span class="string">'MapProjection'</span>,<span class="string">'mercator'</span>,<span class="string">'MapLatLimit'</span>,latlim,<span class="string">'MapLonLimit'</span>,lonlim,<span class="keyword">...</span>
+    <span class="string">'Grid'</span>,<span class="string">'on'</span>,<span class="string">'MeridianLabel'</span>,<span class="string">'off'</span>,<span class="string">'ParallelLabel'</span>,<span class="string">'off'</span>,<span class="string">'FontSize'</span>,20,<span class="keyword">...</span>
+    <span class="string">'FontName'</span>,<span class="string">'arial'</span>);
+    geoshow(<span class="string">'worldcities.shp'</span>, <span class="string">'Marker'</span>, <span class="string">'.'</span>, <span class="string">'MarkerEdgeColor'</span>,[0 0 0])
+    land = shaperead(<span class="string">'landareas'</span>,<span class="string">'UseGeocoords'</span>,true);
+    geoshow(land,<span class="string">'facecolor'</span>,[.9 .9 .9], <span class="string">'linewidth'</span>, 1)
+    geoshow(<span class="string">'worldcities.shp'</span>, <span class="string">'Marker'</span>, <span class="string">'.'</span>, <span class="string">'MarkerEdgeColor'</span>,[0 0 0])
+    hold <span class="string">on</span>
+
+    gridm(<span class="string">'mlinelocation'</span>,5,<span class="string">'plinelocation'</span>,5)
+    box <span class="string">off</span>
+    set(gca,<span class="string">'Visible'</span>,<span class="string">'off'</span>)
+    set(gcf, <span class="string">'color'</span>,<span class="string">'white'</span>);
+
+    <span class="keyword">if</span> nargin==0
+        <span class="comment">% add extra lat/lon text</span>
+        ah(1) = annotation(gcf,<span class="string">'textbox'</span>,<span class="keyword">...</span>
+        [0.669 0.84 0.1 0.04],<span class="keyword">...</span>
+        <span class="string">'String'</span>,{<span class="string">'55&deg; W'</span>},<span class="keyword">...</span>
+        <span class="string">'FitBoxToText'</span>,<span class="string">'off'</span>);
+        ah(2) = annotation(gcf,<span class="string">'textbox'</span>,<span class="keyword">...</span>
+        [0.05 0.181 0.1 0.04],<span class="keyword">...</span>
+        <span class="string">'String'</span>,{<span class="string">'10&deg; N'</span>},<span class="keyword">...</span>
+        <span class="string">'FitBoxToText'</span>,<span class="string">'off'</span>);
+        ah(3) = annotation(gcf,<span class="string">'textbox'</span>,<span class="keyword">...</span>
+        [0.268 0.84 0.1 0.04],<span class="keyword">...</span>
+        <span class="string">'String'</span>,{<span class="string">'60&deg; W'</span>},<span class="keyword">...</span>
+        <span class="string">'FitBoxToText'</span>,<span class="string">'off'</span>);
+        ah(4) = annotation(gcf,<span class="string">'textbox'</span>,<span class="keyword">...</span>
+        [0.05 0.701 0.1 0.04],<span class="keyword">...</span>
+        <span class="string">'String'</span>,{<span class="string">'15&deg; N'</span>},<span class="keyword">...</span>
+        <span class="string">'FitBoxToText'</span>,<span class="string">'off'</span>);
+
+        <span class="keyword">for</span> i=1:length(ah)
+            ah(i).FontSize = 20;
+            ah(i).EdgeColor = <span class="string">'none'</span>;
+            ah(i).HorizontalAlignment = <span class="string">'center'</span>;
+            ah(i).VerticalAlignment = <span class="string">'middle'</span>;
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+<span class="keyword">function</span> fh = plotAttitude(fNum, tIndex, t, alt, alt_dt, roll, head, pitch, color, varargin)
+
+    <span class="keyword">if</span> isempty(tIndex)
+        tIndex = 1:length(t);
+    <span class="keyword">end</span>
+
+    <span class="comment">% Initialize figure</span>
+    fh = figure(fNum);
+    set(fh,<span class="string">'Position'</span>, [485 228 851 829])
+
+    <span class="comment">% Plot altitude</span>
+    subplot(5, 1, 1)
+    <span class="keyword">if</span> any(strcmp(varargin, <span class="string">'hold'</span>))
+        hold <span class="string">on</span>
+    <span class="keyword">end</span>
+    plot(t(tIndex), alt(tIndex), <span class="string">'Color'</span>, color, <span class="string">'LineWidth'</span>, 2)
+    finetunefigures
+    ylabel(<span class="string">'altitude (m)'</span>)
+    <span class="keyword">if</span> any(strcmp(varargin, <span class="string">'lim'</span>))
+        xlim([t(tIndex(1)) t(tIndex(end))])
+    <span class="keyword">end</span>
+
+    <span class="comment">% Plot altitude change</span>
+    subplot(5, 1, 2)
+    <span class="keyword">if</span> any(strcmp(varargin, <span class="string">'hold'</span>))
+        hold <span class="string">on</span>
+    <span class="keyword">end</span>
+    plot(t(tIndex(1:end-1)), alt_dt(tIndex(1:end-1)), <span class="string">'Color'</span>, color, <span class="string">'LineWidth'</span>, 2)
+    finetunefigures
+    ylabel(<span class="string">'dh/dt (m/s)'</span>)
+    <span class="keyword">if</span> any(strcmp(varargin, <span class="string">'lim'</span>))
+        xlim([t(tIndex(1)) t(tIndex(end))])
+    <span class="keyword">end</span>
+
+    <span class="comment">% Plot roll angle</span>
+    subplot(5, 1, 3)
+    <span class="keyword">if</span> any(strcmp(varargin, <span class="string">'hold'</span>))
+        hold <span class="string">on</span>
+    <span class="keyword">end</span>
+    plot(t(tIndex), roll(tIndex), <span class="string">'Color'</span>, color, <span class="string">'LineWidth'</span>, 2)
+    finetunefigures
+    ylabel(<span class="string">'roll (deg)'</span>)
+    <span class="keyword">if</span> any(strcmp(varargin, <span class="string">'lim'</span>))
+        xlim([t(tIndex(1)) t(tIndex(end))])
+    <span class="keyword">end</span>
+
+    <span class="comment">% Plot heading</span>
+    subplot(5, 1, 4)
+    <span class="keyword">if</span> any(strcmp(varargin, <span class="string">'hold'</span>))
+        hold <span class="string">on</span>
+    <span class="keyword">end</span>
+    plot(t(tIndex), head(tIndex), <span class="string">'Color'</span>, color, <span class="string">'LineWidth'</span>, 2)
+    finetunefigures
+    ylabel(<span class="string">'heading (deg)'</span>)
+    <span class="keyword">if</span> any(strcmp(varargin, <span class="string">'lim'</span>))
+        xlim([t(tIndex(1)) t(tIndex(end))])
+    <span class="keyword">end</span>
+
+    <span class="comment">% Plot pitch</span>
+    subplot(5, 1, 5)
+    <span class="keyword">if</span> any(strcmp(varargin, <span class="string">'hold'</span>))
+        hold <span class="string">on</span>
+    <span class="keyword">end</span>
+    plot(t(tIndex), pitch(tIndex), <span class="string">'Color'</span>, color, <span class="string">'LineWidth'</span>, 2)
+    finetunefigures
+    ylabel(<span class="string">'pitch (deg)'</span>)
+    <span class="keyword">if</span> any(strcmp(varargin, <span class="string">'lim'</span>))
+        xlim([t(tIndex(1)) t(tIndex(end))])
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+<span class="keyword">function</span> fh = plotAttitudeSegment(fNum, tIndex, t, alt, alt_dt, roll, head, pitch)
+
+    tIndexLong = [tIndex(1)-300:tIndex(1)-1, tIndex, tIndex(end)+1:tIndex(end)+300];
+    plotAttitude(fNum, tIndexLong, t, alt, alt_dt, roll, head, pitch, [.7 .7 .7], <span class="string">'lim'</span>);
+    hold <span class="string">on</span>
+    fh = plotAttitude(fNum, tIndex, t, alt, alt_dt, roll, head, pitch, [191 14 14]./255, <span class="string">'hold'</span>);
+
+<span class="keyword">end</span>
+</pre><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% HALO_RF15_20200218_info
+% 
+%  Code to identify flight segment for the HALO ferry flight from Barbados 
+%  to Oberpfaffenhofen. Only one straight leg segment is identified. The
+%  later portion of the flight is omitted since it is far outside the
+%  subtropics.
+% 
+
+
+flightdate = '20200218';
+
+%% Read data
+
+% Define data directory
+basefolder = '/Users/heike/Documents/eurec4a/data_processing/EUREC4A_campaignData/all_nc/';
+% Find bahamas file
+bahamasfile = listFiles([basefolder '*bahamas*' flightdate '*.nc'], 'full', 'latest');
+
+% Load data
+t = datetime(ncread(bahamasfile, 'time'), 'convertfrom', 'posixtime');
+lat = ncread(bahamasfile, 'lat');
+lon = ncread(bahamasfile, 'lon');
+alt = ncread(bahamasfile, 'altitude');
+roll = ncread(bahamasfile, 'roll');
+pitch = ncread(bahamasfile, 'pitch');
+head = ncread(bahamasfile, 'heading');
+% Calculate altitude change
+alt_dt = diff(alt);
+
+%% Flight elements
+
+% Take off time
+disp(['takeoff: ' datestr(t(1), 'yyyy-mm-dd HH:MM:SS')])
+% Landing time
+disp(['landing: ' datestr(t(end), 'yyyy-mm-dd HH:MM:SS')])
+
+%% Flight path
+
+% Initialize figure
+fh(1) = figure(1);
+set(fh(1),'Position', [223 406 725 506])
+
+% Initialize map
+x = initMap([12 50], [-60 15]);
+x.XLabel.Visible = 'on';
+x.YLabel.Visible = 'on';
+
+% Plot
+ah = plotm(lat, lon, 'k', 'Linewidth', 2);
+xlabel('Longitude')
+ylabel('Latitude')
+% Make pretty
+finetunefigures
+setFontSize(gcf, 14)
+grid on
+box on
+
+%% Flight overview
+
+fh(2) = plotAttitude(2, [], t, alt, alt_dt, roll, head, pitch, [0 0 0]);
+
+
+%% Segment start: straight leg
+
+% Find first occurrence of altitude increase < 0.3 m/s after take off
+ind_end_ascent = find(abs(alt_dt)<0.3, 1, 'first');
+
+% Initialize figure
+fh(3) = figure(3);
+set(fh(3), 'Position', [499 51 851 689])
+
+% Plot altitude change
+subplot(2,1,1)
+plot(t(1:end-1), alt_dt, '-k', 'LineWidth', 2)
+hold on
+plot(t(ind_end_ascent-1), alt_dt(ind_end_ascent), 'xr', 'MarkerSize', 18, 'LineWidth', 4)
+hold off
+xlim([t(1) datetime(2020,2,18,11,0,0)])
+ylabel('dh/dt (m/s)')
+finetunefigures
+
+% Plot altitude 
+subplot(2,1,2)
+plot(t(1:end-1), alt(1:end-1), 'k', 'LineWidth', 2)
+hold on
+plot(t(ind_end_ascent-1), alt(ind_end_ascent-1), 'xr', 'MarkerSize', 18, 'LineWidth', 4)
+hold off
+xlim([t(1) datetime(2020,2,18,11,0,0)])
+ylabel('altitude (m)')
+finetunefigures
+removeScientificLabel(gca, 'y')
+
+%% Segment end: straight leg
+
+% Find first occurrence of altitude increas of 0.5 m/s after 
+% 2020-02-18 15:22:00 (identified by eye)
+ind_climb = find(t(1:end-1)>datetime(2020, 02, 18, 15, 22, 00)&alt_dt>0.5, 1, 'first')-1;
+
+% Initialize figure
+fh(4) = figure(4);
+set(fh(4), 'Position', [499 51 851 689])
+
+% Plot altitude change
+subplot(2,1,1)
+plot(t(1:end-1), alt_dt, '-k', 'LineWidth', 2)
+hold on
+plot(t(ind_climb-1), alt_dt(ind_climb), 'xr', 'MarkerSize', 18, 'LineWidth', 4)
+hold off
+xlim([datetime(2020,2,18,15,0,0) datetime(2020,2,18,16,0,0)])
+ylim([-4 4])
+ylabel('dh/dt (m/s)')
+finetunefigures
+
+% Plot altitude
+subplot(2,1,2)
+plot(t(1:end-1), alt(1:end-1), 'k', 'LineWidth', 2)
+hold on
+plot(t(ind_climb-1), alt(ind_climb-1), 'xr', 'MarkerSize', 18, 'LineWidth', 4)
+hold off
+xlim([datetime(2020,2,18,15,0,0) datetime(2020,2,18,16,0,0)])
+ylim([10000 15000])
+ylabel('altitude (m)')
+finetunefigures
+removeScientificLabel(gca, 'y')
+
+%% Look large roll
+
+% Look for roll angles larger than 3 deg
+ind_roll = find(abs(roll(ind_end_ascent:ind_climb+2))>=3)+ind_end_ascent;
+
+% Look for non-consecutive values in index
+dInd_roll = diff(ind_roll);
+
+% Find breaks in large roll angle longer than two minutes
+ind_rollBreak = find(dInd_roll>120);
+
+segmentStart(1) = ind_end_ascent;
+segmentEnd(1) = ind_roll(1)-1;
+% Loop all breaks
+for i=1:length(ind_rollBreak)
+    segmentStart(i+1) = ind_roll(ind_rollBreak(i))+1;
+    segmentEnd(i+1) = ind_roll(ind_rollBreak(i)+1)-1;
+    
+    irr{i} = '[]';
+
+end
+
+% Remove one segment break, this is more turbulence and no direction change
+segmentEnd(4) = [];
+segmentStart(5) = [];
+irr{4} = '\n  - Roll angle is larger during this segment, but without heading change. Probably turbulence';
+
+for i=1:length(segmentStart)
+    fh(6+i) = plotAttitudeSegment(6+i, segmentStart(i):segmentEnd(i), t, alt, alt_dt, roll, head, pitch);
+    
+    disp('- kinds:')
+    disp('  - straight_leg')
+    disp(['  name: Constant altitude transfer leg ' num2str(i)])
+    fprintf(['  irregularities: ' irr{i} '\n'])
+    disp(['  segment_id: HALO-0218_sl' num2str(i)])
+    disp(['  start: ' datestr(t(segmentStart(i)), 'yyyy-mm-dd HH:MM:SS')])
+    disp(['  end: ' datestr(t(segmentEnd(i)), 'yyyy-mm-dd HH:MM:SS')])
+end
+
+
+
+%% Flight path: straight leg
+
+% Initialize figure
+fh(6) = figure(6);
+set(fh(6),'Position', [223 406 725 506])
+
+% initialize map
+x2 = initMap([12 50], [-60 15]);
+
+% Plot
+plotm(lat, lon, 'Linewidth', 2, 'Color', [.7 .7 .7]);
+hold on
+% plotm(lat(ind_end_ascent-1:ind_climb-1), lon(ind_end_ascent-1:ind_climb-1), 'Linewidth', 2, 'Color', [191 14 14]./255);
+plotm(lat(segmentStart(1)-1:segmentEnd(1)-1), lon(segmentStart(1)-1:segmentEnd(1)-1), 'Linewidth', 4, 'Color', [231 160 36]./255);
+plotm(lat(segmentStart(2)-1:segmentEnd(2)-1), lon(segmentStart(2)-1:segmentEnd(2)-1), 'Linewidth', 4, 'Color', [191 14 14]./255);
+plotm(lat(segmentStart(3)-1:segmentEnd(3)-1), lon(segmentStart(3)-1:segmentEnd(3)-1), 'Linewidth', 4, 'Color', [59 113 245]./255);
+plotm(lat(segmentStart(4)-1:segmentEnd(4)-1), lon(segmentStart(4)-1:segmentEnd(4)-1), 'Linewidth', 4, 'Color', [129 130 51]./255);
+% Make pretty
+xlabel('Longitude')
+ylabel('Latitude')
+x2.XLabel.Visible = 'on';
+x2.YLabel.Visible = 'on';
+finetunefigures
+setFontSize(gcf, 14)
+grid on
+box on
+
+
+%% Segment times: straight leg
+
+disp(['start: ' datestr(t(ind_end_ascent), 'yyyy-mm-dd HH:MM:SS')])
+disp(['end: ' datestr(t(ind_climb), 'yyyy-mm-dd HH:MM:SS')])
+
+
+%% Functions
+
+function ax = initMap(varargin)
+    if nargin==0
+        latlim = [10 16];
+        lonlim = [-62 -53];
+    else
+        isneg = cell2mat(transpose(cellfun(@(x) x<0, varargin, 'uni', 0)));
+        ind_lon = sum(isneg, 2)>0;
+        ind_lat = -ind_lon + [1;1];
+        latlim = varargin{ind_lat};
+        lonlim = varargin{ind_lon};
+    end
+    ax = axesm('MapProjection','mercator','MapLatLimit',latlim,'MapLonLimit',lonlim,...
+    'Grid','on','MeridianLabel','off','ParallelLabel','off','FontSize',20,...
+    'FontName','arial');
+    geoshow('worldcities.shp', 'Marker', '.', 'MarkerEdgeColor',[0 0 0])
+    land = shaperead('landareas','UseGeocoords',true);
+    geoshow(land,'facecolor',[.9 .9 .9], 'linewidth', 1)
+    geoshow('worldcities.shp', 'Marker', '.', 'MarkerEdgeColor',[0 0 0])
+    hold on
+
+    gridm('mlinelocation',5,'plinelocation',5)
+    box off
+    set(gca,'Visible','off')
+    set(gcf, 'color','white');
+    
+    if nargin==0
+        % add extra lat/lon text
+        ah(1) = annotation(gcf,'textbox',...
+        [0.669 0.84 0.1 0.04],...
+        'String',{'55° W'},...
+        'FitBoxToText','off');
+        ah(2) = annotation(gcf,'textbox',...
+        [0.05 0.181 0.1 0.04],...
+        'String',{'10° N'},...
+        'FitBoxToText','off');
+        ah(3) = annotation(gcf,'textbox',...
+        [0.268 0.84 0.1 0.04],...
+        'String',{'60° W'},...
+        'FitBoxToText','off');
+        ah(4) = annotation(gcf,'textbox',...
+        [0.05 0.701 0.1 0.04],...
+        'String',{'15° N'},...
+        'FitBoxToText','off');
+    
+        for i=1:length(ah)
+            ah(i).FontSize = 20;
+            ah(i).EdgeColor = 'none';
+            ah(i).HorizontalAlignment = 'center';
+            ah(i).VerticalAlignment = 'middle';
+        end
+    end
+end
+
+function fh = plotAttitude(fNum, tIndex, t, alt, alt_dt, roll, head, pitch, color, varargin)
+
+    if isempty(tIndex)
+        tIndex = 1:length(t);
+    end
+    
+    % Initialize figure
+    fh = figure(fNum);
+    set(fh,'Position', [485 228 851 829])
+
+    % Plot altitude
+    subplot(5, 1, 1)
+    if any(strcmp(varargin, 'hold'))
+        hold on
+    end
+    plot(t(tIndex), alt(tIndex), 'Color', color, 'LineWidth', 2)
+    finetunefigures
+    ylabel('altitude (m)')
+    if any(strcmp(varargin, 'lim'))
+        xlim([t(tIndex(1)) t(tIndex(end))])
+    end
+
+    % Plot altitude change
+    subplot(5, 1, 2)
+    if any(strcmp(varargin, 'hold'))
+        hold on
+    end
+    plot(t(tIndex(1:end-1)), alt_dt(tIndex(1:end-1)), 'Color', color, 'LineWidth', 2)
+    finetunefigures
+    ylabel('dh/dt (m/s)')
+    if any(strcmp(varargin, 'lim'))
+        xlim([t(tIndex(1)) t(tIndex(end))])
+    end
+
+    % Plot roll angle
+    subplot(5, 1, 3)
+    if any(strcmp(varargin, 'hold'))
+        hold on
+    end
+    plot(t(tIndex), roll(tIndex), 'Color', color, 'LineWidth', 2)
+    finetunefigures
+    ylabel('roll (deg)')
+    if any(strcmp(varargin, 'lim'))
+        xlim([t(tIndex(1)) t(tIndex(end))])
+    end
+
+    % Plot heading
+    subplot(5, 1, 4)
+    if any(strcmp(varargin, 'hold'))
+        hold on
+    end
+    plot(t(tIndex), head(tIndex), 'Color', color, 'LineWidth', 2)
+    finetunefigures
+    ylabel('heading (deg)')
+    if any(strcmp(varargin, 'lim'))
+        xlim([t(tIndex(1)) t(tIndex(end))])
+    end
+
+    % Plot pitch
+    subplot(5, 1, 5)
+    if any(strcmp(varargin, 'hold'))
+        hold on
+    end
+    plot(t(tIndex), pitch(tIndex), 'Color', color, 'LineWidth', 2)
+    finetunefigures
+    ylabel('pitch (deg)')
+    if any(strcmp(varargin, 'lim'))
+        xlim([t(tIndex(1)) t(tIndex(end))])
+    end
+end
+
+function fh = plotAttitudeSegment(fNum, tIndex, t, alt, alt_dt, roll, head, pitch)
+    
+    tIndexLong = [tIndex(1)-300:tIndex(1)-1, tIndex, tIndex(end)+1:tIndex(end)+300];
+    plotAttitude(fNum, tIndexLong, t, alt, alt_dt, roll, head, pitch, [.7 .7 .7], 'lim');
+    hold on
+    fh = plotAttitude(fNum, tIndex, t, alt, alt_dt, roll, head, pitch, [191 14 14]./255, 'hold');
+    
+end
+##### SOURCE END #####
+--></body></html>
