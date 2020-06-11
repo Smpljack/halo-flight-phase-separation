@@ -6,11 +6,16 @@ contacts:
 - name: Marc Prange
   email: marc.prange@uni-hamburg.de
   tags:
-  - dataset creator
+  - lc
+  - dp
 - name: Bjorn Stevens
   email: bjorn.stevens@mpimet.mpg.de
   tags:
-  - flight PI
+  - pi
+- name: Theresa Lang
+  email: theresa.lang@uni-hamburg.de
+  tags:
+  - dp
 date: 2020-01-28
 flight_report: https://observations.ipsl.fr/aeris/eurec4a-data/REPORTS/HALO/2020/20200128/HALO-0128.pdf
 takeoff: 2020-01-28 14:58:34
@@ -20,59 +25,127 @@ remarks:
 - Rather long excursion towards NTAS with radar calibration maneuver.
 - Sugar cloud patterns within the circle.
 segments:
-- kind: circle
-  name: c1
-  start: 2020-01-28 15:21:54
-  end: 2020-01-28 16:13:03
-- kind: circle_break
-  name: cb1to2
-  start: 2020-01-28 16:13:03
-  end: 2020-01-28 16:32:33
-- kind: circle
-  name: c2
-  start: 2020-01-28 16:32:33
-  end: 2020-01-28 17:25:06
-- kind: circle_break
-  name: cb2to3
-  start: 2020-01-28 17:25:06
-  end: 2020-01-28 17:42:40
-- kind: circle
-  name: c3
-  start: 2020-01-28 17:42:40
-  end: 2020-01-28 18:37:26
-- kind: straight_leg
-  name: leg1_outbound_NTAS
-  start: 2020-01-28 18:41:47
+- kinds:
+  - circle
+  name: Circle 1
+  irregularities: []
+  segment_id: HALO-0128_c1
+  start: 2020-01-28 15:20:54
+  end: 2020-01-28 16:17:27
+  good_dropsondes: 12
+- kinds:
+  - circle_break
+  name: Break between circle 1 and circle 2
+  irregularities: []
+  segment_id: HALO-0128_cb1
+  start: 2020-01-28 16:17:27
+  end: 2020-01-28 16:31:33
+- kinds:
+  - circle
+  name: Circle 2
+  irregularities: []
+  segment_id: HALO-0128_c2
+  start: 2020-01-28 16:31:33
+  end: 2020-01-28 17:28:35
+  good_dropsondes: 12
+- kinds:
+  - circle_break
+  name: Break between circle 2 and circle 3
+  irregularities: []
+  segment_id: HALO-0128_cb2
+  start: 2020-01-28 17:28:35
+  end: 2020-01-28 17:38:40
+- kinds:
+  - circle
+  name: Circle 3
+  irregularities:
+  - Circle starts 4 minutes (instead of regularly 1 minute) before the first dropsonde.
+  segment_id: HALO-0128_c3
+  start: 2020-01-28 17:38:40
+  end: 2020-01-28 18:37:38
+  good_dropsondes: 11
+- kinds:
+  - circling
+  name: Circling 1
+  irregularities: []
+  segment_id: HALO-0128_o1
+  start: 2020-01-28 15:20:54
+  end: 2020-01-28 18:37:38
+  good_dropsondes: 35
+- kinds:
+  - straight_leg
+  name: Outbound leg towards NTAS
+  irregularities: []
+  segment_id: HALO-0128_sl1
+  start: 2020-01-28 18:41:02
   end: 2020-01-28 19:01:46
-- kind: radar_calibration_tilted
-  name: radar_cal_tilted
+- kinds:
+  - radar_calibration_tilted
+  name: Radar calibration constant bank
+  irregularities: []
+  segment_id: HALO-0128_rct1
   start: 2020-01-28 19:07:44
   end: 2020-01-28 19:25:26
-- kind: straight_leg
-  name: leg2_inbound_NTAS
-  start: 2020-01-28 19:29:47
+- kinds:
+  - straight_leg
+  name: Inbound leg from NTAS
+  irregularities: []
+  segment_id: HALO-0128_sl2
+  start: 2020-01-28 19:28:47
   end: 2020-01-28 19:50:47
-- kind: circle
-  name: c4
-  start: 2020-01-28 19:57:50
-  end: 2020-01-28 20:53:13
-- kind: circle_break
-  name: cb4to5
-  start: 2020-01-28 20:53:13
-  end: 2020-01-28 21:13:08
-- kind: circle
-  name: c5
-  start: 2020-01-28 21:13:08
-  end: 2020-01-28 22:07:21
-- kind: circle_break
-  name: cb5to6
-  start: 2020-01-28 22:07:21
-  end: 2020-01-28 22:29:35
-- kind: circle
-  name: c6
-  start: 2020-01-28 22:29:35
-  end: 2020-01-28 23:23:36
-- kind: lidar_calibration
-  name: lidar_cal
+- kinds:
+  - circle
+  name: Circle 4
+  irregularities: []
+  segment_id: HALO-0128_c4
+  start: 2020-01-28 19:56:50
+  end: 2020-01-28 20:56:39
+  good_dropsondes: 11
+- kinds:
+  - circle_break
+  name: Break between circle 4 and circle 5
+  irregularities: []
+  segment_id: HALO-0128_cb3
+  start: 2020-01-28 20:56:39
+  end: 2020-01-28 21:12:08
+- kinds:
+  - circle
+  name: Circle 5
+  irregularities: []
+  segment_id: HALO-0128_c5
+  start: 2020-01-28 21:12:08
+  end: 2020-01-28 22:11:43
+  good_dropsondes: 12
+- kinds:
+  - circle_break
+  name: Break between circle 4 and circle 5
+  irregularities: []
+  segment_id: HALO-0128_cb4
+  start: 2020-01-28 22:11:43
+  end: 2020-01-28 22:24:35
+- kinds:
+  - circle
+  name: Circle 6
+  irregularities:
+  - Circle starts 5 minutes (instead of regularly 1 minute) before the first dropsonde.
+  - There are 13 dropsondes in this circle. The last two sondes were launched one
+    after another, to check variability from measurement.
+  segment_id: HALO-0128_c6
+  start: 2020-01-28 22:24:35
+  end: 2020-01-28 23:24:05
+  good_dropsondes: 13
+- kinds:
+  - circling
+  name: Circling 2
+  irregularities: []
+  segment_id: HALO-0128_o2
+  start: 2020-01-28 19:56:50
+  end: 2020-01-28 23:24:05
+  good_dropsondes: 36
+- kinds:
+  - lidar_leg
+  name: Lidar leg
+  irregularities: []
+  segment_id: HALO-0128_ll1
   start: 2020-01-28 23:32:23
   end: 2020-01-28 23:40:57
