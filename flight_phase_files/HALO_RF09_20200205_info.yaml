@@ -15,7 +15,8 @@ contacts:
 - name: Bernhard Mayer
   email: bernhard.mayer@lmu.de
   tags:
-  - flight PI
+  - pi
+  - cm
 date: 2020-02-05
 flight_report: https://observations.ipsl.fr/aeris/eurec4a-data/REPORTS/HALO/2020/20200205/HALO-0205.pdf
 takeoff: 2020-02-05 09:15:51
@@ -33,24 +34,84 @@ segments:
   name: circling phase 1
   irregularities: []
   segment_id: HALO-0205_o1
-  start: 2020-02-05 09:36:26
+  start: 2020-02-05 09:36:22
   end: 2020-02-05 12:51:07
-  good_dropsondes: 35
+  dropsondes:
+    GOOD:
+    - HALO-0205_s01
+    - HALO-0205_s02
+    - HALO-0205_s03
+    - HALO-0205_s04
+    - HALO-0205_s05
+    - HALO-0205_s06
+    - HALO-0205_s07
+    - HALO-0205_s08
+    - HALO-0205_s09
+    - HALO-0205_s10
+    - HALO-0205_s12
+    - HALO-0205_s13
+    - HALO-0205_s14
+    - HALO-0205_s15
+    - HALO-0205_s16
+    - HALO-0205_s17
+    - HALO-0205_s18
+    - HALO-0205_s20
+    - HALO-0205_s21
+    - HALO-0205_s23
+    - HALO-0205_s24
+    - HALO-0205_s26
+    - HALO-0205_s27
+    - HALO-0205_s28
+    - HALO-0205_s29
+    - HALO-0205_s30
+    - HALO-0205_s31
+    - HALO-0205_s32
+    - HALO-0205_s33
+    - HALO-0205_s34
+    - HALO-0205_s35
+    - HALO-0205_s37
+    - HALO-0205_s38
+    BAD:
+    - HALO-0205_s19
+    - HALO-0205_s22
+    - HALO-0205_s25
+    UGLY:
+    - HALO-0205_s11
+    - HALO-0205_s36
 - kinds:
   - circle
   name: circle 1
   irregularities: []
   segment_id: HALO-0205_c1
-  start: 2020-02-05 09:36:26
-  end: 2020-02-05 10:32:59
-  good_dropsondes: 12
+  start: 2020-02-05 09:36:22
+  end: 2020-02-05 10:32:55
+  dropsondes:
+    GOOD:
+    - HALO-0205_s01
+    - HALO-0205_s02
+    - HALO-0205_s03
+    - HALO-0205_s04
+    - HALO-0205_s05
+    - HALO-0205_s06
+    - HALO-0205_s07
+    - HALO-0205_s08
+    - HALO-0205_s09
+    - HALO-0205_s10
+    - HALO-0205_s12
+    BAD: []
+    UGLY:
+    - HALO-0205_s11
 - kinds:
   - circle_break
   name: circle break between circle 1 and 2
   irregularities: []
   segment_id: HALO-0205_cb1
-  start: 2020-02-05 10:32:59
+  start: 2020-02-05 10:32:55
   end: 2020-02-05 10:46:46
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
 - kinds:
   - circle
   name: circle 2
@@ -58,7 +119,24 @@ segments:
   segment_id: HALO-0205_c2
   start: 2020-02-05 10:46:46
   end: 2020-02-05 11:43:24
-  good_dropsondes: 11
+  dropsondes:
+    GOOD:
+    - HALO-0205_s13
+    - HALO-0205_s14
+    - HALO-0205_s15
+    - HALO-0205_s16
+    - HALO-0205_s17
+    - HALO-0205_s18
+    - HALO-0205_s20
+    - HALO-0205_s21
+    - HALO-0205_s23
+    - HALO-0205_s24
+    - HALO-0205_s26
+    BAD:
+    - HALO-0205_s19
+    - HALO-0205_s22
+    - HALO-0205_s25
+    UGLY: []
 - kinds:
   - circle_break
   name: circle break between circle 2 and 3
@@ -66,6 +144,10 @@ segments:
   segment_id: HALO-0205_cb2
   start: 2020-02-05 11:43:24
   end: 2020-02-05 11:54:25
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
 - kinds:
   - circle
   name: circle 3
@@ -74,7 +156,22 @@ segments:
   segment_id: HALO-0205_c3
   start: 2020-02-05 11:54:25
   end: 2020-02-05 12:51:07
-  good_dropsondes: 12
+  dropsondes:
+    GOOD:
+    - HALO-0205_s27
+    - HALO-0205_s28
+    - HALO-0205_s29
+    - HALO-0205_s30
+    - HALO-0205_s31
+    - HALO-0205_s32
+    - HALO-0205_s33
+    - HALO-0205_s34
+    - HALO-0205_s35
+    - HALO-0205_s37
+    - HALO-0205_s38
+    BAD: []
+    UGLY:
+    - HALO-0205_s36
 - kinds:
   - straight_leg
   name: leg 1 outbound towards NTAS buoy
@@ -82,6 +179,11 @@ segments:
   segment_id: HALO-0205_sl1
   start: 2020-02-05 12:53:40
   end: 2020-02-05 13:19:37
+  dropsondes:
+    GOOD:
+    - HALO-0205_s39
+    BAD: []
+    UGLY: []
 - kinds:
   - straight_leg
   name: leg 2 inbound from NTAS buoy back to circle area
@@ -89,6 +191,10 @@ segments:
   segment_id: HALO-0205_sl2
   start: 2020-02-05 13:25:35
   end: 2020-02-05 13:55:07
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
 - kinds:
   - straight_leg
   name: leg 3 outbound North
@@ -96,6 +202,10 @@ segments:
   segment_id: HALO-0205_sl3
   start: 2020-02-05 14:00:00
   end: 2020-02-05 14:13:45
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
 - kinds:
   - straight_leg
   name: leg 4 TERRA underpass
@@ -103,44 +213,127 @@ segments:
   segment_id: HALO-0205_sl4
   start: 2020-02-05 14:19:30
   end: 2020-02-05 14:32:00
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
 - kinds:
   - circling
   name: circling phase 2
   irregularities: []
   segment_id: HALO-0205_o2
-  start: 2020-02-05 14:35:53
+  start: 2020-02-05 14:35:52
   end: 2020-02-05 17:51:12
-  good_dropsondes: 33
+  dropsondes:
+    GOOD:
+    - HALO-0205_s40
+    - HALO-0205_s41
+    - HALO-0205_s43
+    - HALO-0205_s44
+    - HALO-0205_s45
+    - HALO-0205_s46
+    - HALO-0205_s48
+    - HALO-0205_s49
+    - HALO-0205_s50
+    - HALO-0205_s51
+    - HALO-0205_s52
+    - HALO-0205_s53
+    - HALO-0205_s55
+    - HALO-0205_s56
+    - HALO-0205_s57
+    - HALO-0205_s59
+    - HALO-0205_s60
+    - HALO-0205_s61
+    - HALO-0205_s63
+    - HALO-0205_s64
+    - HALO-0205_s65
+    - HALO-0205_s66
+    - HALO-0205_s67
+    - HALO-0205_s68
+    - HALO-0205_s70
+    - HALO-0205_s71
+    - HALO-0205_s72
+    - HALO-0205_s73
+    - HALO-0205_s74
+    - HALO-0205_s75
+    - HALO-0205_s76
+    BAD:
+    - HALO-0205_s47
+    - HALO-0205_s54
+    - HALO-0205_s58
+    - HALO-0205_s62
+    UGLY:
+    - HALO-0205_s42
+    - HALO-0205_s69
 - kinds:
   - circle
   name: circle 4
   irregularities: []
   segment_id: HALO-0205_c4
-  start: 2020-02-05 14:35:53
-  end: 2020-02-05 15:32:06
-  good_dropsondes: 11
+  start: 2020-02-05 14:35:52
+  end: 2020-02-05 15:32:05
+  dropsondes:
+    GOOD:
+    - HALO-0205_s40
+    - HALO-0205_s41
+    - HALO-0205_s43
+    - HALO-0205_s44
+    - HALO-0205_s45
+    - HALO-0205_s46
+    - HALO-0205_s48
+    - HALO-0205_s49
+    - HALO-0205_s50
+    - HALO-0205_s51
+    BAD:
+    - HALO-0205_s47
+    UGLY:
+    - HALO-0205_s42
 - kinds:
   - circle_break
   name: circle break between circle 4 and 5
   irregularities: []
   segment_id: HALO-0205_cb3
-  start: 2020-02-05 15:32:06
-  end: 2020-02-05 15:45:37
+  start: 2020-02-05 15:32:05
+  end: 2020-02-05 15:45:28
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
 - kinds:
   - circle
   name: circle 5
   irregularities: []
   segment_id: HALO-0205_c5
-  start: 2020-02-05 15:45:37
-  end: 2020-02-05 16:41:35
-  good_dropsondes: 10
+  start: 2020-02-05 15:45:28
+  end: 2020-02-05 16:41:26
+  dropsondes:
+    GOOD:
+    - HALO-0205_s52
+    - HALO-0205_s53
+    - HALO-0205_s55
+    - HALO-0205_s56
+    - HALO-0205_s57
+    - HALO-0205_s59
+    - HALO-0205_s60
+    - HALO-0205_s61
+    - HALO-0205_s63
+    - HALO-0205_s64
+    BAD:
+    - HALO-0205_s54
+    - HALO-0205_s58
+    - HALO-0205_s62
+    UGLY: []
 - kinds:
   - circle_break
   name: circle break between circle 5 and 6
   irregularities: []
   segment_id: HALO-0205_cb4
-  start: 2020-02-05 16:41:35
+  start: 2020-02-05 16:41:26
   end: 2020-02-05 16:55:19
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
 - kinds:
   - circle
   name: circle 6
@@ -149,7 +342,22 @@ segments:
   segment_id: HALO-0205_c6
   start: 2020-02-05 16:55:19
   end: 2020-02-05 17:51:12
-  good_dropsondes: 12
+  dropsondes:
+    GOOD:
+    - HALO-0205_s65
+    - HALO-0205_s66
+    - HALO-0205_s67
+    - HALO-0205_s68
+    - HALO-0205_s70
+    - HALO-0205_s71
+    - HALO-0205_s72
+    - HALO-0205_s73
+    - HALO-0205_s74
+    - HALO-0205_s75
+    - HALO-0205_s76
+    BAD: []
+    UGLY:
+    - HALO-0205_s69
 - kinds:
   - lidar_leg
   - straight_leg
@@ -158,3 +366,7 @@ segments:
   segment_id: HALO-0205_ll1
   start: 2020-02-05 18:00:53
   end: 2020-02-05 18:06:50
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
