@@ -147,7 +147,7 @@ segments:
   name: circle break 1
   irregularities:
   - excludes period of circle deviation between circle 4 and circle 5
-  segment_id: HALO-0215_cb2
+  segment_id: HALO-0215_cb1
   start: 2020-02-15 21:38:56
   end: 2020-02-15 21:48:25
   dropsondes:
