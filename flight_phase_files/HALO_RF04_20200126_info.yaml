@@ -5,7 +5,7 @@ flight_id: HALO-0126
 contacts:
 - name: Marc Prange
   email: marc.prange@uni-hamburg.de
-  tags:	  
+  tags:
   - lc
   - dc
 - name: Manfred Wendisch
@@ -28,6 +28,7 @@ remarks:
 segments:
 - kinds:
   - straight_leg
+  - super_curtain
   name: super_curtain
   irregularities: []
   segment_id: HALO-0126sc1
