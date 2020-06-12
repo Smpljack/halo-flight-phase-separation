@@ -295,7 +295,7 @@ segments:
     UGLY: []
 - kinds:
   - circle_break
-  name: Circle break between circle-5 and circle-6
+  name: Circle break between circle-5 and deviation due to traffic
   irregularities:
   - flight deviated from circle path due to traffic reasons
   segment_id: HALO-0126_cb4
