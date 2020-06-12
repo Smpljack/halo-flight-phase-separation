@@ -44,7 +44,7 @@ segments:
   irregularities: []
   segment_id: HALO-0126_c1
   start: 2020-01-26 12:26:08
-  end: 2020-01-26 13:22:28
+  end: 2020-01-26 13:22:29
   dropsondes:
     GOOD:
     - HALO-0126_s01
@@ -78,7 +78,7 @@ segments:
   irregularities: []
   segment_id: HALO-0126_c2
   start: 2020-01-26 13:34:11
-  end: 2020-01-26 14:30:31
+  end: 2020-01-26 14:30:32
   dropsondes:
     GOOD:
     - HALO-0126_s14
@@ -101,7 +101,7 @@ segments:
   irregularities: []
   segment_id: HALO-0126_cb2
   start: 2020-01-26 14:30:32
-  end: 2020-01-26 14:42:24
+  end: 2020-01-26 14:42:25
   dropsondes:
     GOOD: []
     BAD: []
@@ -242,7 +242,7 @@ segments:
   irregularities: []
   segment_id: HALO-0126_c4
   start: 2020-01-26 17:19:54
-  end: 2020-01-26 18:18:34
+  end: 2020-01-26 18:18:35
   dropsondes:
     GOOD:
     - HALO-0126_s40
@@ -265,7 +265,7 @@ segments:
   irregularities: []
   segment_id: HALO-0126_cb3
   start: 2020-01-26 18:18:35
-  end: 2020-01-26 18:34:59
+  end: 2020-01-26 18:35:00
   dropsondes:
     GOOD: []
     BAD: []
@@ -276,7 +276,7 @@ segments:
   irregularities: []
   segment_id: HALO-0126_c5
   start: 2020-01-26 18:35:00
-  end: 2020-01-26 19:33:16
+  end: 2020-01-26 19:33:17
   dropsondes:
     GOOD:
     - HALO-0126_s52
@@ -300,7 +300,7 @@ segments:
   - flight deviated from circle path due to traffic reasons
   segment_id: HALO-0126_cb4
   start: 2020-01-26 19:33:17
-  end: 2020-01-26 19:50:30
+  end: 2020-01-26 19:50:31
   dropsondes:
     GOOD: []
     BAD: []
@@ -337,7 +337,7 @@ segments:
   - between circle 5 and 6, the flight deviated from the circle due to a traffic issue
   segment_id: HALO-0126_o2
   start: 2020-01-26 17:19:54
-  end: 2020-01-26 20:47:00
+  end: 2020-01-26 19:33:17
   dropsondes:
     GOOD:
     - HALO-0126_s40
