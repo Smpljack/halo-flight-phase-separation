@@ -124,6 +124,53 @@ segments:
     UGLY:
     - HALO-0126_s35
 - kinds:
+  - circling
+  name: Circling phase 1 - Circle 1 to 3
+  irregularities: []
+  segment_id: HALO-0126o1
+  start: 2020-01-26 12:26:08
+  end: 2020-01-26 15:39:13
+  dropsondes:
+    GOOD:
+    - HALO-0126_s01
+    - HALO-0126_s02
+    - HALO-0126_s03
+    - HALO-0126_s04
+    - HALO-0126_s05
+    - HALO-0126_s06
+    - HALO-0126_s07
+    - HALO-0126_s08
+    - HALO-0126_s09
+    - HALO-0126_s10
+    - HALO-0126_s11
+    - HALO-0126_s12
+    - HALO-0126_s14
+    - HALO-0126_s15
+    - HALO-0126_s16
+    - HALO-0126_s17
+    - HALO-0126_s18
+    - HALO-0126_s20
+    - HALO-0126_s21
+    - HALO-0126_s22
+    - HALO-0126_s23
+    - HALO-0126_s24
+    - HALO-0126_s25
+    - HALO-0126_s26
+    - HALO-0126_s27
+    - HALO-0126_s28
+    - HALO-0126_s29
+    - HALO-0126_s30
+    - HALO-0126_s31
+    - HALO-0126_s32
+    - HALO-0126_s33
+    - HALO-0126_s34
+    - HALO-0126_s36
+    BAD:
+    - HALO-0126_s19
+    UGLY:
+    - HALO-0126_s13
+    - HALO-0126_s35
+- kinds:
   - straight_leg
   name: Leg-1 over Meteor
   irregularities:
@@ -243,7 +290,7 @@ segments:
 - kinds:
   - circle_break
   name: Circle break between circle-5 and circle-6
-  irregularities: 
+  irregularities:
   - flight deviated from circle path due to traffic reasons
   segment_id: HALO-0126cb4
   start: 2020-01-26 19:33:17
@@ -255,8 +302,8 @@ segments:
 - kinds:
   - circle
   name: Circle-6
-  irregularities: 
-  - flight returned towards the island before completing a full circle 
+  irregularities:
+  - flight returned towards the island before completing a full circle
   - circle end time denoted by change in altitude after last sonde
   segment_id: HALO-0126c6
   start: 2020-01-26 19:50:31
@@ -276,6 +323,54 @@ segments:
     - HALO-0126_s74
     - HALO-0126_s75
     BAD: []
+    UGLY: []
+- kinds:
+  - circling
+  name: Circling phase 2 - Circle 4 to 6
+  irregularities:
+  - between circle 5 and 6, the flight deviated from the circle due to a traffic issue
+  segment_id: HALO-0126o2
+  start: 2020-01-26 17:19:54
+  end: 2020-01-26 20:47:00
+  dropsondes:
+    GOOD:
+    - HALO-0126_s40
+    - HALO-0126_s41
+    - HALO-0126_s42
+    - HALO-0126_s43
+    - HALO-0126_s44
+    - HALO-0126_s45
+    - HALO-0126_s46
+    - HALO-0126_s47
+    - HALO-0126_s48
+    - HALO-0126_s49
+    - HALO-0126_s50
+    - HALO-0126_s51
+    - HALO-0126_s52
+    - HALO-0126_s53
+    - HALO-0126_s54
+    - HALO-0126_s56
+    - HALO-0126_s57
+    - HALO-0126_s58
+    - HALO-0126_s59
+    - HALO-0126_s60
+    - HALO-0126_s61
+    - HALO-0126_s62
+    - HALO-0126_s63
+    - HALO-0126_s64
+    - HALO-0126_s65
+    - HALO-0126_s66
+    - HALO-0126_s67
+    - HALO-0126_s68
+    - HALO-0126_s69
+    - HALO-0126_s70
+    - HALO-0126_s71
+    - HALO-0126_s72
+    - HALO-0126_s73
+    - HALO-0126_s74
+    - HALO-0126_s75
+    BAD:
+    - HALO-0126_s55
     UGLY: []
 - kinds:
   - lidar_leg
