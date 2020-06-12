@@ -332,7 +332,7 @@ segments:
     UGLY: []
 - kinds:
   - circling
-  name: Circling phase 2 - Circle 4 to 6
+  name: Circling phase 2 - Circle 4 to deviation due to traffic
   irregularities:
   - between circle 5 and 6, the flight deviated from the circle due to a traffic issue
   segment_id: HALO-0126_o2
@@ -363,6 +363,19 @@ segments:
     - HALO-0126_s61
     - HALO-0126_s62
     - HALO-0126_s63
+    BAD:
+    - HALO-0126_s55
+    UGLY: []
+- kinds:
+  - circling
+  name: Circling phase 3 - Deviation due to traffic to circle 6
+  irregularities:
+  - between circle 5 and 6, the flight deviated from the circle due to a traffic issue
+  segment_id: HALO-0126_o3
+  start: 2020-01-26 19:51:19
+  end: 2020-01-26 20:47:00
+  dropsondes:
+    GOOD:
     - HALO-0126_s64
     - HALO-0126_s65
     - HALO-0126_s66
@@ -375,8 +388,7 @@ segments:
     - HALO-0126_s73
     - HALO-0126_s74
     - HALO-0126_s75
-    BAD:
-    - HALO-0126_s55
+    BAD: []
     UGLY: []
 - kinds:
   - lidar_leg
