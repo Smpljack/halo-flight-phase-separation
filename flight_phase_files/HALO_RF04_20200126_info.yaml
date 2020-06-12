@@ -31,7 +31,7 @@ segments:
   - super_curtain
   name: super_curtain
   irregularities: []
-  segment_id: HALO-0126sc1
+  segment_id: HALO-0126_sc1
   start: 2020-01-26 12:07:06
   end: 2020-01-26 12:17:10
   dropsondes:
@@ -42,7 +42,7 @@ segments:
   - circle
   name: Circle-1
   irregularities: []
-  segment_id: HALO-0126c1
+  segment_id: HALO-0126_c1
   start: 2020-01-26 12:26:08
   end: 2020-01-26 13:22:28
   dropsondes:
@@ -65,7 +65,7 @@ segments:
   - circle_break
   name: Circle break between circle-1 and circle-2
   irregularities: []
-  segment_id: HALO-0126cb1
+  segment_id: HALO-0126_cb1
   start: 2020-01-26 13:22:29
   end: 2020-01-26 13:34:10
   dropsondes:
@@ -76,7 +76,7 @@ segments:
   - circle
   name: Circle-2
   irregularities: []
-  segment_id: HALO-0126c2
+  segment_id: HALO-0126_c2
   start: 2020-01-26 13:34:11
   end: 2020-01-26 14:30:31
   dropsondes:
@@ -99,7 +99,7 @@ segments:
   - circle_break
   name: Circle break between circle-2 and circle-3
   irregularities: []
-  segment_id: HALO-0126cb2
+  segment_id: HALO-0126_cb2
   start: 2020-01-26 14:30:32
   end: 2020-01-26 14:42:24
   dropsondes:
@@ -110,7 +110,7 @@ segments:
   - circle
   name: Circle-3
   irregularities: []
-  segment_id: HALO-0126c3
+  segment_id: HALO-0126_c3
   start: 2020-01-26 14:42:25
   end: 2020-01-26 15:39:13
   dropsondes:
@@ -133,7 +133,7 @@ segments:
   - circling
   name: Circling phase 1 - Circle 1 to 3
   irregularities: []
-  segment_id: HALO-0126o1
+  segment_id: HALO-0126_o1
   start: 2020-01-26 12:26:08
   end: 2020-01-26 15:39:13
   dropsondes:
@@ -181,7 +181,7 @@ segments:
   name: Leg-1 over Meteor
   irregularities:
   - slightly high roll towards end of the leg
-  segment_id: HALO-0126sl1
+  segment_id: HALO-0126_sl1
   start: 2020-01-26 15:50:46
   end: 2020-01-26 16:04:52
   dropsondes:
@@ -194,7 +194,7 @@ segments:
   name: Leg-2 over Meteor
   irregularities:
   - slightly high roll at start of leg
-  segment_id: HALO-0126sl2
+  segment_id: HALO-0126_sl2
   start: 2020-01-26 16:11:14
   end: 2020-01-26 16:31:14
   dropsondes:
@@ -205,7 +205,7 @@ segments:
   - straight_leg
   name: Leg-3 over Meteor
   irregularities: []
-  segment_id: HALO-0126sl3
+  segment_id: HALO-0126_sl3
   start: 2020-01-26 16:37:21
   end: 2020-01-26 16:52:17
   dropsondes:
@@ -216,7 +216,7 @@ segments:
   - straight_leg
   name: Leg-4 over Meteor
   irregularities: []
-  segment_id: HALO-0126sl4
+  segment_id: HALO-0126_sl4
   start: 2020-01-26 16:58:46
   end: 2020-01-26 17:14:14
   dropsondes:
@@ -229,7 +229,7 @@ segments:
   - radar_calibration_wiggle
   name: Radar Calibration Wiggle
   irregularities: []
-  segment_id: HALO-0126rcw1
+  segment_id: HALO-0126_rcw1
   start: 2020-01-26 17:14:14
   end: 2020-01-26 17:16:15
   dropsondes:
@@ -240,7 +240,7 @@ segments:
   - circle
   name: Circle-4
   irregularities: []
-  segment_id: HALO-0126c4
+  segment_id: HALO-0126_c4
   start: 2020-01-26 17:19:54
   end: 2020-01-26 18:18:34
   dropsondes:
@@ -263,7 +263,7 @@ segments:
   - circle_break
   name: Circle break between circle-4 and circle-5
   irregularities: []
-  segment_id: HALO-0126cb3
+  segment_id: HALO-0126_cb3
   start: 2020-01-26 18:18:35
   end: 2020-01-26 18:34:59
   dropsondes:
@@ -274,7 +274,7 @@ segments:
   - circle
   name: Circle-5
   irregularities: []
-  segment_id: HALO-0126c5
+  segment_id: HALO-0126_c5
   start: 2020-01-26 18:35:00
   end: 2020-01-26 19:33:16
   dropsondes:
@@ -298,7 +298,7 @@ segments:
   name: Circle break between circle-5 and circle-6
   irregularities:
   - flight deviated from circle path due to traffic reasons
-  segment_id: HALO-0126cb4
+  segment_id: HALO-0126_cb4
   start: 2020-01-26 19:33:17
   end: 2020-01-26 19:50:30
   dropsondes:
@@ -311,7 +311,7 @@ segments:
   irregularities:
   - flight returned towards the island before completing a full circle
   - circle end time denoted by change in altitude after last sonde
-  segment_id: HALO-0126c6
+  segment_id: HALO-0126_c6
   start: 2020-01-26 19:50:31
   end: 2020-01-26 20:47:00
   dropsondes:
@@ -335,7 +335,7 @@ segments:
   name: Circling phase 2 - Circle 4 to 6
   irregularities:
   - between circle 5 and 6, the flight deviated from the circle due to a traffic issue
-  segment_id: HALO-0126o2
+  segment_id: HALO-0126_o2
   start: 2020-01-26 17:19:54
   end: 2020-01-26 20:47:00
   dropsondes:
@@ -383,7 +383,7 @@ segments:
   - straight_leg
   name: Low-level lidar leg
   irregularities: []
-  segment_id: HALO-0126ll1
+  segment_id: HALO-0126_ll1
   start: 2020-01-26 20:54:26
   end: 2020-01-26 21:03:44
   dropsondes:
