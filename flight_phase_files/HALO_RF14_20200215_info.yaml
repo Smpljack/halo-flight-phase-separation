@@ -1,6 +1,5 @@
 name: RF14
 mission: EUREC4A
-platform: HALO
 flight_id: HALO-0215
 platform: HALO
 contacts:
@@ -134,6 +133,7 @@ segments:
   irregularities:
   - does not start 1 minute prior to dropsonde
   - only one dropsonde at the end
+  - increase in flight level from 5.8 to 6.2 km at circle end.
   segment_id: HALO-0215_c4
   start: 2020-02-15 20:11:45
   end: 2020-02-15 21:20:51
@@ -185,6 +185,7 @@ segments:
   - starts 63 seconds prior to first dropsonde
   - early circle exit after 306 degrees
   - Only 7 dropsondes
+  - Change from FL350 to FL180 at circle end.
   segment_id: HALO-0215_c6
   start: 2020-02-15 22:46:43
   end: 2020-02-15 23:35:07
@@ -220,7 +221,7 @@ segments:
   - 'circle 2: starts 165 seconds prior to first dropsonde'
   - 'circle 2: only 8 dropsondes'
   segment_id: HALO-0215_o1
-  start: 2020-02-15 15:37:42
+  start: 2020-02-15 15:34:59
   end: 2020-02-15 17:48:59
   dropsondes:
     GOOD:
@@ -253,7 +254,7 @@ segments:
   - 'circle 3: ranges over only 359.5 deg in heading'
   - 'circle 3: change from FL370 to FL180'
   segment_id: HALO-0215_o2
-  start: 2020-02-15 18:17:24
+  start: 2020-02-15 18:17:29
   end: 2020-02-15 19:22:05
   dropsondes:
     GOOD:
@@ -294,7 +295,7 @@ segments:
   - circle 6: early circle exit after 306 degrees
   - circle 6: Only 7 dropsondes
   segment_id: HALO-0215_o4
-  start: 2020-02-15 21:38:56
+  start: 2020-02-15 21:48:22
   end: 2020-02-15 23:35:07
   dropsondes:
     GOOD:
