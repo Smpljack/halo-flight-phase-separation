@@ -34,7 +34,7 @@ segments:
   start: 2020-02-09 09:35:28
   end: 2020-02-09 10:32:49
   segment_id: HALO-0209_c1
-  irregularities: [begin is 41s before first launch due to roll angle at start]
+  irregularities: [begin is 34s before first launch due to roll angle at start]
   dropsondes:
     GOOD:
     - HALO-0209_s01
@@ -54,7 +54,7 @@ segments:
 - kinds: [circle_break]
   name: circle break 1/2
   start: 2020-02-09 10:32:49
-  end: 2020-02-09 10:49:12
+  end: 2020-02-09 10:49:09
   segment_id: HALO-0209_cb1
   irregularities: []
   dropsondes:
@@ -62,9 +62,9 @@ segments:
     BAD: []
     UGLY: []
 - kinds: [circle]
-  name: circle 2 
-  start: 2020-02-09 10:49:12
-  end: 2020-02-09 11:46:44
+  name: circle 2
+  start: 2020-02-09 10:49:09
+  end: 2020-02-09 11:46:41
   segment_id: HALO-0209_c2
   irregularities: []
   dropsondes:
@@ -85,7 +85,7 @@ segments:
     UGLY: []
 - kinds: [circle_break]
   name: circle break 2/3
-  start: 2020-02-09 11:46:44
+  start: 2020-02-09 11:46:41
   end: 2020-02-09 11:57:36
   segment_id: HALO-0209_cb2
   irregularities: []
@@ -98,7 +98,7 @@ segments:
   start: 2020-02-09 11:57:36
   end: 2020-02-09 12:56:03
   segment_id: HALO-0209_c3
-  irregularities: [begin is 105s before first launch due to roll angle at end]
+  irregularities: [begin is 100s before first launch due to roll angle at end]
   dropsondes:
     GOOD:
     - HALO-0209_s25
@@ -177,8 +177,8 @@ segments:
     UGLY: []
 - kinds: [circle]
   name: circle 4
-  start: 2020-02-09 13:55:26
-  end: 2020-02-09 14:56:14
+  start: 2020-02-09 13:55:19
+  end: 2020-02-09 14:56:07
   segment_id: HALO-0209_c4
   irregularities: []
   dropsondes:
@@ -199,8 +199,8 @@ segments:
     UGLY: []
 - kinds: [circle_break]
   name: circle break 4/5
-  start: 2020-02-09 14:56:14
-  end: 2020-02-09 15:06:19
+  start: 2020-02-09 14:56:07
+  end: 2020-02-09 15:06:13
   segment_id: HALO-0209_cb3
   irregularities: []
   dropsondes:
@@ -209,8 +209,8 @@ segments:
     UGLY: []
 - kinds: [circle]
   name: circle 5
-  start: 2020-02-09 15:06:19
-  end: 2020-02-09 16:08:24
+  start: 2020-02-09 15:06:13
+  end: 2020-02-09 16:08:18
   segment_id: HALO-0209_c5
   irregularities: []
   dropsondes:
@@ -231,7 +231,7 @@ segments:
     - HALO-0209_s55
 - kinds: [circle_break]
   name: circle break 5/6
-  start: 2020-02-09 16:08:24
+  start: 2020-02-09 16:08:18
   end: 2020-02-09 16:22:03
   segment_id: HALO-0209_cb4
   irregularities: []
@@ -244,7 +244,7 @@ segments:
   start: 2020-02-09 16:22:03
   end: 2020-02-09 17:24:26
   segment_id: HALO-0209_c6
-  irregularities: [begin is 371s before first launch due to roll angle at end]
+  irregularities: [begin is 362s before first launch due to roll angle at end]
   dropsondes:
     GOOD:
     - HALO-0209_s61
@@ -276,7 +276,7 @@ segments:
   start: 2020-02-09 09:35:28
   end: 2020-02-09 12:56:03
   segment_id: HALO-0209_o1
-  irregularities: [begin is 41s before first launch due to roll angle at start]
+  irregularities: [begin is 34s before first launch due to roll angle at start]
   dropsondes:
     GOOD:
     - HALO-0209_s01
@@ -318,7 +318,7 @@ segments:
     UGLY: []
 - kinds: [circling]
   name: circling 2
-  start: 2020-02-09 13:55:26
+  start: 2020-02-09 13:55:19
   end: 2020-02-09 17:24:26
   segment_id: HALO-0209_o2
   irregularities: []
