@@ -7,6 +7,10 @@ contacts:
   email: marc.prange@uni-hamburg.de
   tags:
   - dataset creator
+- name: Heike Konow
+  email: heike.konow@uni-hamburg.de
+  tags:
+  - dataset creator
 - name: Silke Gross
   email: silke.gross@dlr.de
   tags:
@@ -27,15 +31,74 @@ remarks:
 - Clear sky during take off in Santiago de Compostela.
 - Super curtain from NTAS buoy over ships towards circle center.
 segments:
-- kind: radar_calibration_wiggle
-  name: radar calibration with +-20 deg roll wiggles
-  start: 2020-01-19 16:55:16
-  end: 2020-01-19 17:22:00
-- kind: straight_leg
-  name: super curtain (from NTAS, over ships, to circle center)
-  start: 2020-01-19 16:55:16
-  end: 2020-01-19 17:22:00
-- kind: circle
-  name: circle 1
-  start: 2020-01-19 17:32:27
-  end: 2020-01-19 18:22:23
+- kinds:
+  - radar_calibration_wiggle
+  name: Radar calibration with +-20 deg roll wiggles
+  irregularities: []
+  segment_id: HALO-0119_rcw1
+  start: 2020-01-19 16:08:51
+  end: 2020-01-19 16:11:36
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
+- kinds:
+  - straight_leg
+  - super_curtain
+  name: Super curtain (from NTAS, over ships, to circle center)
+  irregularities: []
+  segment_id: HALO-0119_sl1
+  start: 2020-01-19 16:16:35
+  end: 2020-01-19 17:23:50
+  dropsondes:
+    GOOD:
+    - HALO-0119_s02
+    - HALO-0119_s03
+    BAD: []
+    UGLY: []
+- kinds:
+  - circle
+  name: Circle 1
+  irregularities:
+  - Start of circle directly with first drop, roll angle around 4 deg in beginning
+  segment_id: HALO-0119_c1
+  start: 2020-01-19 17:33:26
+  end: 2020-01-19 18:24:15
+  dropsondes:
+    GOOD:
+    - HALO-0119_s05
+    - HALO-0119_s06
+    - HALO-0119_s07
+    - HALO-0119_s08
+    - HALO-0119_s09
+    - HALO-0119_s11
+    - HALO-0119_s12
+    - HALO-0119_s14
+    - HALO-0119_s15
+    BAD: []
+    UGLY:
+    - HALO-0119_s10
+    - HALO-0119_s13
+- kinds:
+  - circling
+  name: Circling
+  irregularities:
+  - Start of circling directly with first drop, roll angle around 4 deg in beginning
+  segment_id: HALO-0119_o1
+  start: 2020-01-19 17:33:26
+  end: 2020-01-19 18:25:31
+  dropsondes:
+    GOOD:
+    - HALO-0119_s05
+    - HALO-0119_s06
+    - HALO-0119_s07
+    - HALO-0119_s08
+    - HALO-0119_s09
+    - HALO-0119_s11
+    - HALO-0119_s12
+    - HALO-0119_s14
+    - HALO-0119_s15
+    BAD: []
+    UGLY:
+    - HALO-0119_s10
+    - HALO-0119_s13
