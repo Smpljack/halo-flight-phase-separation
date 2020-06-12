@@ -28,42 +28,96 @@ segments:
   - circle
   name: circle 1
   irregularities:
-  - Starts 38 sec prior to first dropsonde due to otherwise high roll.
+  - starts 40 seconds prior to first dropsonde
   segment_id: HALO-0202_c1
-  start: 2020-02-02 11:47:19
-  end: 2020-02-02 12:42:57
-  good_dropsondes: 12
+  start: 2020-02-02 11:47:17
+  end: 2020-02-02 12:42:55
+  dropsondes:
+    GOOD:
+    - HALO-0202_s02
+    - HALO-0202_s03
+    - HALO-0202_s04
+    - HALO-0202_s05
+    - HALO-0202_s06
+    - HALO-0202_s07
+    - HALO-0202_s08
+    - HALO-0202_s09
+    - HALO-0202_s11
+    - HALO-0202_s12
+    BAD: []
+    UGLY:
+    - HALO-0202_s01
+    - HALO-0202_s10
 - kinds:
   - circle_break
   name: circle break 1
   irregularities: []
   segment_id: HALO-0202_cb1
-  start: 2020-02-02 12:42:57
-  end: 2020-02-02 12:51:25
+  start: 2020-02-02 12:42:55
+  end: 2020-02-02 12:51:26
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
 - kinds:
   - circle
   name: circle 2
-  irregularities:
-  - Starts 62 sec prior to first dropsonde
+  irregularities: []
   segment_id: HALO-0202_c2
-  start: 2020-02-02 12:51:25
-  end: 2020-02-02 13:46:56
-  good_dropsondes: 12
+  start: 2020-02-02 12:51:26
+  end: 2020-02-02 13:46:58
+  dropsondes:
+    GOOD:
+    - HALO-0202_s13
+    - HALO-0202_s15
+    - HALO-0202_s16
+    - HALO-0202_s17
+    - HALO-0202_s18
+    - HALO-0202_s19
+    - HALO-0202_s20
+    - HALO-0202_s21
+    - HALO-0202_s22
+    - HALO-0202_s23
+    - HALO-0202_s24
+    BAD: []
+    UGLY:
+    - HALO-0202_s14
 - kinds:
   - circle_break
   name: circle break 2
   irregularities: []
   segment_id: HALO-0202_cb2
-  start: 2020-02-02 13:46:56
+  start: 2020-02-02 13:46:58
   end: 2020-02-02 13:56:44
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
 - kinds:
   - circle
   name: circle 3
-  irregularities: []
+  irregularities:
+  - First dropsonde is BAD
   segment_id: HALO-0202_c3
-  start: 2020-02-02 13:56:44
-  end: 2020-02-02 14:51:59
-  good_dropsondes: 10
+  start: 2020-02-02 13:56:39
+  end: 2020-02-02 14:51:54
+  dropsondes:
+    GOOD:
+    - HALO-0202_s26
+    - HALO-0202_s28
+    - HALO-0202_s29
+    - HALO-0202_s30
+    - HALO-0202_s31
+    - HALO-0202_s32
+    - HALO-0202_s33
+    - HALO-0202_s34
+    - HALO-0202_s35
+    - HALO-0202_s36
+    - HALO-0202_s37
+    BAD:
+    - HALO-0202_s25
+    - HALO-0202_s27
+    UGLY: []
 - kinds:
   - clover_leg
   name: clover 1
@@ -71,6 +125,13 @@ segments:
   segment_id: HALO-0202_cl1
   start: 2020-02-02 15:03:14
   end: 2020-02-02 15:25:24
+  dropsondes:
+    GOOD:
+    - HALO-0202_s39
+    - HALO-0202_s40
+    BAD: []
+    UGLY:
+    - HALO-0202_s41
 - kinds:
   - clover_turn
   name: clover turn 1
@@ -78,6 +139,12 @@ segments:
   segment_id: HALO-0202_ct1
   start: 2020-02-02 15:25:24
   end: 2020-02-02 15:33:30
+  dropsondes:
+    GOOD:
+    - HALO-0202_s42
+    - HALO-0202_s43
+    BAD: []
+    UGLY: []
 - kinds:
   - clover_leg
   name: clover 2
@@ -85,6 +152,13 @@ segments:
   segment_id: HALO-0202_cl2
   start: 2020-02-02 15:33:30
   end: 2020-02-02 15:53:01
+  dropsondes:
+    GOOD:
+    - HALO-0202_s45
+    - HALO-0202_s46
+    BAD: []
+    UGLY:
+    - HALO-0202_s44
 - kinds:
   - clover_turn
   name: clover turn 2
@@ -92,6 +166,12 @@ segments:
   segment_id: HALO-0202_ct2
   start: 2020-02-02 15:53:01
   end: 2020-02-02 16:01:55
+  dropsondes:
+    GOOD:
+    - HALO-0202_s47
+    - HALO-0202_s48
+    BAD: []
+    UGLY: []
 - kinds:
   - clover_leg
   name: clover 3
@@ -99,59 +179,128 @@ segments:
   segment_id: HALO-0202_cl3
   start: 2020-02-02 16:01:55
   end: 2020-02-02 16:20:45
+  dropsondes:
+    GOOD:
+    - HALO-0202_s50
+    - HALO-0202_s51
+    - HALO-0202_s52
+    BAD: []
+    UGLY: []
 - kinds:
   - circle
   name: circle 4
   irregularities: []
   segment_id: HALO-0202_c4
-  start: 2020-02-02 16:31:49
-  end: 2020-02-02 17:26:56
-  good_dropsondes: 11
+  start: 2020-02-02 16:31:45
+  end: 2020-02-02 17:26:52
+  dropsondes:
+    GOOD:
+    - HALO-0202_s53
+    - HALO-0202_s54
+    - HALO-0202_s55
+    - HALO-0202_s56
+    - HALO-0202_s57
+    - HALO-0202_s58
+    - HALO-0202_s61
+    - HALO-0202_s62
+    - HALO-0202_s63
+    BAD:
+    - HALO-0202_s59
+    UGLY:
+    - HALO-0202_s60
+    - HALO-0202_s64
 - kinds:
   - circle_break
   name: circle break 3
   irregularities: []
   segment_id: HALO-0202_cb3
-  start: 2020-02-02 17:26:56
-  end: 2020-02-02 17:38:00
+  start: 2020-02-02 17:26:52
+  end: 2020-02-02 17:37:57
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
 - kinds:
   - circle
   name: circle 5
   irregularities: []
   segment_id: HALO-0202_c5
-  start: 2020-02-02 17:38:00
-  end: 2020-02-02 18:33:07
-  good_dropsondes: 12
+  start: 2020-02-02 17:37:57
+  end: 2020-02-02 18:33:04
+  dropsondes:
+    GOOD:
+    - HALO-0202_s65
+    - HALO-0202_s66
+    - HALO-0202_s67
+    - HALO-0202_s68
+    - HALO-0202_s69
+    - HALO-0202_s70
+    - HALO-0202_s71
+    - HALO-0202_s73
+    - HALO-0202_s74
+    - HALO-0202_s75
+    - HALO-0202_s76
+    BAD: []
+    UGLY:
+    - HALO-0202_s72
 - kinds:
   - circle_break
   name: circle break 4
   irregularities: []
   segment_id: HALO-0202_cb4
-  start: 2020-02-02 18:33:07
-  end: 2020-02-02 18:39:43
+  start: 2020-02-02 18:33:04
+  end: 2020-02-02 18:41:02
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
 - kinds:
   - circle
   name: circle 6
   irregularities:
-  - starts 2min and 23s prior to first circle dropsonde.
+  - altitude shift at circle end from 10.5 to 9.5 km
   segment_id: HALO-0202_c6
-  start: 2020-02-02 18:39:43
-  end: 2020-02-02 19:34:53
-  good_dropsondes: 11
+  start: 2020-02-02 18:41:02
+  end: 2020-02-02 19:36:11
+  dropsondes:
+    GOOD:
+    - HALO-0202_s77
+    - HALO-0202_s78
+    - HALO-0202_s79
+    - HALO-0202_s80
+    - HALO-0202_s82
+    - HALO-0202_s83
+    - HALO-0202_s84
+    - HALO-0202_s85
+    - HALO-0202_s86
+    - HALO-0202_s87
+    - HALO-0202_s88
+    - HALO-0202_s89
+    BAD:
+    - HALO-0202_s81
+    UGLY: []
 - kinds:
   - radar_calibration_tilted
   name: radar_cal_tilted
   irregularities: []
   segment_id: HALO-0202_rct1
   start: 2020-02-02 19:44:31
-  end: 2020-02-02 19:48:46
+  end: 2020-02-02 19:48:45
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
 - kinds:
   - radar_calibration_wiggle
   name: radar_cal_wiggle
   irregularities: []
   segment_id: HALO-0202_rcw1
   start: 2020-02-02 19:49:03
-  end: 2020-02-02 19:51:51
+  end: 2020-02-02 19:50:57
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
 - kinds:
   - lidar_leg
   - straight_leg
@@ -160,22 +309,106 @@ segments:
   segment_id: HALO-0202_ll1
   start: 2020-02-02 19:51:51
   end: 2020-02-02 19:56:08
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
 - kinds:
   - circling
   name: circling 1
   irregularities:
-  - 'Circle 1: starts 38 sec prior to first dropsonde due to otherwise high roll.'
-  - 'Circle 2: starts 62 sec prior to first dropsonde'
+  - circle 1: starts 40 seconds prior to first dropsonde
+  - circle 3: first dropsonde is BAD
   segment_id: HALO-0202_o1
   start: 2020-02-02 11:47:19
   end: 2020-02-02 14:51:59
-  good_dropsondes: 34
+  dropsondes:
+    GOOD:
+    - HALO-0202_s02
+    - HALO-0202_s03
+    - HALO-0202_s04
+    - HALO-0202_s05
+    - HALO-0202_s06
+    - HALO-0202_s07
+    - HALO-0202_s08
+    - HALO-0202_s09
+    - HALO-0202_s11
+    - HALO-0202_s12
+    - HALO-0202_s13
+    - HALO-0202_s15
+    - HALO-0202_s16
+    - HALO-0202_s17
+    - HALO-0202_s18
+    - HALO-0202_s19
+    - HALO-0202_s20
+    - HALO-0202_s21
+    - HALO-0202_s22
+    - HALO-0202_s23
+    - HALO-0202_s24
+    - HALO-0202_s26
+    - HALO-0202_s28
+    - HALO-0202_s29
+    - HALO-0202_s30
+    - HALO-0202_s31
+    - HALO-0202_s32
+    - HALO-0202_s33
+    - HALO-0202_s34
+    - HALO-0202_s35
+    - HALO-0202_s36
+    - HALO-0202_s37
+    BAD:
+    - HALO-0202_s25
+    - HALO-0202_s27
+    UGLY:
+    - HALO-0202_s01
+    - HALO-0202_s10
+    - HALO-0202_s14
 - kinds:
   - circling
   name: circling 2
   irregularities:
-  - 'Circle 6: starts 2min and 23s prior to first circle dropsonde'
+  - circle 6: altitude shift at circle end from 10.5 to 9.5 km
   segment_id: HALO-0202_o2
   start: 2020-02-02 16:31:49
   end: 2020-02-02 19:34:53
-  good_dropsondes: 34
+  dropsondes:
+    GOOD:
+    - HALO-0202_s53
+    - HALO-0202_s54
+    - HALO-0202_s55
+    - HALO-0202_s56
+    - HALO-0202_s57
+    - HALO-0202_s58
+    - HALO-0202_s61
+    - HALO-0202_s62
+    - HALO-0202_s63
+    - HALO-0202_s65
+    - HALO-0202_s66
+    - HALO-0202_s67
+    - HALO-0202_s68
+    - HALO-0202_s69
+    - HALO-0202_s70
+    - HALO-0202_s71
+    - HALO-0202_s73
+    - HALO-0202_s74
+    - HALO-0202_s75
+    - HALO-0202_s76
+    - HALO-0202_s77
+    - HALO-0202_s78
+    - HALO-0202_s79
+    - HALO-0202_s80
+    - HALO-0202_s82
+    - HALO-0202_s83
+    - HALO-0202_s84
+    - HALO-0202_s85
+    - HALO-0202_s86
+    - HALO-0202_s87
+    - HALO-0202_s88
+    - HALO-0202_s89
+    BAD:
+    - HALO-0202_s59
+    - HALO-0202_s81
+    UGLY:
+    - HALO-0202_s60
+    - HALO-0202_s64
+    - HALO-0202_s72
