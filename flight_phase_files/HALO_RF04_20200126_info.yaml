@@ -5,12 +5,17 @@ flight_id: HALO-0126
 contacts:
 - name: Marc Prange
   email: marc.prange@uni-hamburg.de
-  tags:
-  - dataset creator
+  tags:	  
+  - lc
+  - dc
 - name: Manfred Wendisch
   email: m.wendisch@uni-leipzig.de
   tags:
-  - flight PI
+  - pi
+- name: Geet George
+  email: geet.george@mpimet.mpg.de
+  tags:
+  - dc
 date: 2020-01-26
 flight_report: https://observations.ipsl.fr/aeris/eurec4a-data/REPORTS/HALO/2020/20200126/HALO-0126.pdf
 takeoff: 2020-01-26 12:05:30
