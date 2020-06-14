@@ -7,15 +7,16 @@ contacts:
   email: marc.prange@uni-hamburg.de
   tags:
   - lc
-  - dc
+  - dp
 - name: Bjorn Stevens
   email: bjorn.stevens@mpimet.mpg.de
   tags:
   - pi
+  - cm
 - name: Geet George
   email: geet.george@mpimet.mpg.de
   tags:
-  - dc
+  - dp
 date: 2020-01-24
 flight_report: https://observations.ipsl.fr/aeris/eurec4a-data/REPORTS/HALO/2020/20200124/HALO-0124.pdf
 takeoff: 2020-01-24 09:29:30
