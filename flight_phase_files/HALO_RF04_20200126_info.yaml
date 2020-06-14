@@ -7,15 +7,17 @@ contacts:
   email: marc.prange@uni-hamburg.de
   tags:
   - lc
-  - dc
+  - dp
 - name: Manfred Wendisch
   email: m.wendisch@uni-leipzig.de
   tags:
   - pi
+  - cm
 - name: Geet George
   email: geet.george@mpimet.mpg.de
   tags:
-  - dc
+  - dp
+  - cm
 date: 2020-01-26
 flight_report: https://observations.ipsl.fr/aeris/eurec4a-data/REPORTS/HALO/2020/20200126/HALO-0126.pdf
 takeoff: 2020-01-26 12:05:30
