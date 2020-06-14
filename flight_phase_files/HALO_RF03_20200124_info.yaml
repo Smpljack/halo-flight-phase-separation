@@ -68,7 +68,7 @@ segments:
   - late sonde from subsequent circle break is included here
   segment_id: HALO-0124_c2
   start: 2020-01-24 10:59:01
-  end: 2020-01-24 11:57:01
+  end: 2020-01-24 11:56:59
   dropsondes:
     GOOD:
     - HALO-0124_s14
@@ -91,7 +91,7 @@ segments:
   name: Circle break between circle-2 and circle-3
   irregularities: [sonde was moved to circle-2]
   segment_id: HALO-0124_cb2
-  start: 2020-01-24 11:57:01
+  start: 2020-01-24 11:56:59
   end: 2020-01-24 12:14:08
   dropsondes:
     GOOD: []
@@ -137,7 +137,7 @@ segments:
   irregularities: []
   segment_id: HALO-0124_c4
   start: 2020-01-24 13:29:02
-  end: 2020-01-24 14:28:39
+  end: 2020-01-24 14:28:38
   dropsondes:
     GOOD:
     - HALO-0124_s39
@@ -159,7 +159,7 @@ segments:
   name: Circle break between circle-4 and circle-5
   irregularities: []
   segment_id: HALO-0124_cb4
-  start: 2020-01-24 14:28:39
+  start: 2020-01-24 14:28:38
   end: 2020-01-24 14:39:08
   dropsondes:
     GOOD: []
@@ -171,7 +171,7 @@ segments:
   irregularities: []
   segment_id: HALO-0124_c5
   start: 2020-01-24 14:39:08
-  end: 2020-01-24 15:38:39
+  end: 2020-01-24 15:38:42
   dropsondes:
     GOOD:
     - HALO-0124_s51
@@ -193,7 +193,7 @@ segments:
   name: Circle break between circle-5 and circle-6
   irregularities: []
   segment_id: HALO-0124_cb5
-  start: 2020-01-24 15:38:39
+  start: 2020-01-24 15:38:42
   end: 2020-01-24 15:49:04
   dropsondes:
     GOOD: []
@@ -205,7 +205,7 @@ segments:
   irregularities: []
   segment_id: HALO-0124_c6
   start: 2020-01-24 15:49:04
-  end: 2020-01-24 16:48:18
+  end: 2020-01-24 16:48:15
   dropsondes:
     GOOD:
     - HALO-0124_s63
@@ -229,7 +229,7 @@ segments:
   irregularities: []
   segment_id: HALO-0124_o1
   start: 2020-01-24 09:49:07
-  end: 2020-01-24 16:48:18
+  end: 2020-01-24 16:48:15
   dropsondes:
     GOOD:
     - HALO-0124_s01
