@@ -29,6 +29,7 @@ segments:
 - kinds:
   - straight_leg
   - super_curtain
+  - super_curtain
   name: super_curtain
   irregularities: []
   segment_id: HALO-0126_sc1
