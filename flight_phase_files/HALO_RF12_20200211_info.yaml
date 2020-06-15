@@ -109,7 +109,7 @@ segments:
   irregularities: []
   segment_id: HALO-0211_c1
   start: 2020-02-11 12:57:31
-  end: 2020-02-11 13:54:16
+  end: 2020-02-11 13:54:15
   dropsondes:
     GOOD:
     - HALO-0211_s01
@@ -131,7 +131,7 @@ segments:
   name: circle break 1
   irregularities: []
   segment_id: HALO-0211_cb1
-  start: 2020-02-11 13:54:16
+  start: 2020-02-11 13:54:15
   end: 2020-02-11 14:11:02
   dropsondes:
     GOOD: []
@@ -234,7 +234,7 @@ segments:
   irregularities: []
   segment_id: HALO-0211_cb4
   start: 2020-02-11 17:40:09
-  end: 2020-02-11 17:53:00
+  end: 2020-02-11 17:52:53
   dropsondes:
     GOOD: []
     BAD: []
@@ -242,11 +242,10 @@ segments:
 - kinds:
   - circle
   name: circle 5
-  irregularities:
-  - First sonde 63 sec, to adjust for early exit
+  irregularities: []
   segment_id: HALO-0211_c5
-  start: 2020-02-11 17:53:00
-  end: 2020-02-11 18:55:41
+  start: 2020-02-11 17:52:53
+  end: 2020-02-11 18:55:35
   dropsondes:
     GOOD:
     - HALO-0211_s49
