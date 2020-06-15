@@ -6,11 +6,18 @@ contacts:
 - name: Marc Prange
   email: marc.prange@uni-hamburg.de
   tags:
-  - dataset creator
+  - lc
+  - dp
 - name: Manfred Wendisch
   email: m.wendisch@uni-leipzig.de
   tags:
-  - flight PI
+  - pi
+  - cm
+- name: Geet George
+  email: geet.george@mpimet.mpg.de
+  tags:
+  - dp
+  - cm
 date: 2020-01-26
 flight_report: https://observations.ipsl.fr/aeris/eurec4a-data/REPORTS/HALO/2020/20200126/HALO-0126.pdf
 takeoff: 2020-01-26 12:05:30
@@ -21,71 +28,379 @@ remarks:
 - Four coordinated straight legs over Meteor.
 - Cirrus clouds in 14-17 km present for almost full flight.
 segments:
-- kind: straight_leg
+- kinds:
+  - straight_leg
+  - super_curtain
   name: super_curtain
+  irregularities: []
+  segment_id: HALO-0126_sc1
   start: 2020-01-26 12:07:06
-  end: 2020-01-26 12:15:10
-- kind: circle
-  name: c1
-  start: 2020-01-26 12:27:11
-  end: 2020-01-26 13:17:15
-- kind: circle_break
-  name: cb1to2
-  start: 2020-01-26 13:17:15
-  end: 2020-01-26 13:38:57
-- kind: circle
-  name: c2
-  start: 2020-01-26 13:38:57
-  end: 2020-01-26 14:27:36
-- kind: circle_break
-  name: cb2to3
-  start: 2020-01-26 14:27:36
-  end: 2020-01-26 14:43:29
-- kind: circle
-  name: c3
-  start: 2020-01-26 14:43:29
-  end: 2020-01-26 15:35:58
-- kind: straight_leg
-  name: leg1_over_Meteor
+  end: 2020-01-26 12:17:10
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
+- kinds:
+  - circle
+  name: Circle-1
+  irregularities: []
+  segment_id: HALO-0126_c1
+  start: 2020-01-26 12:26:08
+  end: 2020-01-26 13:22:27
+  dropsondes:
+    GOOD:
+    - HALO-0126_s01
+    - HALO-0126_s02
+    - HALO-0126_s03
+    - HALO-0126_s04
+    - HALO-0126_s05
+    - HALO-0126_s06
+    - HALO-0126_s07
+    - HALO-0126_s08
+    - HALO-0126_s09
+    - HALO-0126_s10
+    - HALO-0126_s11
+    - HALO-0126_s12
+    BAD: []
+    UGLY: []
+- kinds:
+  - circle_break
+  name: Circle break between circle-1 and circle-2
+  irregularities: []
+  segment_id: HALO-0126_cb1
+  start: 2020-01-26 13:22:27
+  end: 2020-01-26 13:34:11
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
+- kinds:
+  - circle
+  name: Circle-2
+  irregularities: []
+  segment_id: HALO-0126_c2
+  start: 2020-01-26 13:34:11
+  end: 2020-01-26 14:30:32
+  dropsondes:
+    GOOD:
+    - HALO-0126_s14
+    - HALO-0126_s15
+    - HALO-0126_s16
+    - HALO-0126_s17
+    - HALO-0126_s18
+    - HALO-0126_s20
+    - HALO-0126_s21
+    - HALO-0126_s22
+    - HALO-0126_s23
+    - HALO-0126_s24
+    BAD:
+    - HALO-0126_s19
+    UGLY:
+    - HALO-0126_s13
+- kinds:
+  - circle_break
+  name: Circle break between circle-2 and circle-3
+  irregularities: []
+  segment_id: HALO-0126_cb2
+  start: 2020-01-26 14:30:32
+  end: 2020-01-26 14:42:25
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
+- kinds:
+  - circle
+  name: Circle-3
+  irregularities: []
+  segment_id: HALO-0126_c3
+  start: 2020-01-26 14:42:25
+  end: 2020-01-26 15:39:16
+  dropsondes:
+    GOOD:
+    - HALO-0126_s25
+    - HALO-0126_s26
+    - HALO-0126_s27
+    - HALO-0126_s28
+    - HALO-0126_s29
+    - HALO-0126_s30
+    - HALO-0126_s31
+    - HALO-0126_s32
+    - HALO-0126_s33
+    - HALO-0126_s34
+    - HALO-0126_s36
+    BAD: []
+    UGLY:
+    - HALO-0126_s35
+- kinds:
+  - circling
+  name: Circling phase 1 - Circle 1 to 3
+  irregularities: []
+  segment_id: HALO-0126_o1
+  start: 2020-01-26 12:25:40
+  end: 2020-01-26 15:40:30
+  dropsondes:
+    GOOD:
+    - HALO-0126_s01
+    - HALO-0126_s02
+    - HALO-0126_s03
+    - HALO-0126_s04
+    - HALO-0126_s05
+    - HALO-0126_s06
+    - HALO-0126_s07
+    - HALO-0126_s08
+    - HALO-0126_s09
+    - HALO-0126_s10
+    - HALO-0126_s11
+    - HALO-0126_s12
+    - HALO-0126_s14
+    - HALO-0126_s15
+    - HALO-0126_s16
+    - HALO-0126_s17
+    - HALO-0126_s18
+    - HALO-0126_s20
+    - HALO-0126_s21
+    - HALO-0126_s22
+    - HALO-0126_s23
+    - HALO-0126_s24
+    - HALO-0126_s25
+    - HALO-0126_s26
+    - HALO-0126_s27
+    - HALO-0126_s28
+    - HALO-0126_s29
+    - HALO-0126_s30
+    - HALO-0126_s31
+    - HALO-0126_s32
+    - HALO-0126_s33
+    - HALO-0126_s34
+    - HALO-0126_s36
+    BAD:
+    - HALO-0126_s19
+    UGLY:
+    - HALO-0126_s13
+    - HALO-0126_s35
+- kinds:
+  - straight_leg
+  name: Leg-1 over Meteor
+  irregularities:
+  - slightly high roll towards end of the leg
+  segment_id: HALO-0126_sl1
   start: 2020-01-26 15:50:46
   end: 2020-01-26 16:04:52
-- kind: straight_leg
-  name: leg2_over_Meteor
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY:
+    - HALO-0126_s37
+- kinds:
+  - straight_leg
+  name: Leg-2 over Meteor
+  irregularities:
+  - slightly high roll towards end of the leg
+  segment_id: HALO-0126_sl2
   start: 2020-01-26 16:11:14
   end: 2020-01-26 16:31:14
-- kind: straight_leg
-  name: leg3_over_Meteor
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
+- kinds:
+  - straight_leg
+  name: Leg-3 over Meteor
+  irregularities: []
+  segment_id: HALO-0126_sl3
   start: 2020-01-26 16:37:21
   end: 2020-01-26 16:52:17
-- kind: straight_leg
-  name: leg4_over_Meteor
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
+- kinds:
+  - straight_leg
+  name: Leg-4 over Meteor
+  irregularities: []
+  segment_id: HALO-0126_sl4
   start: 2020-01-26 16:58:46
   end: 2020-01-26 17:14:14
-- kind: radar_calibration_wiggle
-  name: radar_cal_wiggle
+  dropsondes:
+    GOOD:
+    - HALO-0126_s38
+    - HALO-0126_s39
+    BAD: []
+    UGLY: []
+- kinds:
+  - radar_calibration_wiggle
+  name: Radar Calibration Wiggle
+  irregularities: []
+  segment_id: HALO-0126_rcw1
   start: 2020-01-26 17:14:14
-  end: 2020-01-26 17:21:01
-- kind: circle
-  name: c4
-  start: 2020-01-26 17:21:01
-  end: 2020-01-26 18:12:50
-- kind: circle_break
-  name: cb4to5
-  start: 2020-01-26 18:12:50
-  end: 2020-01-26 18:36:01
-- kind: circle
-  name: c5
-  start: 2020-01-26 18:36:01
-  end: 2020-01-26 19:29:21
-- kind: circle_break
-  name: cb5to6
-  start: 2020-01-26 19:29:21
-  end: 2020-01-26 19:41:01
-- kind: circle
-  name: c6
-  start: 2020-01-26 19:51:32
-  end: 2020-01-26 20:45:42
-- kind: lidar_calibration
-  name: lidar_cal
+  end: 2020-01-26 17:16:15
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
+- kinds:
+  - circle
+  name: Circle-4
+  irregularities: []
+  segment_id: HALO-0126_c4
+  start: 2020-01-26 17:19:54
+  end: 2020-01-26 18:17:54
+  dropsondes:
+    GOOD:
+    - HALO-0126_s40
+    - HALO-0126_s41
+    - HALO-0126_s42
+    - HALO-0126_s43
+    - HALO-0126_s44
+    - HALO-0126_s45
+    - HALO-0126_s46
+    - HALO-0126_s47
+    - HALO-0126_s48
+    - HALO-0126_s49
+    - HALO-0126_s50
+    - HALO-0126_s51
+    BAD: []
+    UGLY: []
+- kinds:
+  - circle_break
+  name: Circle break between circle-4 and circle-5
+  irregularities: []
+  segment_id: HALO-0126_cb3
+  start: 2020-01-26 18:17:54
+  end: 2020-01-26 18:35:00
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
+- kinds:
+  - circle
+  name: Circle-5
+  irregularities: []
+  segment_id: HALO-0126_c5
+  start: 2020-01-26 18:35:00
+  end: 2020-01-26 19:33:16
+  dropsondes:
+    GOOD:
+    - HALO-0126_s52
+    - HALO-0126_s53
+    - HALO-0126_s54
+    - HALO-0126_s56
+    - HALO-0126_s57
+    - HALO-0126_s58
+    - HALO-0126_s59
+    - HALO-0126_s60
+    - HALO-0126_s61
+    - HALO-0126_s62
+    - HALO-0126_s63
+    BAD:
+    - HALO-0126_s55
+    UGLY: []
+- kinds:
+  - circle_break
+  name: Circle break between circle-5 and circle-6
+  irregularities:
+  - flight deviated from circle path due to traffic reasons
+  segment_id: HALO-0126_cb4
+  start: 2020-01-26 19:33:17
+  end: 2020-01-26 19:50:31
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
+- kinds:
+  - circle
+  name: Circle-6
+  irregularities:
+  - flight returned towards the island before completing a full circle
+  - circle end time denoted by change in altitude after last sonde
+  segment_id: HALO-0126_c6
+  start: 2020-01-26 19:50:31
+  end: 2020-01-26 20:47:00
+  dropsondes:
+    GOOD:
+    - HALO-0126_s64
+    - HALO-0126_s65
+    - HALO-0126_s66
+    - HALO-0126_s67
+    - HALO-0126_s68
+    - HALO-0126_s69
+    - HALO-0126_s70
+    - HALO-0126_s71
+    - HALO-0126_s72
+    - HALO-0126_s73
+    - HALO-0126_s74
+    - HALO-0126_s75
+    BAD: []
+    UGLY: []
+- kinds:
+  - circling
+  name: Circling phase 2 - Circle 3 to 4 before deviation due to traffic
+  irregularities:
+  - between circle 5 and 6, the flight deviated from the circle due to a traffic issue
+  segment_id: HALO-0126_o2
+  start: 2020-01-26 17:19:54
+  end: 2020-01-26 19:33:17
+  dropsondes:
+    GOOD:
+    - HALO-0126_s40
+    - HALO-0126_s41
+    - HALO-0126_s42
+    - HALO-0126_s43
+    - HALO-0126_s44
+    - HALO-0126_s45
+    - HALO-0126_s46
+    - HALO-0126_s47
+    - HALO-0126_s48
+    - HALO-0126_s49
+    - HALO-0126_s50
+    - HALO-0126_s51
+    - HALO-0126_s52
+    - HALO-0126_s53
+    - HALO-0126_s54
+    - HALO-0126_s56
+    - HALO-0126_s57
+    - HALO-0126_s58
+    - HALO-0126_s59
+    - HALO-0126_s60
+    - HALO-0126_s61
+    - HALO-0126_s62
+    - HALO-0126_s63
+    BAD:
+    - HALO-0126_s55
+    UGLY: []
+- kinds:
+  - circling
+  name: Circling phase 3 - Deviation due to traffic to circle 6
+  irregularities:
+  - between circle 5 and 6, the flight deviated from the circle due to a traffic issue
+  segment_id: HALO-0126_o3
+  start: 2020-01-26 19:50:31
+  end: 2020-01-26 20:47:00
+  dropsondes:
+    GOOD:
+    - HALO-0126_s64
+    - HALO-0126_s65
+    - HALO-0126_s66
+    - HALO-0126_s67
+    - HALO-0126_s68
+    - HALO-0126_s69
+    - HALO-0126_s70
+    - HALO-0126_s71
+    - HALO-0126_s72
+    - HALO-0126_s73
+    - HALO-0126_s74
+    - HALO-0126_s75
+    BAD: []
+    UGLY: []
+- kinds:
+  - lidar_leg
+  - straight_leg
+  name: Low-level lidar leg
+  irregularities: []
+  segment_id: HALO-0126_ll1
   start: 2020-01-26 20:54:26
   end: 2020-01-26 21:03:44
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
