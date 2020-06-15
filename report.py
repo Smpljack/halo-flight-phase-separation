@@ -251,9 +251,11 @@ class SegmentChecker:
             if dropsondes_from_segment != dropsondes_from_info:
                 yield "dropsondes in segment file are different from sondes in sondes.yaml"
 
-        sonde_times = [s["launch_time"] for s in sondes_by_flag.get("GOOD", [])]
+        sonde_times = list(sorted([s["launch_time"]
+                                   for sondes in sondes_by_flag.values()
+                                   for s in sondes]))
 
-        if good_dropsondes != len(sonde_times):
+        if good_dropsondes != len(sondes_by_flag.get("GOOD", [])):
             yield "inconsistent number of good sondes between segment file and sondes.yaml"
 
         t_start = np.datetime64(seg["start"])
@@ -325,7 +327,7 @@ def _main():
 
         seg["sondes_by_flag"] = sondes_by_flag
 
-        sonde_times = [s["launch_time"] for s in sondes_by_flag.get("GOOD", [])]
+        sonde_times = [s["launch_time"] for s in sondes_in_segment]
 
         sonde_tracks_by_flag = {
             f: bahamas.sel(time=[s["launch_time"] for s in sondes], method="nearest")
