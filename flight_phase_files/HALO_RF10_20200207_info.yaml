@@ -5,16 +5,13 @@ flight_id: HALO-0207
 contacts:
 - name: Marc Prange
   email: marc.prange@uni-hamburg.de
-  tags:
-  - dataset creator
+  tags: [dp, lc]
 - name: Raphaela Vogel
   email: raphaela.vogel@mpimet.mpg.de
-  tags:
-  - flight PI
+  tags: [pi, cm]
 - name: Tobias Kölling
   email: tobias.koelling@physik.uni-muenchen.de
-  tags:
-  - dataset creator
+  tags: [dp]
 date: 2020-02-07
 flight_report: https://observations.ipsl.fr/aeris/eurec4a-data/REPORTS/HALO/2020/20200207/HALO-0207.pdf
 takeoff: 2020-02-07 12:02:24
