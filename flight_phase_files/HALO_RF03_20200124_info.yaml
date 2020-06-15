@@ -6,11 +6,17 @@ contacts:
 - name: Marc Prange
   email: marc.prange@uni-hamburg.de
   tags:
-  - dataset creator
+  - lc
+  - dp
 - name: Bjorn Stevens
   email: bjorn.stevens@mpimet.mpg.de
   tags:
-  - flight PI
+  - pi
+  - cm
+- name: Geet George
+  email: geet.george@mpimet.mpg.de
+  tags:
+  - dp
 date: 2020-01-24
 flight_report: https://observations.ipsl.fr/aeris/eurec4a-data/REPORTS/HALO/2020/20200124/HALO-0124.pdf
 takeoff: 2020-01-24 09:29:30
@@ -20,59 +26,322 @@ remarks:
 - Circle pattern, in the end excursion towards NTAS.
 - Deeper convection in the SE circle, spreading cold pools and stratiform clouds.
 segments:
-- kind: circle
-  name: c1
-  start: 2020-01-24 09:50:17
-  end: 2020-01-24 10:48:51
-- kind: circle_break
-  name: cb1to2
-  start: 2020-01-24 10:48:51
-  end: 2020-01-24 11:00:08
-- kind: circle
-  name: c2
-  start: 2020-01-24 11:00:08
-  end: 2020-01-24 12:00:00
-- kind: circle_break
-  name: cb2to3
-  start: 2020-01-24 12:00:00
-  end: 2020-01-24 12:15:10
-- kind: circle
-  name: c3
-  start: 2020-01-24 12:15:10
-  end: 2020-01-24 13:10:03
-- kind: circle_break
-  name: cb3to4
-  start: 2020-01-24 13:10:03
-  end: 2020-01-24 13:30:05
-- kind: circle
-  name: c4
-  start: 2020-01-24 13:30:05
-  end: 2020-01-24 14:25:07
-- kind: circle_break
-  name: cb4to5
-  start: 2020-01-24 14:25:07
-  end: 2020-01-24 14:40:08
-- kind: circle
-  name: c5
-  start: 2020-01-24 14:40:08
-  end: 2020-01-24 15:35:05
-- kind: circle_break
-  name: cb5to6
-  start: 2020-01-24 15:35:05
-  end: 2020-01-24 15:50:06
-- kind: circle
-  name: c6
-  start: 2020-01-24 15:50:06
-  end: 2020-01-24 16:45:10
-- kind: straight_leg
-  name: leg1_outbound_NTAS
+- kinds:
+  - circle
+  name: Circle-1
+  irregularities:
+  - late sonde from subsequent circle break is included here
+  segment_id: HALO-0124_c1
+  start: 2020-01-24 09:49:07
+  end: 2020-01-24 10:46:26
+  dropsondes:
+    GOOD:
+    - HALO-0124_s01
+    - HALO-0124_s03
+    - HALO-0124_s04
+    - HALO-0124_s05
+    - HALO-0124_s08
+    - HALO-0124_s09
+    - HALO-0124_s10
+    - HALO-0124_s11
+    - HALO-0124_s12
+    - HALO-0124_s13
+    BAD:
+    - HALO-0124_s02
+    - HALO-0124_s06
+    UGLY:
+    - HALO-0124_s07
+- kinds:
+  - circle_break
+  name: Circle break between circle-1 and circle-2
+  irregularities: [sonde was moved to circle-1]
+  segment_id: HALO-0124_cb1
+  start: 2020-01-24 10:46:26
+  end: 2020-01-24 10:59:01
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
+- kinds:
+  - circle
+  name: Circle-2
+  irregularities:
+  - late sonde from subsequent circle break is included here
+  segment_id: HALO-0124_c2
+  start: 2020-01-24 10:59:01
+  end: 2020-01-24 11:56:59
+  dropsondes:
+    GOOD:
+    - HALO-0124_s14
+    - HALO-0124_s15
+    - HALO-0124_s16
+    - HALO-0124_s17
+    - HALO-0124_s18
+    - HALO-0124_s19
+    - HALO-0124_s20
+    - HALO-0124_s21
+    - HALO-0124_s22
+    - HALO-0124_s23
+    - HALO-0124_s24
+    - HALO-0124_s25
+    - HALO-0124_s26
+    BAD: []
+    UGLY: []
+- kinds:
+  - circle_break
+  name: Circle break between circle-2 and circle-3
+  irregularities: [sonde was moved to circle-2]
+  segment_id: HALO-0124_cb2
+  start: 2020-01-24 11:56:59
+  end: 2020-01-24 12:14:08
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
+- kinds:
+  - circle
+  name: Circle-3
+  irregularities: []
+  segment_id: HALO-0124_c3
+  start: 2020-01-24 12:14:08
+  end: 2020-01-24 13:13:30
+  dropsondes:
+    GOOD:
+    - HALO-0124_s27
+    - HALO-0124_s28
+    - HALO-0124_s29
+    - HALO-0124_s30
+    - HALO-0124_s31
+    - HALO-0124_s32
+    - HALO-0124_s33
+    - HALO-0124_s34
+    - HALO-0124_s35
+    - HALO-0124_s36
+    - HALO-0124_s37
+    - HALO-0124_s38
+    BAD: []
+    UGLY: []
+- kinds:
+  - circle_break
+  name: Circle break between circle-3 and circle-4
+  irregularities: []
+  segment_id: HALO-0124_cb3
+  start: 2020-01-24 13:13:30
+  end: 2020-01-24 13:29:02
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
+- kinds:
+  - circle
+  name: Circle-4
+  irregularities: []
+  segment_id: HALO-0124_c4
+  start: 2020-01-24 13:29:02
+  end: 2020-01-24 14:28:38
+  dropsondes:
+    GOOD:
+    - HALO-0124_s39
+    - HALO-0124_s40
+    - HALO-0124_s41
+    - HALO-0124_s42
+    - HALO-0124_s43
+    - HALO-0124_s44
+    - HALO-0124_s45
+    - HALO-0124_s46
+    - HALO-0124_s47
+    - HALO-0124_s48
+    - HALO-0124_s49
+    - HALO-0124_s50
+    BAD: []
+    UGLY: []
+- kinds:
+  - circle_break
+  name: Circle break between circle-4 and circle-5
+  irregularities: []
+  segment_id: HALO-0124_cb4
+  start: 2020-01-24 14:28:38
+  end: 2020-01-24 14:39:08
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
+- kinds:
+  - circle
+  name: Circle-5
+  irregularities: []
+  segment_id: HALO-0124_c5
+  start: 2020-01-24 14:39:08
+  end: 2020-01-24 15:38:42
+  dropsondes:
+    GOOD:
+    - HALO-0124_s51
+    - HALO-0124_s52
+    - HALO-0124_s53
+    - HALO-0124_s54
+    - HALO-0124_s55
+    - HALO-0124_s56
+    - HALO-0124_s57
+    - HALO-0124_s58
+    - HALO-0124_s59
+    - HALO-0124_s60
+    - HALO-0124_s61
+    - HALO-0124_s62
+    BAD: []
+    UGLY: []
+- kinds:
+  - circle_break
+  name: Circle break between circle-5 and circle-6
+  irregularities: []
+  segment_id: HALO-0124_cb5
+  start: 2020-01-24 15:38:42
+  end: 2020-01-24 15:49:04
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
+- kinds:
+  - circle
+  name: Circle-6
+  irregularities: []
+  segment_id: HALO-0124_c6
+  start: 2020-01-24 15:49:04
+  end: 2020-01-24 16:48:15
+  dropsondes:
+    GOOD:
+    - HALO-0124_s63
+    - HALO-0124_s64
+    - HALO-0124_s65
+    - HALO-0124_s66
+    - HALO-0124_s67
+    - HALO-0124_s68
+    - HALO-0124_s69
+    - HALO-0124_s71
+    - HALO-0124_s72
+    - HALO-0124_s73
+    - HALO-0124_s74
+    - HALO-0124_s75
+    BAD:
+    - HALO-0124_s70
+    UGLY: []
+- kinds:
+  - circling
+  name: Circling period - Circle 1 to 6
+  irregularities: []
+  segment_id: HALO-0124_o1
+  start: 2020-01-24 09:49:07
+  end: 2020-01-24 16:48:15
+  dropsondes:
+    GOOD:
+    - HALO-0124_s01
+    - HALO-0124_s03
+    - HALO-0124_s04
+    - HALO-0124_s05
+    - HALO-0124_s08
+    - HALO-0124_s09
+    - HALO-0124_s10
+    - HALO-0124_s11
+    - HALO-0124_s12
+    - HALO-0124_s13
+    - HALO-0124_s14
+    - HALO-0124_s15
+    - HALO-0124_s16
+    - HALO-0124_s17
+    - HALO-0124_s18
+    - HALO-0124_s19
+    - HALO-0124_s20
+    - HALO-0124_s21
+    - HALO-0124_s22
+    - HALO-0124_s23
+    - HALO-0124_s24
+    - HALO-0124_s25
+    - HALO-0124_s26
+    - HALO-0124_s27
+    - HALO-0124_s28
+    - HALO-0124_s29
+    - HALO-0124_s30
+    - HALO-0124_s31
+    - HALO-0124_s32
+    - HALO-0124_s33
+    - HALO-0124_s34
+    - HALO-0124_s35
+    - HALO-0124_s36
+    - HALO-0124_s37
+    - HALO-0124_s38
+    - HALO-0124_s39
+    - HALO-0124_s40
+    - HALO-0124_s41
+    - HALO-0124_s42
+    - HALO-0124_s43
+    - HALO-0124_s44
+    - HALO-0124_s45
+    - HALO-0124_s46
+    - HALO-0124_s47
+    - HALO-0124_s48
+    - HALO-0124_s49
+    - HALO-0124_s50
+    - HALO-0124_s51
+    - HALO-0124_s52
+    - HALO-0124_s53
+    - HALO-0124_s54
+    - HALO-0124_s55
+    - HALO-0124_s56
+    - HALO-0124_s57
+    - HALO-0124_s58
+    - HALO-0124_s59
+    - HALO-0124_s60
+    - HALO-0124_s61
+    - HALO-0124_s62
+    - HALO-0124_s63
+    - HALO-0124_s64
+    - HALO-0124_s65
+    - HALO-0124_s66
+    - HALO-0124_s67
+    - HALO-0124_s68
+    - HALO-0124_s69
+    - HALO-0124_s71
+    - HALO-0124_s72
+    - HALO-0124_s73
+    - HALO-0124_s74
+    - HALO-0124_s75
+    BAD:
+    - HALO-0124_s02
+    - HALO-0124_s06
+    - HALO-0124_s70
+    UGLY:
+    - HALO-0124_s07
+- kinds:
+  - straight_leg
+  name: Leg outbound NTAS
+  irregularities: []
+  segment_id: HALO-0124_sl1
   start: 2020-01-24 16:59:34
   end: 2020-01-24 17:27:19
-- kind: straight_leg
-  name: leg2_inbound_NTAS
+  dropsondes:
+    GOOD:
+    - HALO-0124_s77
+    BAD:
+    - HALO-0124_s76
+    UGLY: []
+- kinds:
+  - straight_leg
+  name: Leg inbound NTAS
+  irregularities: []
+  segment_id: HALO-0124_sl2
   start: 2020-01-24 17:33:45
   end: 2020-01-24 18:02:50
-- kind: lidar_calibration
-  name: lidar_cal
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
+- kinds:
+  - lidar_leg
+  name: Low level lidar leg
+  irregularities: [roll not maintained at zero]
+  segment_id: HALO-0124_ll1
   start: 2020-01-24 18:12:19
   end: 2020-01-24 18:21:55
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
