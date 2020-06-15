@@ -47,6 +47,18 @@
     color: white;
 }
 
+.flag_GOOD {
+    background-color: #8f8;
+}
+
+.flag_BAD{
+    background-color: #f88;
+}
+
+.flag_UGLY{
+    background-color: #fc8;
+}
+
 </style>
     </head>
     <body>
@@ -102,12 +114,26 @@
         </p>
         {% endfor %}
         <ul>
-            <li>Number of sondes according to data: {{ segment.sonde_count_in_data }}</li>
+            {% if "dropsondes" in segment %}
+            <li>Sondes in segment file:
+                {% for flag, sondes in segment.dropsondes.items() | sort %}
+                <span class="tag flag_{{ flag }}">{{ sondes | length }} {{ flag }}</span>
+                {% endfor %}
+            </li>
+            {% endif %}
+            <li>Sondes in sondes.yaml:
+                {% for flag, sondes in segment.sondes_by_flag.items() | sort %}
+                <span class="tag flag_{{ flag }}">{{ sondes | length }} {{ flag }}</span>
+                {% endfor %}
+            </li>
             {% if segment.good_dropsondes %}
             <li>Number of good sondes: {{ segment.good_dropsondes }}</li>
             {% endif %}
             {% if segment.time_to_first_sonde %}
             <li>Time until first dropsonde launch: {{ segment.time_to_first_sonde }} s</li>
+            {% endif %}
+            {% if segment.heading_difference %}
+            <li>Difference in heading from start to end: {{ segment.heading_difference }} deg</li>
             {% endif %}
         </ul>
         {% for plot in segment.plot_data %}
@@ -115,13 +141,16 @@
             <img src="{{ plot }}" alt="segment {{ segment.name }} plot" />
         </p>
         {% endfor %}
-        {% if segment.sonde_times|length %}
-        <h4>sonde times</h4>
+        {% if segment.sondes_by_flag|length %}
+        <h4>sonde launch times</h4>
+        {% for flag, sondes in segment.sondes_by_flag.items() %}
+        <h5>{{ flag }}</h5>
         <ul>
-            {% for t in segment.sonde_times %}
-            <li>{{ t }}</li>
+            {% for s in sondes %}
+            <li>{{ s.launch_time }}</li>
             {% endfor %}
         </ul>
+        {% endfor %}
         {% endif %}
         {% endfor %}
     </body>

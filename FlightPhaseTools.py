@@ -196,7 +196,7 @@ def timestamp_ind_seconds_prior(bahamas_data, timestamp_ind, seconds):
                                  np.timedelta64(seconds, 's')))))
 
 
-def exit_circle_timestamp_ind(bahamas_data, enter_circle_ts_index, search_interval_sec=3600):
+def exit_circle_timestamp_ind(bahamas_data, enter_circle_ts_index):
     """
     Find the timestamp index in the bahamas dataset after the given
     enter_circle_ts_index that has the closest 'heading' value as
@@ -206,12 +206,12 @@ def exit_circle_timestamp_ind(bahamas_data, enter_circle_ts_index, search_interv
     :param enter_circle_ts_index: timestamp index.
     :return: timestamp index.
     """
-    search_interval = bahamas_data['time'][enter_circle_ts_index] + np.timedelta64(search_interval_sec, 's')
-    search_interval_ind = int(np.argmin(np.abs(bahamas_data['time'] - search_interval)))
-    return np.argmin(np.abs(bahamas_data['heading'][enter_circle_ts_index + 60:search_interval_ind]
-                            - bahamas_data['heading'][enter_circle_ts_index])) + enter_circle_ts_index + 60
+    timestamp_1h = bahamas_data['time'][enter_circle_ts_index] + np.timedelta64(1, 'h')
+    timestamp_ind_1h = int(np.argmin(np.abs(bahamas_data['time'] - timestamp_1h)))
+    return np.argmin(np.abs(bahamas_data['heading'][enter_circle_ts_index + 1:timestamp_ind_1h]
+                            - bahamas_data['heading'][enter_circle_ts_index])) + enter_circle_ts_index + 1
 
-def enter_circle_timestamp_ind_given_end(bahamas_data, exit_circle_ts_index, search_interval_sec=3600):
+def enter_circle_timestamp_ind_given_end(bahamas_data, exit_circle_ts_index):
     """
     Find the timestamp index in the bahamas dataset prior to the given
     exit_circle_ts_index that has the closest 'heading' value as
@@ -221,9 +221,8 @@ def enter_circle_timestamp_ind_given_end(bahamas_data, exit_circle_ts_index, sea
     :param exit_circle_ts_index: timestamp index.
     :return: timestamp index.
     """
-    search_interval = bahamas_data['time'][exit_circle_ts_index] - \
-                      np.timedelta64(search_interval_sec, 's')
-    search_interval_ind = int(np.argmin(np.abs(bahamas_data['time'] - search_interval)))
-    return  exit_circle_ts_index - 60 - \
-            np.argmin(np.abs(bahamas_data['heading'][exit_circle_ts_index-60:search_interval_ind:-1]
+    timestamp_1h = bahamas_data['time'][exit_circle_ts_index] - np.timedelta64(1, 'h')
+    timestamp_ind_1h = int(np.argmin(np.abs(bahamas_data['time'] - timestamp_1h)))
+    return  exit_circle_ts_index - 1 - \
+            np.argmin(np.abs(bahamas_data['heading'][exit_circle_ts_index-1:timestamp_ind_1h:-1]
                             - bahamas_data['heading'][exit_circle_ts_index]))
