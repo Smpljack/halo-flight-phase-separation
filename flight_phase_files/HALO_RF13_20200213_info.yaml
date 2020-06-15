@@ -83,7 +83,7 @@ segments:
   irregularities: []
   segment_id: HALO-0213_c1
   start: 2020-02-13 08:19:47
-  end: 2020-02-13 09:15:39
+  end: 2020-02-13 09:15:38
   dropsondes:
     GOOD:
     - HALO-0213_s01
@@ -105,20 +105,19 @@ segments:
   name: circle break 1
   irregularities: []
   segment_id: HALO-0213_cb1
-  start: 2020-02-13 09:15:39
-  end: 2020-02-13 09:28:31
+  start: 2020-02-13 09:15:38
+  end: 2020-02-13 09:25:08
   dropsondes:
     GOOD: []
-    BAD:
-    - HALO-0213_s13
+    BAD: []
     UGLY: []
 - kinds:
   - circle
   name: circle 2
   irregularities: []
   segment_id: HALO-0213_c2
-  start: 2020-02-13 09:28:31
-  end: 2020-02-13 10:25:06
+  start: 2020-02-13 09:25:08
+  end: 2020-02-13 10:21:41
   dropsondes:
     GOOD:
     - HALO-0213_s14
@@ -131,7 +130,8 @@ segments:
     - HALO-0213_s22
     - HALO-0213_s23
     - HALO-0213_s24
-    BAD: []
+    BAD:
+    - HALO-0213_s13
     UGLY:
     - HALO-0213_s19
 - kinds:
@@ -139,7 +139,7 @@ segments:
   name: circle break 2
   irregularities: []
   segment_id: HALO-0213_cb2
-  start: 2020-02-13 10:25:06
+  start: 2020-02-13 10:21:41
   end: 2020-02-13 10:33:58
   dropsondes:
     GOOD: []
@@ -346,7 +346,7 @@ segments:
   - straight_leg
   name: lidar leg
   irregularities: []
-  segment_id: HALO-0213_lc1
+  segment_id: HALO-0213_ll1
   start: 2020-02-13 16:48:33
   end: 2020-02-13 17:01:45
   dropsondes:
