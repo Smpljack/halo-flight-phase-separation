@@ -37,69 +37,208 @@ segments:
   name: circling 1
   irregularities: []
   segment_id: HALO-0211_o1
-  start: 2020-02-11 12:57:38
+  start: 2020-02-11 12:57:31
   end: 2020-02-11 18:55:41
-  good_dropsondes: 58
+  dropsondes:
+    GOOD:
+    - HALO-0211_s01
+    - HALO-0211_s02
+    - HALO-0211_s03
+    - HALO-0211_s04
+    - HALO-0211_s05
+    - HALO-0211_s06
+    - HALO-0211_s09
+    - HALO-0211_s10
+    - HALO-0211_s11
+    - HALO-0211_s12
+    - HALO-0211_s13
+    - HALO-0211_s14
+    - HALO-0211_s15
+    - HALO-0211_s16
+    - HALO-0211_s17
+    - HALO-0211_s18
+    - HALO-0211_s19
+    - HALO-0211_s20
+    - HALO-0211_s21
+    - HALO-0211_s22
+    - HALO-0211_s23
+    - HALO-0211_s24
+    - HALO-0211_s25
+    - HALO-0211_s26
+    - HALO-0211_s27
+    - HALO-0211_s28
+    - HALO-0211_s29
+    - HALO-0211_s30
+    - HALO-0211_s31
+    - HALO-0211_s32
+    - HALO-0211_s33
+    - HALO-0211_s34
+    - HALO-0211_s35
+    - HALO-0211_s37
+    - HALO-0211_s38
+    - HALO-0211_s39
+    - HALO-0211_s40
+    - HALO-0211_s41
+    - HALO-0211_s42
+    - HALO-0211_s43
+    - HALO-0211_s44
+    - HALO-0211_s46
+    - HALO-0211_s47
+    - HALO-0211_s48
+    - HALO-0211_s49
+    - HALO-0211_s50
+    - HALO-0211_s51
+    - HALO-0211_s52
+    - HALO-0211_s53
+    - HALO-0211_s54
+    - HALO-0211_s55
+    - HALO-0211_s56
+    - HALO-0211_s57
+    - HALO-0211_s58
+    - HALO-0211_s59
+    - HALO-0211_s60
+    BAD:
+    - HALO-0211_s45
+    UGLY:
+    - HALO-0211_s07
+    - HALO-0211_s08
+    - HALO-0211_s36
 - kinds:
   - circle
   name: circle 1
   irregularities: []
   segment_id: HALO-0211_c1
-  start: 2020-02-11 12:57:38
-  end: 2020-02-11 13:54:23
-  good_dropsondes: 11
+  start: 2020-02-11 12:57:31
+  end: 2020-02-11 13:54:16
+  dropsondes:
+    GOOD:
+    - HALO-0211_s01
+    - HALO-0211_s02
+    - HALO-0211_s03
+    - HALO-0211_s04
+    - HALO-0211_s05
+    - HALO-0211_s06
+    - HALO-0211_s09
+    - HALO-0211_s10
+    - HALO-0211_s11
+    - HALO-0211_s12
+    BAD: []
+    UGLY:
+    - HALO-0211_s07
+    - HALO-0211_s08
 - kinds:
   - circle_break
   name: circle break 1
   irregularities: []
   segment_id: HALO-0211_cb1
-  start: 2020-02-11 13:54:23
-  end: 2020-02-11 14:11:04
+  start: 2020-02-11 13:54:16
+  end: 2020-02-11 14:11:02
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
 - kinds:
   - circle
   name: circle 2
   irregularities: []
   segment_id: HALO-0211_c2
-  start: 2020-02-11 14:11:04
-  end: 2020-02-11 15:09:20
-  good_dropsondes: 12
+  start: 2020-02-11 14:11:02
+  end: 2020-02-11 15:09:18
+  dropsondes:
+    GOOD:
+    - HALO-0211_s13
+    - HALO-0211_s14
+    - HALO-0211_s15
+    - HALO-0211_s16
+    - HALO-0211_s17
+    - HALO-0211_s18
+    - HALO-0211_s19
+    - HALO-0211_s20
+    - HALO-0211_s21
+    - HALO-0211_s22
+    - HALO-0211_s23
+    - HALO-0211_s24
+    BAD: []
+    UGLY: []
 - kinds:
   - circle_break
   name: circle break 2
   irregularities: []
   segment_id: HALO-0211_cb2
-  start: 2020-02-11 15:09:20
-  end: 2020-02-11 15:26:53
+  start: 2020-02-11 15:09:18
+  end: 2020-02-11 15:26:51
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
 - kinds:
   - circle
   name: circle 3
   irregularities: []
   segment_id: HALO-0211_c3
-  start: 2020-02-11 15:26:53
-  end: 2020-02-11 16:26:47
-  good_dropsondes: 12
+  start: 2020-02-11 15:26:51
+  end: 2020-02-11 16:26:45
+  dropsondes:
+    GOOD:
+    - HALO-0211_s25
+    - HALO-0211_s26
+    - HALO-0211_s27
+    - HALO-0211_s28
+    - HALO-0211_s29
+    - HALO-0211_s30
+    - HALO-0211_s31
+    - HALO-0211_s32
+    - HALO-0211_s33
+    - HALO-0211_s34
+    - HALO-0211_s35
+    BAD: []
+    UGLY:
+    - HALO-0211_s36
 - kinds:
   - circle_break
   name: circle break 3
   irregularities: []
   segment_id: HALO-0211_cb3
-  start: 2020-02-11 16:26:47
-  end: 2020-02-11 16:38:54
+  start: 2020-02-11 16:26:45
+  end: 2020-02-11 16:38:51
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
 - kinds:
   - circle
   name: circle 4
   irregularities: []
   segment_id: HALO-0211_c4
-  start: 2020-02-11 16:38:54
-  end: 2020-02-11 17:40:29
-  good_dropsondes: 11
+  start: 2020-02-11 16:38:51
+  end: 2020-02-11 17:40:09
+  dropsondes:
+    GOOD:
+    - HALO-0211_s37
+    - HALO-0211_s38
+    - HALO-0211_s39
+    - HALO-0211_s40
+    - HALO-0211_s41
+    - HALO-0211_s42
+    - HALO-0211_s43
+    - HALO-0211_s44
+    - HALO-0211_s46
+    - HALO-0211_s47
+    - HALO-0211_s48
+    BAD:
+    - HALO-0211_s45
+    UGLY: []
 - kinds:
   - circle_break
   name: circle break 4
   irregularities: []
   segment_id: HALO-0211_cb4
-  start: 2020-02-11 17:40:29
+  start: 2020-02-11 17:40:09
   end: 2020-02-11 17:53:00
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
 - kinds:
   - circle
   name: circle 5
@@ -108,7 +247,22 @@ segments:
   segment_id: HALO-0211_c5
   start: 2020-02-11 17:53:00
   end: 2020-02-11 18:55:41
-  good_dropsondes: 12
+  dropsondes:
+    GOOD:
+    - HALO-0211_s49
+    - HALO-0211_s50
+    - HALO-0211_s51
+    - HALO-0211_s52
+    - HALO-0211_s53
+    - HALO-0211_s54
+    - HALO-0211_s55
+    - HALO-0211_s56
+    - HALO-0211_s57
+    - HALO-0211_s58
+    - HALO-0211_s59
+    - HALO-0211_s60
+    BAD: []
+    UGLY: []
 - kinds:
   - straight_leg
   name: leg1 outbound NTAS
@@ -116,6 +270,11 @@ segments:
   segment_id: HALO-0211_sl1
   start: 2020-02-11 18:58:28
   end: 2020-02-11 19:46:26
+  dropsondes:
+    GOOD:
+    - HALO-0211_s61
+    BAD: []
+    UGLY: []
 - kinds:
   - radar_calibration_wiggle
   name: radarcalibration wiggle 1
@@ -123,6 +282,10 @@ segments:
   segment_id: HALO-0211_rcw1
   start: 2020-02-11 19:46:24
   end: 2020-02-11 19:47:44
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
 - kinds:
   - radar_calibration_tilted
   name: radar calibration tilted
@@ -130,6 +293,10 @@ segments:
   segment_id: HALO-0211_rct1
   start: 2020-02-11 19:51:11
   end: 2020-02-11 19:59:34
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
 - kinds:
   - radar_calibration_wiggle
   name: radar calibration wiggle 2
@@ -137,6 +304,10 @@ segments:
   segment_id: HALO-0211_rcw2
   start: 2020-02-11 20:00:13
   end: 2020-02-11 20:01:36
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
 - kinds:
   - straight_leg
   name: leg2 inbound NTAS
@@ -144,6 +315,10 @@ segments:
   segment_id: HALO-0211_sl2
   start: 2020-02-11 20:10:08
   end: 2020-02-11 20:58:39
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
 - kinds:
   - lidar_leg
   name: lidar leg
@@ -151,3 +326,7 @@ segments:
   segment_id: HALO-0211_ll1
   start: 2020-02-11 21:07:50
   end: 2020-02-11 21:22:22
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
