@@ -217,7 +217,7 @@ segments:
 - kinds: [circle_break]
   name: circle break 5/6
   start: 2020-02-07 19:26:59
-  end: 2020-02-07 19:39:43
+  end: 2020-02-07 19:39:45
   segment_id: HALO-0207_cb4
   irregularities: []
   dropsondes:
