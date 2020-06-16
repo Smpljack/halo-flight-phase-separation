@@ -6,7 +6,12 @@ contacts:
 - name: Marc Prange
   email: marc.prange@uni-hamburg.de
   tags:
-  - dataset creator
+  - lc
+  - dp
+- name: Lutz Hirsch
+  email: lutz.hirsch@mpimet.mpg.de
+  tags:
+  - dp
 - name: Jessica Vial
   email: jessica.vial@lmd.jussieu.fr
   tags:
@@ -25,59 +30,326 @@ remarks:
 - During the whole flight precipitating cells were observed.
 - On the way to NTAS a few cold pools were observed with shallow sugar-type convection.
 segments:
-- kind: circle
-  name: c1
-  start: 2020-02-13 08:20:47
-  end: 2020-02-13 09:16:21
-- kind: circle_break
-  name: cb1to2
-  start: 2020-02-13 09:16:21
-  end: 2020-02-13 09:29:33
-- kind: circle
-  name: c2
-  start: 2020-02-13 09:29:33
-  end: 2020-02-13 10:19:35
-- kind: circle_break
-  name: cb2to3
-  start: 2020-02-13 10:19:35
-  end: 2020-02-13 10:35:00
-- kind: circle
-  name: c3
-  start: 2020-02-13 10:35:00
-  end: 2020-02-13 11:27:10
-- kind: straight_leg
-  name: leg1_outbound_NTAS
-  start: 2020-02-13 11:34:30
-  end: 2020-02-13 12:05:48
-- kind: radar_calibration_wiggle
-  name: radar_cal_wiggle
+- kinds:
+  - circling
+  name: circling 1
+  irregularities: []
+  segment_id: HALO-0213_o1
+  start: 2020-02-13 08:19:47
+  end: 2020-02-13 11:31:01
+  dropsondes:
+    GOOD:
+    - HALO-0213_s01
+    - HALO-0213_s02
+    - HALO-0213_s03
+    - HALO-0213_s04
+    - HALO-0213_s05
+    - HALO-0213_s06
+    - HALO-0213_s07
+    - HALO-0213_s08
+    - HALO-0213_s09
+    - HALO-0213_s10
+    - HALO-0213_s11
+    - HALO-0213_s12
+    - HALO-0213_s14
+    - HALO-0213_s15
+    - HALO-0213_s16
+    - HALO-0213_s17
+    - HALO-0213_s18
+    - HALO-0213_s20
+    - HALO-0213_s21
+    - HALO-0213_s22
+    - HALO-0213_s23
+    - HALO-0213_s24
+    - HALO-0213_s25
+    - HALO-0213_s26
+    - HALO-0213_s27
+    - HALO-0213_s28
+    - HALO-0213_s29
+    - HALO-0213_s30
+    - HALO-0213_s31
+    - HALO-0213_s32
+    - HALO-0213_s33
+    - HALO-0213_s34
+    - HALO-0213_s35
+    - HALO-0213_s36
+    BAD:
+    - HALO-0213_s13
+    UGLY:
+    - HALO-0213_s19
+- kinds:
+  - circle
+  name: circle 1
+  irregularities: []
+  segment_id: HALO-0213_c1
+  start: 2020-02-13 08:19:47
+  end: 2020-02-13 09:15:38
+  dropsondes:
+    GOOD:
+    - HALO-0213_s01
+    - HALO-0213_s02
+    - HALO-0213_s03
+    - HALO-0213_s04
+    - HALO-0213_s05
+    - HALO-0213_s06
+    - HALO-0213_s07
+    - HALO-0213_s08
+    - HALO-0213_s09
+    - HALO-0213_s10
+    - HALO-0213_s11
+    - HALO-0213_s12
+    BAD: []
+    UGLY: []
+- kinds:
+  - circle_break
+  name: circle break 1
+  irregularities: []
+  segment_id: HALO-0213_cb1
+  start: 2020-02-13 09:15:38
+  end: 2020-02-13 09:25:08
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
+- kinds:
+  - circle
+  name: circle 2
+  irregularities: []
+  segment_id: HALO-0213_c2
+  start: 2020-02-13 09:25:08
+  end: 2020-02-13 10:21:41
+  dropsondes:
+    GOOD:
+    - HALO-0213_s14
+    - HALO-0213_s15
+    - HALO-0213_s16
+    - HALO-0213_s17
+    - HALO-0213_s18
+    - HALO-0213_s20
+    - HALO-0213_s21
+    - HALO-0213_s22
+    - HALO-0213_s23
+    - HALO-0213_s24
+    BAD:
+    - HALO-0213_s13
+    UGLY:
+    - HALO-0213_s19
+- kinds:
+  - circle_break
+  name: circle break 2
+  irregularities: []
+  segment_id: HALO-0213_cb2
+  start: 2020-02-13 10:21:41
+  end: 2020-02-13 10:33:58
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
+- kinds:
+  - circle
+  name: circle 3
+  irregularities: []
+  segment_id: HALO-0213_c3
+  start: 2020-02-13 10:33:58
+  end: 2020-02-13 11:31:01
+  dropsondes:
+    GOOD:
+    - HALO-0213_s25
+    - HALO-0213_s26
+    - HALO-0213_s27
+    - HALO-0213_s28
+    - HALO-0213_s29
+    - HALO-0213_s30
+    - HALO-0213_s31
+    - HALO-0213_s32
+    - HALO-0213_s33
+    - HALO-0213_s34
+    - HALO-0213_s35
+    - HALO-0213_s36
+    BAD: []
+    UGLY: []
+- kinds:
+  - straight_leg
+  name: leg1 outbound NTAS
+  irregularities: []
+  segment_id: HALO-0213_sl1
+  start: 2020-02-13 11:33:53
+  end: 2020-02-13 12:05:50
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY:
+    - HALO-0213_s37
+- kinds:
+  - radar_calibration_wiggle
+  name: radar calibration wiggle
+  irregularities: []
+  segment_id: HALO-0213_rcw1
   start: 2020-02-13 12:11:42
-  end: 2020-02-13 12:17:03
-- kind: straight_leg
+  end: 2020-02-13 12:13:48
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
+- kinds:
+  - straight_leg
   name: leg2_inbound_NTAS
-  start: 2020-02-13 12:17:03
-  end: 2020-02-13 12:57:12
-- kind: circle
-  name: c4
-  start: 2020-02-13 13:03:45
-  end: 2020-02-13 13:57:37
-- kind: circle_break
-  name: cb4to5
-  start: 2020-02-13 13:57:37
-  end: 2020-02-13 14:24:57
-- kind: circle
-  name: c5
-  start: 2020-02-13 14:24:57
-  end: 2020-02-13 15:19:56
-- kind: circle_break
-  name: cb5to6
-  start: 2020-02-13 15:19:56
-  end: 2020-02-13 15:40:07
-- kind: circle
-  name: c6
-  start: 2020-02-13 15:40:07
-  end: 2020-02-13 16:38:42
-- kind: lidar_calibration
-  name: lidar_cal
-  start: 2020-02-13 16:48:43
-  end: 2020-02-13 17:01:40
+  irregularities: []
+  segment_id: HALO-0213_sl2
+  start: 2020-02-13 12:16:28
+  end: 2020-02-13 12:57:34
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
+- kinds:
+  - circling
+  name: circling 2
+  irregularities: []
+  segment_id: HALO-0213_o2
+  start: 2020-02-13 13:02:44
+  end: 2020-02-13 16:40:42
+  dropsondes:
+    GOOD:
+    - HALO-0213_s38
+    - HALO-0213_s39
+    - HALO-0213_s40
+    - HALO-0213_s41
+    - HALO-0213_s42
+    - HALO-0213_s43
+    - HALO-0213_s44
+    - HALO-0213_s45
+    - HALO-0213_s46
+    - HALO-0213_s47
+    - HALO-0213_s48
+    - HALO-0213_s49
+    - HALO-0213_s50
+    - HALO-0213_s51
+    - HALO-0213_s52
+    - HALO-0213_s53
+    - HALO-0213_s54
+    - HALO-0213_s55
+    - HALO-0213_s56
+    - HALO-0213_s57
+    - HALO-0213_s58
+    - HALO-0213_s59
+    - HALO-0213_s60
+    - HALO-0213_s61
+    - HALO-0213_s62
+    - HALO-0213_s63
+    - HALO-0213_s64
+    - HALO-0213_s65
+    - HALO-0213_s66
+    - HALO-0213_s67
+    - HALO-0213_s68
+    - HALO-0213_s69
+    - HALO-0213_s70
+    - HALO-0213_s71
+    - HALO-0213_s72
+    BAD: []
+    UGLY:
+    - HALO-0213_s73
+- kinds:
+  - circle
+  name: circle 4
+  irregularities: []
+  segment_id: HALO-0213_c4
+  start: 2020-02-13 13:02:44
+  end: 2020-02-13 14:02:49
+  dropsondes:
+    GOOD:
+    - HALO-0213_s38
+    - HALO-0213_s39
+    - HALO-0213_s40
+    - HALO-0213_s41
+    - HALO-0213_s42
+    - HALO-0213_s43
+    - HALO-0213_s44
+    - HALO-0213_s45
+    - HALO-0213_s46
+    - HALO-0213_s47
+    - HALO-0213_s48
+    - HALO-0213_s49
+    BAD: []
+    UGLY: []
+- kinds:
+  - circle_break
+  name: circle break 4
+  irregularities: []
+  segment_id: HALO-0213_cb4
+  start: 2020-02-13 14:02:49
+  end: 2020-02-13 14:23:55
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
+- kinds:
+  - circle
+  name: circle 5
+  irregularities: []
+  segment_id: HALO-0213_c5
+  start: 2020-02-13 14:23:55
+  end: 2020-02-13 15:25:28
+  dropsondes:
+    GOOD:
+    - HALO-0213_s50
+    - HALO-0213_s51
+    - HALO-0213_s52
+    - HALO-0213_s53
+    - HALO-0213_s54
+    - HALO-0213_s55
+    - HALO-0213_s56
+    - HALO-0213_s57
+    - HALO-0213_s58
+    - HALO-0213_s59
+    - HALO-0213_s60
+    - HALO-0213_s61
+    BAD: []
+    UGLY: []
+- kinds:
+  - circle_break
+  name: circle break 5
+  irregularities: []
+  segment_id: HALO-0213_cb5
+  start: 2020-02-13 15:25:28
+  end: 2020-02-13 15:38:26
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
+- kinds:
+  - circle
+  name: circle 6
+  irregularities:
+  - Earlier start to finish 360 degree before next flight segment
+  segment_id: HALO-0213_c6
+  start: 2020-02-13 15:38:26
+  end: 2020-02-13 16:40:42
+  dropsondes:
+    GOOD:
+    - HALO-0213_s62
+    - HALO-0213_s63
+    - HALO-0213_s64
+    - HALO-0213_s65
+    - HALO-0213_s66
+    - HALO-0213_s67
+    - HALO-0213_s68
+    - HALO-0213_s69
+    - HALO-0213_s70
+    - HALO-0213_s71
+    - HALO-0213_s72
+    BAD: []
+    UGLY:
+    - HALO-0213_s73
+- kinds:
+  - lidar_leg
+  - straight_leg
+  name: lidar leg
+  irregularities: []
+  segment_id: HALO-0213_ll1
+  start: 2020-02-13 16:48:33
+  end: 2020-02-13 17:01:45
+  dropsondes:
+    GOOD: []
+    BAD: []
+    UGLY: []
