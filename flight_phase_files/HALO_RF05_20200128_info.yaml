@@ -27,7 +27,7 @@ remarks:
 segments:
 - kinds:
   - circle
-  name: Circle 1
+  name: circle 1
   irregularities: []
   segment_id: HALO-0128_c1
   start: 2020-01-28 15:20:47
@@ -50,7 +50,7 @@ segments:
     UGLY: []
 - kinds:
   - circle_break
-  name: Break between circle 1 and circle 2
+  name: break between circle 1 and circle 2
   irregularities: []
   segment_id: HALO-0128_cb1
   start: 2020-01-28 16:17:20
@@ -61,7 +61,7 @@ segments:
     UGLY: []
 - kinds:
   - circle
-  name: Circle 2
+  name: circle 2
   irregularities: []
   segment_id: HALO-0128_c2
   start: 2020-01-28 16:31:29
@@ -84,7 +84,7 @@ segments:
     UGLY: []
 - kinds:
   - circle_break
-  name: Break between circle 2 and circle 3
+  name: break between circle 2 and circle 3
   irregularities: []
   segment_id: HALO-0128_cb2
   start: 2020-01-28 17:28:31
@@ -95,7 +95,7 @@ segments:
     UGLY: []
 - kinds:
   - circle
-  name: Circle 3
+  name: circle 3
   irregularities:
   - Circle starts 4 minutes (instead of regularly 1 minute) before the first dropsonde.
   segment_id: HALO-0128_c3
@@ -119,7 +119,7 @@ segments:
     UGLY: []
 - kinds:
   - circling
-  name: Circling 1
+  name: circling 1
   irregularities: []
   segment_id: HALO-0128_o1
   start: 2020-01-28 15:20:47
@@ -166,7 +166,7 @@ segments:
     UGLY: []
 - kinds:
   - straight_leg
-  name: Outbound leg towards NTAS
+  name: outbound leg towards NTAS
   irregularities: []
   segment_id: HALO-0128_sl1
   start: 2020-01-28 18:41:02
@@ -178,7 +178,7 @@ segments:
     UGLY: []
 - kinds:
   - radar_calibration_tilted
-  name: Radar calibration constant bank
+  name: radar calibration with constant bank
   irregularities: []
   segment_id: HALO-0128_rct1
   start: 2020-01-28 19:07:44
@@ -189,7 +189,7 @@ segments:
     UGLY: []
 - kinds:
   - straight_leg
-  name: Inbound leg from NTAS
+  name: inbound leg from NTAS
   irregularities: []
   segment_id: HALO-0128_sl2
   start: 2020-01-28 19:28:47
@@ -200,7 +200,7 @@ segments:
     UGLY: []
 - kinds:
   - circle
-  name: Circle 4
+  name: circle 4
   irregularities: []
   segment_id: HALO-0128_c4
   start: 2020-01-28 19:56:48
@@ -223,7 +223,7 @@ segments:
     - HALO-0128_s45
 - kinds:
   - circle_break
-  name: Break between circle 4 and circle 5
+  name: break between circle 4 and circle 5
   irregularities: []
   segment_id: HALO-0128_cb3
   start: 2020-01-28 20:56:37
@@ -234,7 +234,7 @@ segments:
     UGLY: []
 - kinds:
   - circle
-  name: Circle 5
+  name: circle 5
   irregularities: []
   segment_id: HALO-0128_c5
   start: 2020-01-28 21:12:03
@@ -257,7 +257,7 @@ segments:
     UGLY: []
 - kinds:
   - circle_break
-  name: Break between circle 4 and circle 5
+  name: break between circle 4 and circle 5
   irregularities: []
   segment_id: HALO-0128_cb4
   start: 2020-01-28 22:11:38
@@ -268,7 +268,7 @@ segments:
     UGLY: []
 - kinds:
   - circle
-  name: Circle 6
+  name: circle 6
   irregularities:
   - Circle starts 5 minutes (instead of regularly 1 minute) before the first dropsonde.
   - There are 13 dropsondes in this circle. The last two sondes were launched one
@@ -295,7 +295,7 @@ segments:
     - HALO-0128_s74
 - kinds:
   - circling
-  name: Circling 2
+  name: circling 2
   irregularities: []
   segment_id: HALO-0128_o2
   start: 2020-01-28 19:56:48
@@ -343,7 +343,7 @@ segments:
     - HALO-0128_s74
 - kinds:
   - lidar_leg
-  name: Lidar leg
+  name: lidar leg
   irregularities: []
   segment_id: HALO-0128_ll1
   start: 2020-01-28 23:32:23

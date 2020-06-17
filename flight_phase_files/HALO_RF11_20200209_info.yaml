@@ -52,7 +52,7 @@ segments:
     - HALO-0209_s07
     UGLY: []
 - kinds: [circle_break]
-  name: circle break 1/2
+  name: circle break between circle 1 and circle 2
   start: 2020-02-09 10:32:49
   end: 2020-02-09 10:49:09
   segment_id: HALO-0209_cb1
@@ -84,7 +84,7 @@ segments:
     - HALO-0209_s20
     UGLY: []
 - kinds: [circle_break]
-  name: circle break 2/3
+  name: circle break between circle 2 and circle 3
   start: 2020-02-09 11:46:41
   end: 2020-02-09 11:57:36
   segment_id: HALO-0209_cb2
@@ -126,7 +126,7 @@ segments:
     BAD: []
     UGLY: []
 - kinds: [radar_calibration_wiggle]
-  name: radar wiggle pattern 1
+  name: radar calibration with +-20 deg roll wiggles
   start: 2020-02-09 13:17:13
   end: 2020-02-09 13:19:11
   segment_id: HALO-0209_rcw1
@@ -136,7 +136,7 @@ segments:
     BAD: []
     UGLY: []
 - kinds: [radar_calibration_tilted]
-  name: tilted radar calibration pattern
+  name: radar calibration with constant bank
   start: 2020-02-09 13:19:42
   end: 2020-02-09 13:28:40
   segment_id: HALO-0209_rct1
@@ -146,7 +146,7 @@ segments:
     BAD: []
     UGLY: []
 - kinds: [radar_calibration_wiggle]
-  name: radar wiggle pattern 2
+  name: radar calibration with +-20 deg roll wiggles
   start: 2020-02-09 13:32:59
   end: 2020-02-09 13:35:14
   segment_id: HALO-0209_rcw2
@@ -198,7 +198,7 @@ segments:
     - HALO-0209_s37
     UGLY: []
 - kinds: [circle_break]
-  name: circle break 4/5
+  name: circle break between circle 4 and circle 5
   start: 2020-02-09 14:56:07
   end: 2020-02-09 15:06:13
   segment_id: HALO-0209_cb3
@@ -230,7 +230,7 @@ segments:
     UGLY:
     - HALO-0209_s55
 - kinds: [circle_break]
-  name: circle break 5/6
+  name: circle break between circle 5 and circle 6
   start: 2020-02-09 16:08:18
   end: 2020-02-09 16:22:03
   segment_id: HALO-0209_cb4
@@ -262,7 +262,7 @@ segments:
     UGLY:
     - HALO-0209_s72
 - kinds: [straight_leg, lidar_leg]
-  name: low level lidar leg
+  name: lidar leg
   start: 2020-02-09 17:34:18
   end: 2020-02-09 17:47:14
   segment_id: HALO-0209_ll1

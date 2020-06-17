@@ -33,7 +33,7 @@ remarks:
 segments:
 - kinds:
   - radar_calibration_wiggle
-  name: Radar calibration with +-20 deg roll wiggles
+  name: radar calibration with +-20 deg roll wiggles
   irregularities: []
   segment_id: HALO-0119_rcw1
   start: 2020-01-19 16:08:51
@@ -45,7 +45,7 @@ segments:
 - kinds:
   - straight_leg
   - super_curtain
-  name: Super curtain (from NTAS, over ships, to circle center)
+  name: super curtain (from NTAS, over ships, to circle center)
   irregularities: []
   segment_id: HALO-0119_sl1
   start: 2020-01-19 16:16:35
@@ -58,7 +58,7 @@ segments:
     UGLY: []
 - kinds:
   - circle
-  name: Circle 1
+  name: circle 1
   irregularities:
   - Start of circle directly with first drop, roll angle around 4 deg in beginning
   segment_id: HALO-0119_c1
@@ -81,7 +81,7 @@ segments:
     - HALO-0119_s13
 - kinds:
   - circling
-  name: Circling
+  name: circling
   irregularities:
   - Start of circling directly with first drop, roll angle around 4 deg in beginning
   segment_id: HALO-0119_o1

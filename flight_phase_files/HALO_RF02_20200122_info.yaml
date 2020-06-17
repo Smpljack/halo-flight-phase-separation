@@ -32,7 +32,7 @@ remarks:
 segments:
 - kinds:
   - circle
-  name: Circle 1
+  name: circle 1
   irregularities:
   - Circle starts 30 s before first launch to include the last sonde
   segment_id: HALO-0122_c1
@@ -56,7 +56,7 @@ segments:
     UGLY: []
 - kinds:
   - circle_break
-  name: Break between circle 1 and 2
+  name: break between circle 1 and circle 2
   irregularities: []
   segment_id: HALO-0122_cb1
   start: 2020-01-22 16:13:04
@@ -67,7 +67,7 @@ segments:
     UGLY: []
 - kinds:
   - circle
-  name: Circle 2
+  name: circle 2
   irregularities: []
   segment_id: HALO-0122_c2
   start: 2020-01-22 16:30:20
@@ -90,7 +90,7 @@ segments:
     UGLY: []
 - kinds:
   - circle_break
-  name: Break between circle 2 and 3
+  name: break between circle 2 and circle 3
   irregularities: []
   segment_id: HALO-0122_cb2
   start: 2020-01-22 17:26:52
@@ -101,7 +101,7 @@ segments:
     UGLY: []
 - kinds:
   - circle
-  name: Circle 3
+  name: circle 3
   irregularities:
   - Circle starts 70 s before first launch to avoid pitch change in end of circle
   segment_id: HALO-0122_c3
@@ -136,7 +136,7 @@ segments:
     UGLY: []
 - kinds:
   - straight_leg
-  name: Leg 1 above cirrus
+  name: leg 1 above cirrus
   irregularities: []
   segment_id: HALO-0122_sl1
   start: 2020-01-22 19:08:05
@@ -147,7 +147,7 @@ segments:
     UGLY: []
 - kinds:
   - straight_leg
-  name: Leg 2 below cirrus
+  name: leg 2 below cirrus
   irregularities: []
   segment_id: HALO-0122_sl2
   start: 2020-01-22 19:25:42
@@ -158,7 +158,7 @@ segments:
     UGLY: []
 - kinds:
   - circle
-  name: Circle 4
+  name: circle 4
   irregularities: []
   segment_id: HALO-0122_c4
   start: 2020-01-22 19:44:10
@@ -182,7 +182,7 @@ segments:
     UGLY: []
 - kinds:
   - circle_break
-  name: Break between circle 4 and 5
+  name: break between circle 4 and circle 5
   irregularities: []
   segment_id: HALO-0122_cb3
   start: 2020-01-22 20:43:22
@@ -193,7 +193,7 @@ segments:
     UGLY: []
 - kinds:
   - circle
-  name: Circle 5
+  name: circle 5
   irregularities:
   - Circle starts earlier to accomodate complete 6th circle right afterwards
   segment_id: HALO-0122_c5
@@ -217,7 +217,7 @@ segments:
     UGLY: []
 - kinds:
   - circle
-  name: Circle 6
+  name: circle 6
   irregularities: []
   segment_id: HALO-0122_c6
   start: 2020-01-22 21:58:36
@@ -240,7 +240,7 @@ segments:
     UGLY: []
 - kinds:
   - straight_leg
-  name: Leg 3 over R/V Meteor
+  name: leg 3 over R/V Meteor
   irregularities: []
   segment_id: HALO-0122_sl3
   start: 2020-01-22 23:01:37
@@ -251,7 +251,7 @@ segments:
     UGLY: []
 - kinds:
   - lidar_leg
-  name: Lidar leg
+  name: lidar leg
   irregularities: []
   segment_id: HALO-0122_ll1
   start: 2020-01-22 23:25:01
@@ -262,7 +262,7 @@ segments:
     UGLY: []
 - kinds:
   - circling
-  name: Circling 1
+  name: circling 1
   irregularities: []
   segment_id: HALO-0122_o1
   start: 2020-01-22 15:17:48
@@ -309,7 +309,7 @@ segments:
     UGLY: []
 - kinds:
   - circling
-  name: Circling 2
+  name: circling 2
   irregularities: []
   segment_id: HALO-0122_o2
   start: 2020-01-22 19:44:10

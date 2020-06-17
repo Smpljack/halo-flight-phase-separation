@@ -145,7 +145,7 @@ segments:
     UGLY: []
 - kinds:
   - circle_break
-  name: circle break 1
+  name: circle break between circle 4 and circle 5
   irregularities:
   - excludes period of circle deviation between circle 4 and circle 5
   segment_id: HALO-0215_cb1

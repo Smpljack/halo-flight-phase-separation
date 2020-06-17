@@ -50,7 +50,7 @@ segments:
     - HALO-0202_s10
 - kinds:
   - circle_break
-  name: circle break 1
+  name: circle break between circle 1 and circle 2
   irregularities: []
   segment_id: HALO-0202_cb1
   start: 2020-02-02 12:42:55
@@ -84,7 +84,7 @@ segments:
     - HALO-0202_s14
 - kinds:
   - circle_break
-  name: circle break 2
+  name: circle break between circle 2 and circle 3
   irregularities: []
   segment_id: HALO-0202_cb2
   start: 2020-02-02 13:46:58
@@ -211,7 +211,7 @@ segments:
     - HALO-0202_s64
 - kinds:
   - circle_break
-  name: circle break 3
+  name: circle break between circle 4 and circle 5
   irregularities: []
   segment_id: HALO-0202_cb3
   start: 2020-02-02 17:26:52
@@ -245,7 +245,7 @@ segments:
     - HALO-0202_s72
 - kinds:
   - circle_break
-  name: circle break 4
+  name: circle break between circle 5 and circle 6
   irregularities: []
   segment_id: HALO-0202_cb4
   start: 2020-02-02 18:33:04
@@ -281,7 +281,7 @@ segments:
     UGLY: []
 - kinds:
   - radar_calibration_tilted
-  name: radar_cal_tilted
+  name: radar calibration with constant bank
   irregularities: []
   segment_id: HALO-0202_rct1
   start: 2020-02-02 19:44:31
@@ -292,7 +292,7 @@ segments:
     UGLY: []
 - kinds:
   - radar_calibration_wiggle
-  name: radar_cal_wiggle
+  name: radar calibration with +-20 deg roll wiggles
   irregularities: []
   segment_id: HALO-0202_rcw1
   start: 2020-02-02 19:49:03
@@ -304,7 +304,7 @@ segments:
 - kinds:
   - lidar_leg
   - straight_leg
-  name: lidar_leg
+  name: lidar leg
   irregularities: []
   segment_id: HALO-0202_ll1
   start: 2020-02-02 19:51:51

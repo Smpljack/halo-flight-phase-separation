@@ -102,7 +102,7 @@ segments:
     UGLY: []
 - kinds:
   - circle_break
-  name: circle break between circles 1 & 2
+  name: circle break between circle 1 and circle 2
   irregularities: []
   segment_id: HALO-0213_cb1
   start: 2020-02-13 09:15:38
@@ -136,7 +136,7 @@ segments:
     - HALO-0213_s19
 - kinds:
   - circle_break
-  name: circle break between circles 2 & 3
+  name: circle break between circle 2 and circle 3
   irregularities: []
   segment_id: HALO-0213_cb2
   start: 2020-02-13 10:21:41
@@ -170,7 +170,7 @@ segments:
     UGLY: []
 - kinds:
   - straight_leg
-  name: leg1 outbound NTAS
+  name: leg 1 outbound NTAS
   irregularities: []
   segment_id: HALO-0213_sl1
   start: 2020-02-13 11:33:53
@@ -182,7 +182,7 @@ segments:
     - HALO-0213_s37
 - kinds:
   - radar_calibration_wiggle
-  name: radar calibration wiggle
+  name: radar calibration with +-20 deg roll wiggles
   irregularities: []
   segment_id: HALO-0213_rcw1
   start: 2020-02-13 12:11:42
@@ -193,7 +193,7 @@ segments:
     UGLY: []
 - kinds:
   - straight_leg
-  name: leg2_inbound_NTAS
+  name: leg 2 inbound NTAS
   irregularities: []
   segment_id: HALO-0213_sl2
   start: 2020-02-13 12:16:28
@@ -274,7 +274,7 @@ segments:
     UGLY: []
 - kinds:
   - circle_break
-  name: circle break between circles 4 & 5
+  name: circle break between circle 4 and circle 5
   irregularities: []
   segment_id: HALO-0213_cb3
   start: 2020-02-13 14:02:49
@@ -308,7 +308,7 @@ segments:
     UGLY: []
 - kinds:
   - circle_break
-  name: circle break between circles 5 & 6
+  name: circle break between circle 5 and circle 6
   irregularities: []
   segment_id: HALO-0213_cb4
   start: 2020-02-13 15:25:28

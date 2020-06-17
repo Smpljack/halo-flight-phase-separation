@@ -32,7 +32,7 @@ remarks:
 segments:
 - kinds:
   - circling
-  name: circling phase 1
+  name: circling 1
   irregularities: []
   segment_id: HALO-0131_o1
   start: 2020-01-31 15:31:12
@@ -100,7 +100,7 @@ segments:
     UGLY: []
 - kinds:
   - circle_break
-  name: circle break between circle 1 and 2
+  name: circle break between circle 1 and circle 2
   irregularities: []
   segment_id: HALO-0131_cb1
   start: 2020-01-31 16:28:29
@@ -134,7 +134,7 @@ segments:
     UGLY: []
 - kinds:
   - circle_break
-  name: circle break between circle 2 and 3
+  name: circle break between circle 2 and circle 3
   irregularities: []
   segment_id: HALO-0131_cb2
   start: 2020-01-31 17:39:38
@@ -181,7 +181,7 @@ segments:
     UGLY: []
 - kinds:
   - radar_calibration_tilted
-  name: radar calibration circles
+  name: radar calibration with constant bank
   irregularities: []
   segment_id: HALO-0131_rct1
   start: 2020-01-31 19:07:40
@@ -204,7 +204,7 @@ segments:
     UGLY: []
 - kinds:
   - radar_calibration_wiggle
-  name: radar calibration wiggle pattern
+  name: radar calibration with +-20 deg roll wiggles
   irregularities: []
   segment_id: HALO-0131_rcw1
   start: 2020-01-31 19:42:57
@@ -226,7 +226,7 @@ segments:
     UGLY: []
 - kinds:
   - circling
-  name: circling phase 2
+  name: circling 2
   irregularities: []
   segment_id: HALO-0131_o2
   start: 2020-01-31 19:58:32
@@ -296,7 +296,7 @@ segments:
     UGLY: []
 - kinds:
   - circle_break
-  name: circle break between circle 4 and 5
+  name: circle break between circle 4 and circle 5
   irregularities: []
   segment_id: HALO-0131_cb3
   start: 2020-01-31 20:57:39
@@ -330,7 +330,7 @@ segments:
     UGLY: []
 - kinds:
   - circle_break
-  name: circle break between circle 5 and 6
+  name: circle break between circle 5 and circle 6
   irregularities: []
   segment_id: HALO-0131_cb4
   start: 2020-01-31 22:14:31

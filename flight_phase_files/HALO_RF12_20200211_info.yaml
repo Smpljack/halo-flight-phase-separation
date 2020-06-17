@@ -128,7 +128,7 @@ segments:
     - HALO-0211_s08
 - kinds:
   - circle_break
-  name: circle break 1
+  name: circle break between circle 1 and circle 2
   irregularities: []
   segment_id: HALO-0211_cb1
   start: 2020-02-11 13:54:15
@@ -162,7 +162,7 @@ segments:
     UGLY: []
 - kinds:
   - circle_break
-  name: circle break 2
+  name: circle break between circle 2 and circle 3
   irregularities: []
   segment_id: HALO-0211_cb2
   start: 2020-02-11 15:09:18
@@ -196,7 +196,7 @@ segments:
     - HALO-0211_s36
 - kinds:
   - circle_break
-  name: circle break 3
+  name: circle break between circle 3 and circle 4
   irregularities: []
   segment_id: HALO-0211_cb3
   start: 2020-02-11 16:26:45
@@ -230,7 +230,7 @@ segments:
     UGLY: []
 - kinds:
   - circle_break
-  name: circle break 4
+  name: circle break between circle 4 and circle 5
   irregularities: []
   segment_id: HALO-0211_cb4
   start: 2020-02-11 17:40:09
@@ -276,7 +276,7 @@ segments:
     UGLY: []
 - kinds:
   - radar_calibration_wiggle
-  name: radarcalibration wiggle 1
+  name: radar calibration with +-20 deg roll wiggles
   irregularities: []
   segment_id: HALO-0211_rcw1
   start: 2020-02-11 19:46:24
@@ -287,7 +287,7 @@ segments:
     UGLY: []
 - kinds:
   - radar_calibration_tilted
-  name: radar calibration tilted
+  name: radar calibration with constant bank
   irregularities: []
   segment_id: HALO-0211_rct1
   start: 2020-02-11 19:51:11
@@ -298,7 +298,7 @@ segments:
     UGLY: []
 - kinds:
   - radar_calibration_wiggle
-  name: radar calibration wiggle 2
+  name: radar calibration with +-20 deg roll wiggles
   irregularities: []
   segment_id: HALO-0211_rcw2
   start: 2020-02-11 20:00:13

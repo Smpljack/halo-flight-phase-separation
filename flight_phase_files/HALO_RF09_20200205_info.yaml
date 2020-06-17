@@ -31,7 +31,7 @@ remarks:
 segments:
 - kinds:
   - circling
-  name: circling phase 1
+  name: circling 1
   irregularities: []
   segment_id: HALO-0205_o1
   start: 2020-02-05 09:36:22
@@ -103,7 +103,7 @@ segments:
     - HALO-0205_s11
 - kinds:
   - circle_break
-  name: circle break between circle 1 and 2
+  name: circle break between circle 1 and circle 2
   irregularities: []
   segment_id: HALO-0205_cb1
   start: 2020-02-05 10:32:55
@@ -139,7 +139,7 @@ segments:
     UGLY: []
 - kinds:
   - circle_break
-  name: circle break between circle 2 and 3
+  name: circle break between circle 2 and circle 3
   irregularities: []
   segment_id: HALO-0205_cb2
   start: 2020-02-05 11:43:24
@@ -219,7 +219,7 @@ segments:
     UGLY: []
 - kinds:
   - circling
-  name: circling phase 2
+  name: circling 2
   irregularities: []
   segment_id: HALO-0205_o2
   start: 2020-02-05 14:35:52
@@ -290,7 +290,7 @@ segments:
     - HALO-0205_s42
 - kinds:
   - circle_break
-  name: circle break between circle 4 and 5
+  name: circle break between circle 4 and circle 5
   irregularities: []
   segment_id: HALO-0205_cb3
   start: 2020-02-05 15:32:05
@@ -325,7 +325,7 @@ segments:
     UGLY: []
 - kinds:
   - circle_break
-  name: circle break between circle 5 and 6
+  name: circle break between circle 5 and circle 6
   irregularities: []
   segment_id: HALO-0205_cb4
   start: 2020-02-05 16:41:26

@@ -29,7 +29,7 @@ remarks:
 segments:
 - kinds:
   - straight_leg
-  name: Leg 1 racetrack
+  name: leg 1 racetrack
   irregularities: []
   segment_id: HALO-0130_sl1
   start: 2020-01-30 11:42:28
@@ -40,7 +40,7 @@ segments:
     UGLY: []
 - kinds:
   - straight_leg
-  name: Leg 2 racetrack
+  name: leg 2 racetrack
   irregularities: []
   segment_id: HALO-0130_sl2
   start: 2020-01-30 11:55:38
@@ -52,7 +52,7 @@ segments:
     UGLY: []
 - kinds:
   - straight_leg
-  name: Leg 3 racetrack
+  name: leg 3 racetrack
   irregularities: []
   segment_id: HALO-0130_sl3
   start: 2020-01-30 12:08:42
@@ -63,7 +63,7 @@ segments:
     UGLY: []
 - kinds:
   - straight_leg
-  name: Leg 4 racetrack
+  name: leg 4 racetrack
   irregularities: []
   segment_id: HALO-0130_sl4
   start: 2020-01-30 12:23:30
@@ -74,7 +74,7 @@ segments:
     UGLY: []
 - kinds:
   - straight_leg
-  name: Leg 5 towards GPM
+  name: leg 5 towards GPM
   irregularities: []
   segment_id: HALO-0130_sl5
   start: 2020-01-30 12:39:11
@@ -85,7 +85,7 @@ segments:
     UGLY: []
 - kinds:
   - straight_leg
-  name: Leg 6 GPM underpass
+  name: leg 6 GPM underpass
   irregularities: []
   segment_id: HALO-0130_sl6
   start: 2020-01-30 12:56:24
@@ -97,7 +97,7 @@ segments:
     UGLY: []
 - kinds:
   - straight_leg
-  name: Leg 7 towards dust
+  name: leg 7 towards dust
   irregularities: []
   segment_id: HALO-0130_sl7
   start: 2020-01-30 13:15:55
@@ -108,7 +108,7 @@ segments:
     UGLY: []
 - kinds:
   - straight_leg
-  name: Leg 8 dust overpass
+  name: leg 8 dust overpass
   irregularities: []
   segment_id: HALO-0130_sl8
   start: 2020-01-30 13:35:10
@@ -120,7 +120,7 @@ segments:
     UGLY: []
 - kinds:
   - straight_leg
-  name: Leg 9 towards Barbados
+  name: leg 9 towards Barbados
   irregularities: []
   segment_id: HALO-0130_sl9
   start: 2020-01-30 13:56:16
