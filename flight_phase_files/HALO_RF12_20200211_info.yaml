@@ -322,7 +322,8 @@ segments:
   - lidar_leg
   name: lidar leg
   irregularities:
-  - roll angle not constant; two small turns
+  - roll angle not constant
+  - two small turns
   segment_id: HALO-0211_ll1
   start: 2020-02-11 21:07:50
   end: 2020-02-11 21:22:22
