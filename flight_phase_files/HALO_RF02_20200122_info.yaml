@@ -177,7 +177,7 @@ segments:
     - HALO-0122_s46
     - HALO-0122_s47
     - HALO-0122_s48
-    BAD: []
+    BAD:
     - HALO-0122_s49
     UGLY: []
 - kinds:

@@ -54,7 +54,8 @@ segments:
 - kinds:
   - circle_break
   name: circle break between circle 1 and circle 2
-  irregularities: [sonde was moved to circle-1]
+  irregularities:
+  - sonde was moved to circle-1
   segment_id: HALO-0124_cb1
   start: 2020-01-24 10:46:26
   end: 2020-01-24 10:59:01
@@ -90,7 +91,8 @@ segments:
 - kinds:
   - circle_break
   name: circle break between circle 2 and circle 3
-  irregularities: [sonde was moved to circle-2]
+  irregularities:
+  - sonde was moved to circle-2
   segment_id: HALO-0124_cb2
   start: 2020-01-24 11:56:59
   end: 2020-01-24 12:14:08
@@ -337,7 +339,8 @@ segments:
 - kinds:
   - lidar_leg
   name: lidar leg
-  irregularities: [roll not maintained at zero]
+  irregularities:
+  - roll not maintained at zero
   segment_id: HALO-0124_ll1
   start: 2020-01-24 18:12:19
   end: 2020-01-24 18:21:55

@@ -146,8 +146,9 @@ segments:
 - kinds:
   - circle
   name: circle 3
-  irregularities: [Earlier start of circle to allow completion of 360 deg before next
-      flight pattern]
+  irregularities:
+  - Earlier start of circle to allow completion of 360 deg before next
+      flight pattern
   segment_id: HALO-0131_c3
   start: 2020-01-31 17:50:17
   end: 2020-01-31 18:49:16
@@ -342,7 +343,8 @@ segments:
 - kinds:
   - circle
   name: circle 6
-  irregularities: [last sonde slightly delayed to circumvent conflict with P3.]
+  irregularities:
+  - last sonde slightly delayed to circumvent conflict with P3
   segment_id: HALO-0131_c6
   start: 2020-01-31 22:26:31
   end: 2020-01-31 23:25:38
