@@ -1254,7 +1254,7 @@
   launch_time: 2020-01-28 23:23:51
   platform: HALO
   sonde_id: HALO-0128_s74
-- flag: BAD
+- flag: GOOD
   launch_time: 2020-01-30 12:06:07
   platform: HALO
   sonde_id: HALO-0130_s01
@@ -1270,7 +1270,7 @@
   launch_time: 2020-01-30 13:35:57
   platform: HALO
   sonde_id: HALO-0130_s04
-- flag: GOOD
+- flag: BAD
   launch_time: 2020-01-31 15:21:57
   platform: HALO
   sonde_id: HALO-0131_s01
