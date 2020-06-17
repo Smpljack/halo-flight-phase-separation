@@ -55,6 +55,7 @@ segments:
     - HALO-0215_s09
     - HALO-0215_s10
     - HALO-0215_s11
+    - HALO-0215_s12
     BAD: []
     UGLY: []
 - kinds:

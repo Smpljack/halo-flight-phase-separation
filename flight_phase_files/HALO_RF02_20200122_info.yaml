@@ -178,6 +178,7 @@ segments:
     - HALO-0122_s47
     - HALO-0122_s48
     BAD: []
+    - HALO-0122_s49
     UGLY: []
 - kinds:
   - circle_break
@@ -188,8 +189,7 @@ segments:
   end: 2020-01-22 20:59:01
   dropsondes:
     GOOD: []
-    BAD:
-    - HALO-0122_s49
+    BAD: []
     UGLY: []
 - kinds:
   - circle
