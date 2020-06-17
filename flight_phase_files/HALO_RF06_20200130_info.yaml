@@ -46,9 +46,9 @@ segments:
   start: 2020-01-30 11:55:38
   end: 2020-01-30 12:06:16
   dropsondes:
-    GOOD: []
-    BAD:
+    GOOD:
     - HALO-0130_s01
+    BAD: []
     UGLY: []
 - kinds:
   - straight_leg
@@ -58,7 +58,8 @@ segments:
   start: 2020-01-30 12:08:42
   end: 2020-01-30 12:17:53
   dropsondes:
-    GOOD: []
+    GOOD: 
+    - HALO-0130_s02
     BAD: []
     UGLY: []
 - kinds:
@@ -91,9 +92,9 @@ segments:
   start: 2020-01-30 12:56:24
   end: 2020-01-30 13:13:21
   dropsondes:
-    GOOD: []
-    BAD:
+    GOOD:
     - HALO-0130_s03
+    BAD: []
     UGLY: []
 - kinds:
   - straight_leg
@@ -114,9 +115,9 @@ segments:
   start: 2020-01-30 13:35:10
   end: 2020-01-30 13:52:49
   dropsondes:
-    GOOD: []
-    BAD:
+    GOOD:
     - HALO-0130_s04
+    BAD: []
     UGLY: []
 - kinds:
   - straight_leg
