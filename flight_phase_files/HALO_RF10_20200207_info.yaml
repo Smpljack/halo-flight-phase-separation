@@ -167,7 +167,8 @@ segments:
   end: 2020-02-07 18:15:53
   segment_id: HALO-0207_c4
   irregularities:
-  - traffic_diversion, begin is at first launch due to roll angle at start
+  - traffic_diversion
+  - begin is at first launch due to roll angle at start
   dropsondes:
     GOOD:
     - HALO-0207_s38
