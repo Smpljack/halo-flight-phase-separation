@@ -58,7 +58,8 @@ segments:
   start: 2020-01-30 12:08:42
   end: 2020-01-30 12:17:53
   dropsondes:
-    GOOD: []
+    GOOD: 
+    - HALO-0130_s02
     BAD: []
     UGLY: []
 - kinds:
