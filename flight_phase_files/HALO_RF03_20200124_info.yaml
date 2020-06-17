@@ -92,7 +92,7 @@ segments:
   - circle_break
   name: circle break between circle 2 and circle 3
   irregularities:
-  - sonde was moved to circle-2
+  - sonde was moved to circle 2
   segment_id: HALO-0124_cb2
   start: 2020-01-24 11:56:59
   end: 2020-01-24 12:14:08
