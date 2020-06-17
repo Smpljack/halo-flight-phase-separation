@@ -147,8 +147,7 @@ segments:
   - circle
   name: circle 3
   irregularities:
-  - Earlier start of circle to allow completion of 360 deg before next
-      flight pattern
+  - Earlier start of circle to allow completion of 360 deg before next flight pattern
   segment_id: HALO-0131_c3
   start: 2020-01-31 17:50:17
   end: 2020-01-31 18:49:16
