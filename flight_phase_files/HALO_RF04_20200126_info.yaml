@@ -334,7 +334,7 @@ segments:
     UGLY: []
 - kinds:
   - circling
-  name: circling phase 2 - circle 4 to 5 before deviation due to traffic
+  name: circling 2
   irregularities:
   - between circle 5 and 6, the flight deviated from the circle due to a traffic issue
   segment_id: HALO-0126_o2
