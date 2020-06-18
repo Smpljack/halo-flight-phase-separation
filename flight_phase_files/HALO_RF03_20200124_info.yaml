@@ -28,7 +28,7 @@ remarks:
 segments:
 - kinds:
   - circle
-  name: Circle-1
+  name: circle 1
   irregularities:
   - late sonde from subsequent circle break is included here
   segment_id: HALO-0124_c1
@@ -53,8 +53,9 @@ segments:
     - HALO-0124_s07
 - kinds:
   - circle_break
-  name: Circle break between circle-1 and circle-2
-  irregularities: [sonde was moved to circle-1]
+  name: circle break between circle 1 and circle 2
+  irregularities:
+  - sonde was moved to circle 1
   segment_id: HALO-0124_cb1
   start: 2020-01-24 10:46:26
   end: 2020-01-24 10:59:01
@@ -64,7 +65,7 @@ segments:
     UGLY: []
 - kinds:
   - circle
-  name: Circle-2
+  name: circle 2
   irregularities:
   - late sonde from subsequent circle break is included here
   segment_id: HALO-0124_c2
@@ -89,8 +90,9 @@ segments:
     UGLY: []
 - kinds:
   - circle_break
-  name: Circle break between circle-2 and circle-3
-  irregularities: [sonde was moved to circle-2]
+  name: circle break between circle 2 and circle 3
+  irregularities:
+  - sonde was moved to circle 2
   segment_id: HALO-0124_cb2
   start: 2020-01-24 11:56:59
   end: 2020-01-24 12:14:08
@@ -100,7 +102,7 @@ segments:
     UGLY: []
 - kinds:
   - circle
-  name: Circle-3
+  name: circle 3
   irregularities: []
   segment_id: HALO-0124_c3
   start: 2020-01-24 12:14:08
@@ -123,7 +125,7 @@ segments:
     UGLY: []
 - kinds:
   - circle_break
-  name: Circle break between circle-3 and circle-4
+  name: circle break between circle 3 and circle 4
   irregularities: []
   segment_id: HALO-0124_cb3
   start: 2020-01-24 13:13:30
@@ -134,7 +136,7 @@ segments:
     UGLY: []
 - kinds:
   - circle
-  name: Circle-4
+  name: circle 4
   irregularities: []
   segment_id: HALO-0124_c4
   start: 2020-01-24 13:29:02
@@ -157,7 +159,7 @@ segments:
     UGLY: []
 - kinds:
   - circle_break
-  name: Circle break between circle-4 and circle-5
+  name: circle break between circle 4 and circle 5
   irregularities: []
   segment_id: HALO-0124_cb4
   start: 2020-01-24 14:28:38
@@ -168,7 +170,7 @@ segments:
     UGLY: []
 - kinds:
   - circle
-  name: Circle-5
+  name: circle 5
   irregularities: []
   segment_id: HALO-0124_c5
   start: 2020-01-24 14:39:08
@@ -191,7 +193,7 @@ segments:
     UGLY: []
 - kinds:
   - circle_break
-  name: Circle break between circle-5 and circle-6
+  name: circle break between circle 5 and circle 6
   irregularities: []
   segment_id: HALO-0124_cb5
   start: 2020-01-24 15:38:42
@@ -202,7 +204,7 @@ segments:
     UGLY: []
 - kinds:
   - circle
-  name: Circle-6
+  name: circle 6
   irregularities: []
   segment_id: HALO-0124_c6
   start: 2020-01-24 15:49:04
@@ -226,7 +228,7 @@ segments:
     UGLY: []
 - kinds:
   - circling
-  name: Circling period - Circle 1 to 6
+  name: circling
   irregularities: []
   segment_id: HALO-0124_o1
   start: 2020-01-24 09:49:07
@@ -312,7 +314,7 @@ segments:
     - HALO-0124_s07
 - kinds:
   - straight_leg
-  name: Leg outbound NTAS
+  name: leg outbound NTAS
   irregularities: []
   segment_id: HALO-0124_sl1
   start: 2020-01-24 16:59:34
@@ -325,7 +327,7 @@ segments:
     UGLY: []
 - kinds:
   - straight_leg
-  name: Leg inbound NTAS
+  name: leg inbound NTAS
   irregularities: []
   segment_id: HALO-0124_sl2
   start: 2020-01-24 17:33:45
@@ -336,8 +338,9 @@ segments:
     UGLY: []
 - kinds:
   - lidar_leg
-  name: Low level lidar leg
-  irregularities: [roll not maintained at zero]
+  name: lidar leg
+  irregularities:
+  - roll not maintained at zero
   segment_id: HALO-0124_ll1
   start: 2020-01-24 18:12:19
   end: 2020-01-24 18:21:55

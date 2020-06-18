@@ -26,7 +26,7 @@ remarks:
 segments:
 - kinds:
   - straight_leg
-  name: Constant altitude transfer leg 1
+  name: constant altitude transfer leg 1
   irregularities: []
   segment_id: HALO-0218_sl1
   start: 2020-02-18 10:42:32
@@ -38,7 +38,7 @@ segments:
     UGLY: []
 - kinds:
   - straight_leg
-  name: Constant altitude transfer leg 2
+  name: constant altitude transfer leg 2
   irregularities: []
   segment_id: HALO-0218_sl2
   start: 2020-02-18 11:07:24
@@ -49,7 +49,7 @@ segments:
     UGLY: []
 - kinds:
   - straight_leg
-  name: Constant altitude transfer leg 3
+  name: constant altitude transfer leg 3
   irregularities: []
   segment_id: HALO-0218_sl3
   start: 2020-02-18 11:53:46
@@ -63,7 +63,7 @@ segments:
     - HALO-0218_s04
 - kinds:
   - straight_leg
-  name: Constant altitude transfer leg 4
+  name: constant altitude transfer leg 4
   irregularities:
   - Roll angle is larger during this segment, but without heading change. Probably
     turbulence
