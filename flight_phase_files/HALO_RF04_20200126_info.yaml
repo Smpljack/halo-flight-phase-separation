@@ -133,7 +133,7 @@ segments:
     - HALO-0126_s35
 - kinds:
   - circling
-  name: circling 1 - circle 1 to 3
+  name: circling 1
   irregularities: []
   segment_id: HALO-0126_o1
   start: 2020-01-26 12:25:40
