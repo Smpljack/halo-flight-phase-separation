@@ -35,7 +35,7 @@ segments:
   end: 2020-02-09 10:32:49
   segment_id: HALO-0209_c1
   irregularities:
-  - begin is 34s before first launch due to roll angle at start
+  - TTFS begin is 34s before first launch due to roll angle at start
   dropsondes:
     GOOD:
     - HALO-0209_s01
@@ -100,7 +100,7 @@ segments:
   end: 2020-02-09 12:56:03
   segment_id: HALO-0209_c3
   irregularities:
-  - begin is 100s before first launch due to roll angle at end
+  - TTFS begin is 100s before first launch due to roll angle at end
   dropsondes:
     GOOD:
     - HALO-0209_s25
@@ -247,7 +247,7 @@ segments:
   end: 2020-02-09 17:24:26
   segment_id: HALO-0209_c6
   irregularities:
-  - begin is 362s before first launch due to roll angle at end
+  - TTFS begin is 362s before first launch due to roll angle at end
   dropsondes:
     GOOD:
     - HALO-0209_s61
@@ -280,7 +280,7 @@ segments:
   end: 2020-02-09 12:56:03
   segment_id: HALO-0209_o1
   irregularities:
-  - begin is 34s before first launch due to roll angle at start
+  - TTFS begin is 34s before first launch due to roll angle at start
   dropsondes:
     GOOD:
     - HALO-0209_s01
@@ -322,7 +322,7 @@ segments:
     UGLY: []
 - kinds: [circling]
   name: circling 2
-  start: 2020-02-09 13:55:19
+  start: 2020-02-09 13:54:23
   end: 2020-02-09 17:24:26
   segment_id: HALO-0209_o2
   irregularities: []
