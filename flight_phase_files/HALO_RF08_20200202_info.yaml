@@ -28,7 +28,7 @@ segments:
   - circle
   name: circle 1
   irregularities:
-  - TTFS starts 40 seconds prior to first dropsonde
+  - TTFS starts 40 seconds prior to first dropsonde due to high roll angle
   segment_id: HALO-0202_c1
   start: 2020-02-02 11:47:17
   end: 2020-02-02 12:42:55
