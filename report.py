@@ -190,6 +190,9 @@ def plots_for_kinds(kinds):
 def kinds_is_circle(kinds):
     return any(k in kinds for k in ["circle", "circling"])
 
+def has_irregularity(irregularities, irregularity_tag):
+    return any(i.startswith(irregularity_tag) for i in irregularities)
+
 class SegmentChecker:
     def __init__(self, flight):
         self.used_segment_ids = set()
@@ -250,23 +253,23 @@ class SegmentChecker:
             dropsondes_from_segment = {f: s
                                        for f, s in seg["dropsondes"].items()
                                        if len(s) > 0}
-            if dropsondes_from_segment != dropsondes_from_info:
-                yield "dropsondes in segment file are different from sondes in sondes.yaml"
+            if dropsondes_from_segment != dropsondes_from_info and not has_irregularity(irregularities, "SAM"):
+                yield "dropsondes in segment file are different from sondes in sondes.yaml and no SAM irregularity is recorded"
 
         sonde_times = list(sorted([s["launch_time"]
                                    for sondes in sondes_by_flag.values()
                                    for s in sondes]))
 
-        if good_dropsondes != len(sondes_by_flag.get("GOOD", [])):
-            yield "inconsistent number of good sondes between segment file and sondes.yaml"
+        if good_dropsondes != len(sondes_by_flag.get("GOOD", [])) and not has_irregularity(irregularities, "SAM"):
+            yield "inconsistent number of good sondes between segment file and sondes.yaml and no SAM irregularity is recorded"
 
         t_start = np.datetime64(seg["start"])
         if "circle" in kinds and len(sonde_times) > 0:
             seconds_to_first_sonde = (np.datetime64(sonde_times[0]) - t_start) \
                                    / np.timedelta64(1, "s")
-            if abs(seconds_to_first_sonde - 60.) > .75 and len(irregularities) == 0:
+            if abs(seconds_to_first_sonde - 60.) > .75 and not has_irregularity(irregularities, "TTFS"):
                 # use a little bit more that .5 sec offset to cover rounding errors
-                yield "time to first sonde is not 1 minute and no irregularities are recorded"
+                yield "time to first sonde is not 1 minute and no TTFS irregularities are recorded"
 
 
 def _main():
