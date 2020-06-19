@@ -129,12 +129,11 @@ def straight_leg_detail_plot(seg, sonde_tracks_by_flag, seg_before, seg_after):
 
     return fig
 
-def zoom_on(var, unit):
+def zoom_on(var, unit, tofs=np.timedelta64(30, "s")):
     def zoom_plot(seg, sonde_tracks_by_flag, seg_before, seg_after):
         fig, (start_ax, end_ax) = plt.subplots(1, 2, figsize=(8,3), constrained_layout=True)
 
-        tofs = np.timedelta64(30, "s")
-        tofs2 = np.timedelta64(31, "s")
+        tofs2 = tofs + np.timedelta64(1, "s")
 
         for ax, t, name in [(start_ax, seg.time.data[0], "start"),
                             (end_ax, seg.time.data[-1], "end")]:
@@ -172,6 +171,9 @@ def timeline_of(var, unit):
 
 SPECIAL_PLOTS = {
     "circle": [circle_detail_plot, zoom_on("roll", "deg")],
+    "circling": [zoom_on("roll", "deg", tofs=np.timedelta64(3, "m")),
+                 zoom_on("pitch", "deg", tofs=np.timedelta64(3, "m")),
+                 zoom_on("altitude", "m", tofs=np.timedelta64(3, "m"))],
     "straight_leg": [straight_leg_detail_plot, zoom_on("roll", "deg")],
     "radar_calibration_wiggle": [zoom_on("roll", "deg")],
     "radar_calibration_tilted": [zoom_on("roll", "deg")],
@@ -187,6 +189,9 @@ def plots_for_kinds(kinds):
 
 def kinds_is_circle(kinds):
     return any(k in kinds for k in ["circle", "circling"])
+
+def has_irregularity(irregularities, irregularity_tag):
+    return any(i.startswith(irregularity_tag) for i in irregularities)
 
 class SegmentChecker:
     def __init__(self, flight):
@@ -248,23 +253,23 @@ class SegmentChecker:
             dropsondes_from_segment = {f: s
                                        for f, s in seg["dropsondes"].items()
                                        if len(s) > 0}
-            if dropsondes_from_segment != dropsondes_from_info:
-                yield "dropsondes in segment file are different from sondes in sondes.yaml"
+            if dropsondes_from_segment != dropsondes_from_info and not has_irregularity(irregularities, "SAM"):
+                yield "dropsondes in segment file are different from sondes in sondes.yaml and no SAM irregularity is recorded"
 
         sonde_times = list(sorted([s["launch_time"]
                                    for sondes in sondes_by_flag.values()
                                    for s in sondes]))
 
-        if good_dropsondes != len(sondes_by_flag.get("GOOD", [])):
-            yield "inconsistent number of good sondes between segment file and sondes.yaml"
+        if good_dropsondes != len(sondes_by_flag.get("GOOD", [])) and not has_irregularity(irregularities, "SAM"):
+            yield "inconsistent number of good sondes between segment file and sondes.yaml and no SAM irregularity is recorded"
 
         t_start = np.datetime64(seg["start"])
-        if kinds_is_circle(kinds) and len(sonde_times) > 0:
+        if "circle" in kinds and len(sonde_times) > 0:
             seconds_to_first_sonde = (np.datetime64(sonde_times[0]) - t_start) \
                                    / np.timedelta64(1, "s")
-            if abs(seconds_to_first_sonde - 60.) > .75 and len(irregularities) == 0:
+            if abs(seconds_to_first_sonde - 60.) > .75 and not has_irregularity(irregularities, "TTFS"):
                 # use a little bit more that .5 sec offset to cover rounding errors
-                yield "time to first sonde is not 1 minute and no irregularities are recorded"
+                yield "time to first sonde is not 1 minute and no TTFS irregularities are recorded"
 
 
 def _main():
@@ -302,6 +307,7 @@ def _main():
         global_warnings.append("no sonde_info is specified, using data from unified dataset")
 
     sonde_info = [s for s in sonde_info if s["platform"] == platform]
+    sondes_by_id = {s["sonde_id"]: s for s in sonde_info}
 
     fig, ax = plt.subplots()
     ax.plot(bahamas.lon, bahamas.lat)
@@ -325,13 +331,16 @@ def _main():
         sondes_by_flag = {f: [s for s in sondes_in_segment if s["flag"] == f]
                           for f in set(s["flag"] for s in sondes_in_segment)}
 
+        manual_sondes_by_flag = {f: [sondes_by_id[s] for s in sondes] for f, sondes in seg.get("dropsondes", []).items()}
+
         seg["sondes_by_flag"] = sondes_by_flag
 
         sonde_times = [s["launch_time"] for s in sondes_in_segment]
 
         sonde_tracks_by_flag = {
             f: bahamas.sel(time=[s["launch_time"] for s in sondes], method="nearest")
-            for f, sondes in sondes_by_flag.items()
+            #for f, sondes in sondes_by_flag.items()
+            for f, sondes in manual_sondes_by_flag.items()
         }
 
         plot_data = []
