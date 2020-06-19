@@ -35,10 +35,11 @@ segments:
   - circle
   name: circle 1
   irregularities:
-  - starts 220 seconds prior to first dropsonde
+  - TTFS starts 220 seconds prior to first dropsonde to get as close to 360 degree circle as possible
   - descent from FL320 to FL180
   - circle lasts 68 minutes
   - circle ranges over only 337 deg
+  - SAM HALO-0215_s01 sonde added manually because released prior to start of circle track
   segment_id: HALO-0215_c1
   start: 2020-02-15 15:34:59
   end: 2020-02-15 16:38:50
@@ -63,7 +64,7 @@ segments:
   name: circle 2
   irregularities:
   - Only 8 dropsondes.
-  - Starts 165 seconds prior to first dropsonde.
+  - TTFS Starts 165 seconds prior to first dropsonde to get complete 360 degree circle
   segment_id: HALO-0215_c2
   start: 2020-02-15 16:38:50
   end: 2020-02-15 17:48:59
@@ -95,7 +96,7 @@ segments:
   - circle
   name: circle 3
   irregularities:
-  - starts at launch-time of first dropsonde
+  - TTFS starts at launch-time of first dropsonde due to high roll before
   - circle ranges over only 359.5 deg in heading
   - change from FL370 to FL180
   segment_id: HALO-0215_c3
@@ -132,15 +133,12 @@ segments:
   - circle
   name: circle 4
   irregularities:
-  - does not start 1 minute prior to dropsonde
-  - only one dropsonde at the end
-  - increase in flight level from 5.8 to 6.2 km at circle end.
+  - TTFS circle without any sondes due to lack of dropsonde during final research flight
   segment_id: HALO-0215_c4
   start: 2020-02-15 20:11:45
-  end: 2020-02-15 21:20:51
+  end: 2020-02-15 21:19:40
   dropsondes:
-    GOOD:
-    - HALO-0215_s32
+    GOOD: []
     BAD: []
     UGLY: []
 - kinds:
@@ -160,11 +158,13 @@ segments:
   name: circle 5
   irregularities:
   - ascend from 10.4 km to 11.2 km at circle start
+  - SAM HALO-0215_s32 sonde added manually, released before traffic diversion
   segment_id: HALO-0215_c5
   start: 2020-02-15 21:48:22
   end: 2020-02-15 22:46:43
   dropsondes:
     GOOD:
+    - HALO-0215_s32
     - HALO-0215_s33
     - HALO-0215_s34
     - HALO-0215_s35
@@ -183,7 +183,7 @@ segments:
   - circle
   name: circle 6
   irregularities:
-  - starts 63 seconds prior to first dropsonde
+  - TTFS starts 63 seconds prior to first dropsonde to get as close to a full circle as possible
   - early circle exit after 306 degrees
   - Only 7 dropsondes
   - Change from FL350 to FL180 at circle end.
@@ -216,11 +216,11 @@ segments:
   - circling
   name: circling 1
   irregularities:
-  - 'circle 1: descent from FL320 to FL180'
-  - 'circle 1: lasts 68 minutes'
-  - 'circle 1: circle ranges over only 337 degrees'
-  - 'circle 2: starts 165 seconds prior to first dropsonde'
-  - 'circle 2: only 8 dropsondes'
+  - 'circle 1 descent from FL320 to FL180'
+  - 'circle 1 lasts 68 minutes'
+  - 'circle 1 circle ranges over only 337 degrees'
+  - 'TTFS circle 2 starts 165 seconds prior to first dropsonde'
+  - 'circle 2 only 8 dropsondes'
   segment_id: HALO-0215_o1
   start: 2020-02-15 15:34:59
   end: 2020-02-15 17:48:59
@@ -251,9 +251,9 @@ segments:
   - circling
   name: circling 2
   irregularities:
-  - 'circle 3: starts at launch-time of first dropsonde'
-  - 'circle 3: ranges over only 359.5 deg in heading'
-  - 'circle 3: change from FL370 to FL180'
+  - 'TTFS circle 3 starts at launch-time of first dropsonde due to high roll angle before'
+  - 'circle 3 ranges over only 359.5 deg in heading'
+  - 'change from FL370 to FL180 at circling start'
   segment_id: HALO-0215_o2
   start: 2020-02-15 18:17:29
   end: 2020-02-15 19:22:05
@@ -276,30 +276,28 @@ segments:
 - kinds:
   - circling
   name: circling 3
-  irregularities:
-  - 'circle 4: does not start 1 minute prior to dropsonde'
-  - 'circle 4: only one dropsonde at the end'
+  irregularities: [] 
   segment_id: HALO-0215_o3
   start: 2020-02-15 20:11:45
-  end: 2020-02-15 21:20:51
+  end: 2020-02-15 21:19:40
   dropsondes:
-    GOOD:
-    - HALO-0215_s32
+    GOOD: []
     BAD: []
     UGLY: []
 - kinds:
   - circling
   name: circling 4
   irregularities:
-  - circle 5: ascend from 10.4 km to 11.2 km at circle start
-  - circle 6: starts 63 seconds prior to first dropsonde
-  - circle 6: early circle exit after 306 degrees
-  - circle 6: Only 7 dropsondes
+  - TTFS circle 6 starts 63 seconds prior to first dropsonde
+  - circle 6 early circle exit after 306 degrees
+  - circle 6 Only 7 dropsondes
+  - SAM HALO-0215_s32 sonde added manually, released before traffic diversion
   segment_id: HALO-0215_o4
-  start: 2020-02-15 21:48:22
-  end: 2020-02-15 23:35:07
+  start: 2020-02-15 21:50:20
+  end: 2020-02-15 23:34:40
   dropsondes:
     GOOD:
+    - HALO-0215_s32
     - HALO-0215_s33
     - HALO-0215_s34
     - HALO-0215_s35
