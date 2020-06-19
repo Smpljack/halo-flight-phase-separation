@@ -97,7 +97,7 @@ segments:
   - circle
   name: circle 3
   irregularities:
-  - Circle starts 4 minutes (instead of regularly 1 minute) before the first dropsonde.
+  - TTFS Circle starts 4 minutes (instead of regularly 1 minute) prior to first dropsonde to ensure that it is a full 360 deg circle.
   segment_id: HALO-0128_c3
   start: 2020-01-28 17:38:37
   end: 2020-01-28 18:37:34
@@ -120,10 +120,11 @@ segments:
 - kinds:
   - circling
   name: circling 1
-  irregularities: []
+  irregularities: 
+  - TTFS Circle 3 starts 4 minutes (instead of regularly 1 minute) prior to first dropsonde to ensure that it is a full 360 deg circle.
   segment_id: HALO-0128_o1
-  start: 2020-01-28 15:20:47
-  end: 2020-01-28 18:37:34
+  start: 2020-01-28 15:18:45
+  end: 2020-01-28 18:38:38
   dropsondes:
     GOOD:
     - HALO-0128_s01
@@ -270,7 +271,7 @@ segments:
   - circle
   name: circle 6
   irregularities:
-  - Circle starts 5 minutes (instead of regularly 1 minute) before the first dropsonde.
+  - TTFS Circle starts 5 minutes (instead of regularly 1 minute) prior to first dropsonde to ensure that it is a full 360 deg circle.
   - There are 13 dropsondes in this circle. The last two sondes were launched one
     after another, to check variability from measurement.
   segment_id: HALO-0128_c6
@@ -296,10 +297,11 @@ segments:
 - kinds:
   - circling
   name: circling 2
-  irregularities: []
+  irregularities: 
+  - TTFS Circle 6 starts 5 minutes (instead of regularly 1 minute) prior to first dropsonde to ensure that it is a full 360 deg circle.
   segment_id: HALO-0128_o2
-  start: 2020-01-28 19:56:48
-  end: 2020-01-28 23:24:04
+  start: 2020-01-28 19:53:30
+  end: 2020-01-28 23:24:47
   dropsondes:
     GOOD:
     - HALO-0128_s38
