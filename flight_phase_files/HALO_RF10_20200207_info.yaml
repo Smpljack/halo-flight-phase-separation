@@ -93,7 +93,7 @@ segments:
   end: 2020-02-07 15:34:48
   segment_id: HALO-0207_c3
   irregularities:
-  - begin is 120s before first launch due to roll angle at end
+  - TTFS begin is 120s before first launch due to roll angle at end
   dropsondes:
     GOOD:
     - HALO-0207_s25
@@ -168,7 +168,7 @@ segments:
   segment_id: HALO-0207_c4
   irregularities:
   - traffic_diversion
-  - begin is at first launch due to roll angle at start
+  - TTFS begin is at first launch due to roll angle at start
   dropsondes:
     GOOD:
     - HALO-0207_s38
@@ -234,7 +234,7 @@ segments:
   segment_id: HALO-0207_c6
   irregularities:
     - traffic_diversion
-    - begin is 222s before first launch due to roll angle at end
+    - TTFS begin is 222s before first launch due to roll angle at end
   dropsondes:
     GOOD:
     - HALO-0207_s64
