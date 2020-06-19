@@ -129,12 +129,11 @@ def straight_leg_detail_plot(seg, sonde_tracks_by_flag, seg_before, seg_after):
 
     return fig
 
-def zoom_on(var, unit):
+def zoom_on(var, unit, tofs=np.timedelta64(30, "s")):
     def zoom_plot(seg, sonde_tracks_by_flag, seg_before, seg_after):
         fig, (start_ax, end_ax) = plt.subplots(1, 2, figsize=(8,3), constrained_layout=True)
 
-        tofs = np.timedelta64(30, "s")
-        tofs2 = np.timedelta64(31, "s")
+        tofs2 = tofs + np.timedelta64(1, "s")
 
         for ax, t, name in [(start_ax, seg.time.data[0], "start"),
                             (end_ax, seg.time.data[-1], "end")]:
