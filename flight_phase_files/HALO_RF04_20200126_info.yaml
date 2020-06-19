@@ -134,7 +134,8 @@ segments:
 - kinds:
   - circling
   name: circling 1
-  irregularities: []
+  irregularities: 
+  - TTFS 88 seconds to first launch as flight was already on circle path
   segment_id: HALO-0126_o1
   start: 2020-01-26 12:25:40
   end: 2020-01-26 15:40:30
@@ -312,10 +313,10 @@ segments:
   name: circle 6
   irregularities:
   - flight returned towards the island before completing a full circle
-  - circle end time denoted by change in altitude after last sonde
+  - circle end time denoted by significant change in roll after last sonde
   segment_id: HALO-0126_c6
   start: 2020-01-26 19:50:31
-  end: 2020-01-26 20:47:00
+  end: 2020-01-26 20:46:30
   dropsondes:
     GOOD:
     - HALO-0126_s64
@@ -375,7 +376,7 @@ segments:
   - between circle 5 and 6, the flight deviated from the circle due to a traffic issue
   segment_id: HALO-0126_o3
   start: 2020-01-26 19:50:31
-  end: 2020-01-26 20:47:00
+  end: 2020-01-26 20:46:30
   dropsondes:
     GOOD:
     - HALO-0126_s64

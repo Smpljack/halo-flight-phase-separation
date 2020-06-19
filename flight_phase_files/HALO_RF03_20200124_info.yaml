@@ -30,7 +30,7 @@ segments:
   - circle
   name: circle 1
   irregularities:
-  - late sonde from subsequent circle break is included here
+  - SAM late sonde from subsequent circle break is included here
   segment_id: HALO-0124_c1
   start: 2020-01-24 09:49:07
   end: 2020-01-24 10:46:26
@@ -55,7 +55,7 @@ segments:
   - circle_break
   name: circle break between circle 1 and circle 2
   irregularities:
-  - sonde was moved to circle 1
+  - SAM sonde was moved to previous segment, circle 1
   segment_id: HALO-0124_cb1
   start: 2020-01-24 10:46:26
   end: 2020-01-24 10:59:01
@@ -67,7 +67,8 @@ segments:
   - circle
   name: circle 2
   irregularities:
-  - late sonde from subsequent circle break is included here
+  - SAM late sonde from subsequent circle break is included here
+  - sudden jump in pitch in the final quarter of segment
   segment_id: HALO-0124_c2
   start: 2020-01-24 10:59:01
   end: 2020-01-24 11:56:59
@@ -92,7 +93,7 @@ segments:
   - circle_break
   name: circle break between circle 2 and circle 3
   irregularities:
-  - sonde was moved to circle 2
+  - SAM sonde was moved to previous segment, circle 2
   segment_id: HALO-0124_cb2
   start: 2020-01-24 11:56:59
   end: 2020-01-24 12:14:08
@@ -103,7 +104,8 @@ segments:
 - kinds:
   - circle
   name: circle 3
-  irregularities: []
+  irregularities: 
+  - higher roll fluctuation at the end of segment
   segment_id: HALO-0124_c3
   start: 2020-01-24 12:14:08
   end: 2020-01-24 13:13:30
@@ -228,11 +230,12 @@ segments:
     UGLY: []
 - kinds:
   - circling
-  name: circling
-  irregularities: []
+  name: circling 1
+  irregularities: 
+  - TTFS HALO was already on the circle 147 s before first launch
   segment_id: HALO-0124_o1
-  start: 2020-01-24 09:49:07
-  end: 2020-01-24 16:48:15
+  start: 2020-01-24 09:47:40
+  end: 2020-01-24 16:56:30
   dropsondes:
     GOOD:
     - HALO-0124_s01
