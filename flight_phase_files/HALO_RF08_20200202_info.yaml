@@ -316,7 +316,7 @@ segments:
   - circling
   name: circling 1
   irregularities:
-  - circle 1 starts 40 seconds prior to first dropsonde
+  - TTFS circle 1 starts 40 seconds prior to first dropsonde
   segment_id: HALO-0202_o1
   start: 2020-02-02 11:47:19
   end: 2020-02-02 14:57:35
