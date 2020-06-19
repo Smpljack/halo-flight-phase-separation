@@ -376,7 +376,7 @@ segments:
   - between circle 5 and 6, the flight deviated from the circle due to a traffic issue
   segment_id: HALO-0126_o3
   start: 2020-01-26 19:50:31
-  end: 2020-01-26 20:47:00
+  end: 2020-01-26 20:46:30
   dropsondes:
     GOOD:
     - HALO-0126_s64
