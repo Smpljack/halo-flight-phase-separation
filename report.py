@@ -229,6 +229,11 @@ class SegmentChecker:
                 yield "irregularities is not a list"
                 del seg["irregularities"]
                 irregularities = []
+            else:
+                if not all(isinstance(i, str) for i in irregularities):
+                    yield "irregularities is not a list of str"
+                    del seg["irregularities"]
+                    irregularities = []
         else:
             yield "segment has no irregularities attribute"
             irregularities = []
