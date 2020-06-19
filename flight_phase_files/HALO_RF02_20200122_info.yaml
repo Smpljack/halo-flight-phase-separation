@@ -34,7 +34,7 @@ segments:
   - circle
   name: circle 1
   irregularities:
-  - TTFS circle starts 30 s before first launch to include the last sonde
+  - TTFS circle starts 27 s before first launch to include the last sonde
   segment_id: HALO-0122_c1
   start: 2020-01-22 15:17:48
   end: 2020-01-22 16:13:04
