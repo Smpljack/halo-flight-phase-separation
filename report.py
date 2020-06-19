@@ -261,7 +261,7 @@ class SegmentChecker:
             yield "inconsistent number of good sondes between segment file and sondes.yaml"
 
         t_start = np.datetime64(seg["start"])
-        if kinds_is_circle(kinds) and len(sonde_times) > 0:
+        if "circle" in kinds and len(sonde_times) > 0:
             seconds_to_first_sonde = (np.datetime64(sonde_times[0]) - t_start) \
                                    / np.timedelta64(1, "s")
             if abs(seconds_to_first_sonde - 60.) > .75 and len(irregularities) == 0:
