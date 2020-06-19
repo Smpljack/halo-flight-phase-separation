@@ -304,6 +304,7 @@ def _main():
         global_warnings.append("no sonde_info is specified, using data from unified dataset")
 
     sonde_info = [s for s in sonde_info if s["platform"] == platform]
+    sondes_by_id = {s["sonde_id"]: s for s in sonde_info}
 
     fig, ax = plt.subplots()
     ax.plot(bahamas.lon, bahamas.lat)
@@ -327,13 +328,16 @@ def _main():
         sondes_by_flag = {f: [s for s in sondes_in_segment if s["flag"] == f]
                           for f in set(s["flag"] for s in sondes_in_segment)}
 
+        manual_sondes_by_flag = {f: [sondes_by_id[s] for s in sondes] for f, sondes in seg.get("dropsondes", []).items()}
+
         seg["sondes_by_flag"] = sondes_by_flag
 
         sonde_times = [s["launch_time"] for s in sondes_in_segment]
 
         sonde_tracks_by_flag = {
             f: bahamas.sel(time=[s["launch_time"] for s in sondes], method="nearest")
-            for f, sondes in sondes_by_flag.items()
+            #for f, sondes in sondes_by_flag.items()
+            for f, sondes in manual_sondes_by_flag.items()
         }
 
         plot_data = []
