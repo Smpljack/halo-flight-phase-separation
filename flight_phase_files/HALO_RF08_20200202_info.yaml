@@ -28,7 +28,7 @@ segments:
   - circle
   name: circle 1
   irregularities:
-  - starts 40 seconds prior to first dropsonde
+  - TTFS starts 40 seconds prior to first dropsonde
   segment_id: HALO-0202_c1
   start: 2020-02-02 11:47:17
   end: 2020-02-02 12:42:55
@@ -96,8 +96,7 @@ segments:
 - kinds:
   - circle
   name: circle 3
-  irregularities:
-  - First dropsonde is BAD
+  irregularities: []
   segment_id: HALO-0202_c3
   start: 2020-02-02 13:56:39
   end: 2020-02-02 14:51:54
@@ -317,8 +316,7 @@ segments:
   - circling
   name: circling 1
   irregularities:
-  - circle 1: starts 40 seconds prior to first dropsonde
-  - circle 3: first dropsonde is BAD
+  - circle 1 starts 40 seconds prior to first dropsonde
   segment_id: HALO-0202_o1
   start: 2020-02-02 11:47:19
   end: 2020-02-02 14:51:59
@@ -367,7 +365,7 @@ segments:
   - circling
   name: circling 2
   irregularities:
-  - circle 6: altitude shift at circle end from 10.5 to 9.5 km
+  - circle 6 altitude shift at circle end from 10.5 to 9.5 km
   segment_id: HALO-0202_o2
   start: 2020-02-02 16:31:49
   end: 2020-02-02 19:34:53
