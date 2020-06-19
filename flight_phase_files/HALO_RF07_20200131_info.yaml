@@ -35,8 +35,8 @@ segments:
   name: circling 1
   irregularities: []
   segment_id: HALO-0131_o1
-  start: 2020-01-31 15:31:12
-  end: 2020-01-31 18:49:16
+  start: 2020-01-31 15:28:40
+  end: 2020-01-31 18:50:00
   dropsondes:
     GOOD:
     - HALO-0131_s02
@@ -147,7 +147,7 @@ segments:
   - circle
   name: circle 3
   irregularities:
-  - Earlier start of circle to allow completion of 360 deg before next flight pattern
+  - TTFS Earlier start of circle to allow completion of 360 deg before next flight pattern
   segment_id: HALO-0131_c3
   start: 2020-01-31 17:50:17
   end: 2020-01-31 18:49:16
@@ -229,7 +229,7 @@ segments:
   name: circling 2
   irregularities: []
   segment_id: HALO-0131_o2
-  start: 2020-01-31 19:58:32
+  start: 2020-01-31 19:56:20
   end: 2020-01-31 23:25:38
   dropsondes:
     GOOD:
@@ -343,7 +343,8 @@ segments:
   - circle
   name: circle 6
   irregularities:
-  - last sonde slightly delayed to circumvent conflict with P3
+  - TTFS earlier circle start to complete 360 degeree
+  - circle deviation before last sonde to circumvent conflict with P3
   segment_id: HALO-0131_c6
   start: 2020-01-31 22:26:31
   end: 2020-01-31 23:25:38
