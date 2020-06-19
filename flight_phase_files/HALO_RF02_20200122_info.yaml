@@ -34,7 +34,7 @@ segments:
   - circle
   name: circle 1
   irregularities:
-  - Circle starts 30 s before first launch to include the last sonde
+  - TTFS circle starts 27 s before first launch to include the last sonde
   segment_id: HALO-0122_c1
   start: 2020-01-22 15:17:48
   end: 2020-01-22 16:13:04
@@ -94,7 +94,7 @@ segments:
   irregularities: []
   segment_id: HALO-0122_cb2
   start: 2020-01-22 17:26:52
-  end: 2020-01-22 17:41:58
+  end: 2020-01-22 17:41:56
   dropsondes:
     GOOD: []
     BAD: []
@@ -103,10 +103,10 @@ segments:
   - circle
   name: circle 3
   irregularities:
-  - Circle starts 70 s before first launch to avoid pitch change in end of circle
+  - TTFS circle starts 65 s before first launch to avoid pitch change in end of circle
   segment_id: HALO-0122_c3
-  start: 2020-01-22 17:41:58
-  end: 2020-01-22 18:38:44
+  start: 2020-01-22 17:41:56
+  end: 2020-01-22 18:38:42
   dropsondes:
     GOOD:
     - HALO-0122_s25
@@ -159,10 +159,11 @@ segments:
 - kinds:
   - circle
   name: circle 4
-  irregularities: []
+  irregularities:
+  - SAM HALO-0122_s49 attributed manually
   segment_id: HALO-0122_c4
-  start: 2020-01-22 19:44:10
-  end: 2020-01-22 20:43:22
+  start: 2020-01-22 19:44:02
+  end: 2020-01-22 20:43:14
   dropsondes:
     GOOD:
     - HALO-0122_s37
@@ -183,9 +184,10 @@ segments:
 - kinds:
   - circle_break
   name: break between circle 4 and circle 5
-  irregularities: []
+  irregularities:
+  - SAM HALO-0122_s49 attributed manually
   segment_id: HALO-0122_cb3
-  start: 2020-01-22 20:43:22
+  start: 2020-01-22 20:43:14
   end: 2020-01-22 20:59:01
   dropsondes:
     GOOD: []
@@ -195,7 +197,7 @@ segments:
   - circle
   name: circle 5
   irregularities:
-  - Circle starts earlier to accomodate complete 6th circle right afterwards
+  - TTFS circle starts earlier to accomodate complete 6th circle right afterwards
   segment_id: HALO-0122_c5
   start: 2020-01-22 20:59:01
   end: 2020-01-22 21:58:36
@@ -218,7 +220,8 @@ segments:
 - kinds:
   - circle
   name: circle 6
-  irregularities: []
+  irregularities:
+  - TTFS circle starts directly after circle 5 to accomodate complete circle
   segment_id: HALO-0122_c6
   start: 2020-01-22 21:58:36
   end: 2020-01-22 23:00:32
@@ -266,7 +269,7 @@ segments:
   irregularities: []
   segment_id: HALO-0122_o1
   start: 2020-01-22 15:17:48
-  end: 2020-01-22 18:38:44
+  end: 2020-01-22 18:38:42
   dropsondes:
     GOOD:
     - HALO-0122_s01
@@ -310,7 +313,8 @@ segments:
 - kinds:
   - circling
   name: circling 2
-  irregularities: []
+  irregularities:
+  - altitude change between circles 4 and 5
   segment_id: HALO-0122_o2
   start: 2020-01-22 19:44:10
   end: 2020-01-22 23:00:32
