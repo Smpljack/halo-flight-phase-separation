@@ -231,7 +231,8 @@ segments:
 - kinds:
   - circling
   name: circling 1
-  irregularities: []
+  irregularities: 
+  - TTFS HALO was already on the circle 147 s before first launch
   segment_id: HALO-0124_o1
   start: 2020-01-24 09:47:40
   end: 2020-01-24 16:56:30
