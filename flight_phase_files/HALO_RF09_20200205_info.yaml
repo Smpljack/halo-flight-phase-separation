@@ -34,7 +34,7 @@ segments:
   name: circling 1
   irregularities: []
   segment_id: HALO-0205_o1
-  start: 2020-02-05 09:36:22
+  start: 2020-02-05 09:35:00
   end: 2020-02-05 12:51:07
   dropsondes:
     GOOD:
@@ -152,7 +152,7 @@ segments:
   - circle
   name: circle 3
   irregularities:
-  - "earlier start of cricle to get 360\xB0 before next flight segment"
+  - "TTFS Earlier start of cricle to get 360\xB0 before next flight segment"
   segment_id: HALO-0205_c3
   start: 2020-02-05 11:54:25
   end: 2020-02-05 12:51:07
@@ -338,7 +338,7 @@ segments:
   - circle
   name: circle 6
   irregularities:
-  - "earlier start of cricle to get 360\xB0 before next flight segment"
+  - "TTFS Earlier start of cricle to get 360\xB0 before next flight segment"
   segment_id: HALO-0205_c6
   start: 2020-02-05 16:55:19
   end: 2020-02-05 17:51:12
