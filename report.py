@@ -171,6 +171,9 @@ def timeline_of(var, unit):
 
 SPECIAL_PLOTS = {
     "circle": [circle_detail_plot, zoom_on("roll", "deg")],
+    "circling": [zoom_on("roll", "deg", tofs=np.timedelta64(3, "m")),
+                 zoom_on("pitch", "deg", tofs=np.timedelta64(3, "m")),
+                 zoom_on("altitude", "m", tofs=np.timedelta64(3, "m"))],
     "straight_leg": [straight_leg_detail_plot, zoom_on("roll", "deg")],
     "radar_calibration_wiggle": [zoom_on("roll", "deg")],
     "radar_calibration_tilted": [zoom_on("roll", "deg")],
