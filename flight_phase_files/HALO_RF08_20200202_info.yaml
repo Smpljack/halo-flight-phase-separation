@@ -319,7 +319,7 @@ segments:
   - circle 1 starts 40 seconds prior to first dropsonde
   segment_id: HALO-0202_o1
   start: 2020-02-02 11:47:19
-  end: 2020-02-02 14:51:59
+  end: 2020-02-02 14:57:35
   dropsondes:
     GOOD:
     - HALO-0202_s02
@@ -367,7 +367,7 @@ segments:
   irregularities:
   - circle 6 altitude shift at circle end from 10.5 to 9.5 km
   segment_id: HALO-0202_o2
-  start: 2020-02-02 16:31:49
+  start: 2020-02-02 16:23:30
   end: 2020-02-02 19:34:53
   dropsondes:
     GOOD:
