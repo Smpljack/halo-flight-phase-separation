@@ -60,12 +60,13 @@ segments:
   - circle
   name: circle 1
   irregularities:
-  - Start of circle directly with first drop, roll angle around 4 deg in beginning
+  - TTFS Start of circle directly with first dropsonde, roll angle around 4 deg in beginning
   segment_id: HALO-0119_c1
-  start: 2020-01-19 17:33:26
+  start: 2020-01-19 17:33:12
   end: 2020-01-19 18:24:15
   dropsondes:
     GOOD:
+    - HALO-0119_s04
     - HALO-0119_s05
     - HALO-0119_s06
     - HALO-0119_s07
